@@ -9,14 +9,14 @@ _**Note that the internal and DMZ networks are /25, not /24**_
 ### Internal
 Managed by blue teamers  
 Supposed to be less public, "trusted"  
-Network: 10.X.0.0/25  
-Router: 10.X.0.126
+Network: 10.100.X.0/25  
+Router: 10.100.X.126
 
 ### DMZ
 Managed by blue teamers  
 Supposed to be more public  
-Network: 10.X.0.128/25  
-Router: 10.X.0.254
+Network: 10.100.X.128/25  
+Router: 10.100.X.254
 
 ### Remote
 Unmanaged by blue teamers 
