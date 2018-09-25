@@ -20,10 +20,10 @@ Gateway: 10.X.0.254
 | Hostname | Role | IP | OS | Services | Notes |
 |----------|------|----|----|----------|-------|
 | Alexander | AD/DC | 10.X.0.1 | Windows Server 2016 | LDAP, DNS | GUI install |
-| Attila | ??? | 10.X.0.5 | ??? | (Useful service) ||
+| Attila | Vulnerable Web App | 10.X.0.5 | Cucumber Linux | HTTP (injects webapp) | LAMP stack |
 | Julius | Fileserver, Mail | 10.X.0.2 | Windows Server 2008 R2 | SMTP (hMail), SMB, FTP (existing Ansible role) | GUI install |
-| Leonidas | GrayLog | 10.X.0.4 | Kali 2018.2 | HTTP (GrayLog), Elasticsearch API ||
-
+| Leonidas | GrayLog | 10.X.0.4 | CentOS 7 | HTTP (GrayLog), Elasticsearch API ||
+| Washington | Router | 10.X.0.254 | PAN |||
 
 ### DMZ Network
 Blueteam-managed network  
@@ -33,8 +33,9 @@ Gateway: 10.X.1.254
 
 | Hostname | Role | IP | OS | Services | Notes |
 |----------|------|----|----|----------|-------|
-| Ashoka | VPN | 10.X.1.1 | CentOS 6 | DNS (PowerDNS), OpenVPN, HTTP (Webmin) | Has second interface on Internal network: 10.X.0.6 |
+| Ashoka | VPN | 10.X.1.1 | FreeBSD | DNS (PowerDNS), OpenVPN, HTTP (Webmin) | Has second interface on Internal network: 10.X.0.6 |
 | Bonaparte | Web | 10.X.1.2 | Windows Server 2012 R2 | HTTP/HTTPS (IIS) | Core install |
+| Washington | Router | 10.X.1.254 | PAN |||
 
 ### VPN Network
 Whiteteam-managed network  
@@ -43,8 +44,9 @@ Network: TBD
 
 | Hostname | Role | IP | OS | Services | Notes |
 |----------|------|----|----|----------|-------|
-| Bismark | Client | DHCP | Cucumber Linux |||
+| Bismark | Client | DHCP | Kali 2018.2 |||
 | Suleyman | Client | DHCP | Windows 8 |||
+| Washington | Router | DHCP ? | PAN |||
 
 ### AWS Hosts
 Whiteteam-managed network
