@@ -23,6 +23,7 @@ Gateway: 10.X.0.254
 | Attila | Vulnerable Web App | 10.X.0.5 | Cucumber Linux | HTTP (injects webapp) | LAMP stack |
 | Julius | Fileserver, Mail | 10.X.0.2 | Windows Server 2008 R2 | SMTP (hMail), SMB, FTP (existing Ansible role) | GUI install |
 | Leonidas | GrayLog | 10.X.0.4 | CentOS 7 | HTTP (GrayLog), Elasticsearch API ||
+| Churchill | Docker Host | 10.X.0.5 | Ubuntu 18.04 | Docker API | Will run Mattermost, GitLab, etc docker containers.  No containers will be scored. |
 | Washington | Router | 10.X.0.254 | PAN |||
 
 ### DMZ Network
@@ -47,11 +48,3 @@ Network: TBD
 | Bismark | Client | DHCP | Kali 2018.2 |||
 | Suleyman | Client | DHCP | Windows 8 |||
 | Washington | Router | DHCP ? | PAN |||
-
-### AWS Hosts
-Whiteteam-managed network
-Network: TBD
-
-| Hostname | Role | IP | OS | Services | Notes |
-|----------|------|----|----|----------|-------|
-| Churchill | Docker Host | Elastic IP(s) | Ubuntu 18.04 | Docker API | Will run Mattermost, GitLab, etc docker containers.  No containers will be scored. |
