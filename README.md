@@ -3,7 +3,7 @@
 Blue Man Group is the codename for the Blue Team infrastructure component of ISTS17.
 
 ## Network Topology
-![ISTS 17 topology](ists17-network.png)
+![ISTS 17 topology](network.png)
 
 ## Host Reference
 Notes about "global" services:
