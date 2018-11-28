@@ -38,9 +38,9 @@ Domain: teamX.TBD
 
 | Hostname    | Role                | IP          | OS                      | Services                | Notes |
 |-------------|---------------------|-------------|-------------------------|-------------------------|-------|
-| Gandhi      | Public DNS          | 10.X.1.1    | FreeBSD                 | DNS, HTTP (Webmin)      ||
+| Gandhi      | Public DNS          | 10.X.1.1    | FreeBSD 11.2            | DNS, HTTP (Webmin)      ||
 | Bonaparte   | Public Website      | 10.X.1.2    | Windows Server 2012 R2  | HTTP, HTTPS (IIS)       | Core install |
-| Ataturk     | GitLab              | 10.X.1.3    | openSUSE                | HTTPS, SSH (git)        | GitLab login required for HTTPS check |
+| Ataturk     | GitLab              | 10.X.1.3    | openSUSE 42.3           | HTTPS, SSH (git)        | GitLab login required for HTTPS check |
 | Washington  | Router              | 10.X.1.254  | PAN                     |                         ||
 
 ### VPN Network
