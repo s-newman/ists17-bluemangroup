@@ -2,4 +2,4 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - ashoka-dns-deploy
+    - gandhi-dns-deploy
