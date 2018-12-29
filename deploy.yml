@@ -1,0 +1,16 @@
+---
+
+- hosts: Linux
+  roles:
+          deploy-linux-addusers
+
+- hosts: attila
+  roles:
+          attila-webapp-deploy
+
+- hosts: ashoka
+  roles:
+          ashoka-dns-deploy
+          ashoka-http-deploy
+          ashoka-openvpn-deploy
+
