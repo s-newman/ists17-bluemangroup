@@ -1,0 +1,37 @@
+- name: Install EPEL
+  package:
+    name: epel-release
+    state: present
+  when: ansible_distribution == "CentOS" or ansible_distribution=="RedHat"
+
+- name: Install python2-dnf for Fedora dnf support
+  raw: dnf install -y python2-dnf
+  when:
+    - ansible_distribution == "Fedora"
+    - ansible_python.version.major == 2
+  register: fedora_dnf
+  changed_when: '"Nothing to do." not in fedora_dnf.stdout'
+
+- name: Install openvpn
+  package:
+   name: "{{ item }}"
+   state: present
+  with_items:
+    - openvpn
+    - openssl
+  become: true
+  become_user: root
+
+- name: Install LDAP plugin
+  package:
+   name: openvpn-auth-ldap
+   state: present
+  when: openvpn_use_ldap
+
+# RHEL has the group 'nobody', 'Debian/Ubuntu' have 'nogroup'
+# standardize on 'nogroup'
+- name: Ensure group 'nogroup' is present
+  group:
+    name: nogroup
+    state: present
+    system: yes

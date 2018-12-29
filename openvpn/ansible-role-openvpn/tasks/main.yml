@@ -1,0 +1,71 @@
+---
+# tasks file for openvpn
+- include_vars: "{{ item }}"
+  with_first_found:
+    - "../vars/{{ ansible_distribution }}{{ ansible_distribution_major_version }}.yml"
+    - "../vars/{{ ansible_distribution }}.yml"
+    - "../vars/{{ ansible_os_family }}.yml"
+    - "../vars/empty.yml"
+  tags: [always]
+
+- name: Set facts
+  include_tasks: set_facts.yml
+  tags: [always]
+
+- name: Uninstall OpenVPN
+  include_tasks: uninstall.yml
+  when: openvpn_uninstall
+  tags:
+    - uninstall
+
+- name: Install OpenVPN
+  include_tasks: install.yml
+  tags:
+    - install
+
+- name: Copy or Generate server keys
+  include_tasks: server_keys.yml
+  tags:
+    - server_keys
+
+# ignoreerrors is required for CentOS/RHEL 6
+# http://serverfault.com/questions/477718/sysctl-p-etc-sysctl-conf-returns-error
+- name: enable ipv4 forwarding
+  sysctl:
+    name: net.ipv4.ip_forward
+    value: 1
+    ignoreerrors: yes
+  failed_when: false
+  when: not ci_build
+
+- name: enable ipv6 forwarding
+  sysctl:
+    name: net.ipv6.conf.all.forwarding
+    value: 1
+    ignoreerrors: yes
+  when: openvpn_server_ipv6_network is defined and not ci_build
+
+- name: Detect firewall type
+  include_tasks: firewall.yml
+  when:
+    - not ci_build
+    - manage_firewall_rules
+  tags:
+    - firewall
+
+- name: Generate client configs
+  include_tasks: client_keys.yml
+  when: clients is defined
+  tags:
+    - client_keys
+
+- name: Generate revocation list and clean up
+  include_tasks: revocation.yml
+  when: openvpn_revoke_these_certs is defined
+  tags:
+    - revocation
+
+- name: Configure OpenVPN server
+  include_tasks: config.yml
+  tags:
+    - configure

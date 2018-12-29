@@ -1,0 +1,89 @@
+# generate client keys
+---
+- name: Copy openssl client extensions
+  copy:
+    src: openssl-client.ext
+    dest: "{{openvpn_key_dir}}"
+    owner: root
+    group: root
+    mode: 0400
+  become: true
+  become_user: root
+
+- name: generate client key
+  command: "openssl req -nodes -newkey rsa:{{openvpn_rsa_bits}} -keyout {{item}}.key -out {{item}}.csr -days 3650 -subj /CN=OpenVPN-Client-{{ inventory_hostname[:24] }}-{{ item[:24] }}/"
+  args:
+    chdir: "{{ openvpn_key_dir }}"
+    creates: "{{item}}.key"
+  with_items: "{{clients}}"
+  become: true
+  become_user: root
+
+- name: protect client keys
+  file:
+    path: "{{openvpn_key_dir}}/{{item}}.key"
+    mode: 0400
+  with_items: "{{clients}}"
+  become: true
+  become_user: root
+
+- name: sign client key
+  command: openssl x509 -req -in {{item}}.csr -out {{item}}.crt -CA ca.crt -CAkey ca-key.pem -sha256 -days 3650 -extfile openssl-client.ext
+  args:
+    chdir: "{{openvpn_key_dir}}"
+    creates: "{{item}}.crt"
+  with_items: "{{clients}}"
+  become: true
+  become_user: root
+
+- name: register server ca key
+  slurp:
+    src: "{{openvpn_key_dir}}/ca.crt"
+  register: ca_cert
+  become: true
+  become_user: root
+
+- name: register tls-auth key
+  slurp:
+    src: "{{openvpn_key_dir}}/ta.key"
+  register: tls_auth
+  become: true
+  become_user: root
+
+- name: register client certs
+  slurp:
+    src: "{{openvpn_key_dir}}/{{item}}.crt"
+  with_items: "{{clients}}"
+  register: client_certs
+  become: true
+  become_user: root
+
+- name: register client keys
+  slurp:
+    src: "{{openvpn_key_dir}}/{{item}}.key"
+  with_items: "{{clients}}"
+  register: client_keys
+  become: true
+  become_user: root
+
+- name: generate client config
+  template:
+    src: client.ovpn.j2
+    dest: "{{ openvpn_base_dir }}/{{item.0.item}}-{{inventory_hostname}}.ovpn"
+    owner: root
+    group: root
+    mode: 0400
+  with_together:
+    - "{{client_certs.results}}"
+    - "{{client_keys.results}}"
+  become: true
+  become_user: root
+
+- name: fetch client config
+  fetch:
+    src: "{{ openvpn_base_dir }}/{{item}}-{{inventory_hostname}}.ovpn"
+    dest: "{{ openvpn_fetch_config_dir }}/{{item}}/{{inventory_hostname}}.ovpn"
+    flat: yes
+  with_items: "{{clients}}"
+  become: true
+  become_user: root
