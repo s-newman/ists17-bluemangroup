@@ -1,0 +1,43 @@
+---
+# tasks file for churchill-docker-deploy
+- name: Install prerequiste packages
+  apt:
+       name: ['apt-transport-https', 'ca-certificates', 'curl', 'software-properties-common'] 
+       update_cache: yes
+  become: yes
+
+- name: Add docker GPG key
+  apt_key:
+       url: https://download.docker.com/linux/ubuntu/gpg
+       state: present
+       id: 0EBFCD88
+  become: yes
+
+- name: Add docker repo
+  apt_repository:
+       repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable
+       state: present
+  become: yes
+
+- name: Install docker
+  apt:
+       name: docker-ce
+       update_cache: yes
+  become: yes
+
+- name: Create service directory
+  file: path=/etc/systemd/system/docker.service.d state=directory
+  become: yes
+
+- name: Configure docker service
+  copy:
+       src: startup_options.conf
+       dest: /etc/systemd/system/docker.service.d/startup_options.conf
+  become: yes 
+  
+- name: reload daemon
+  systemd:
+       state: restarted
+       name: docker.service
+       daemon_reload: yes
+  become: yes
