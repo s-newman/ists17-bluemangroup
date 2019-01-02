@@ -1,0 +1,16 @@
+---
+- name: Start Necessary Services
+  sysvinit:
+    name: "{{ item }}"
+    state: started
+    enabled: yes
+    runlevels:
+      - 3
+      - 4
+      - 5
+  loop:
+    - sshd
+    - httpd
+    - mysqld
+    - php-fpm
+

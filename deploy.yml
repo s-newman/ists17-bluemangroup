@@ -1,0 +1,4 @@
+---
+- hosts: churchill
+  roles:
+          - churchill-docker-deploy
