@@ -6,43 +6,56 @@
     cached: no
     name: mariadb103-server-10.3.11
     state: present
+  become: yes
 
 - name: Add MariaDB server to /etc/rc.conf
   shell: grep mysql_enable /etc/rc.conf || echo 'mysql_enable=YES' >> /etc/rc.conf
+  become: yes
 
 - name: Enable MariaDB server
   service:
     name: mysql-server
     state: started
+  become: yes
 
 - name: Copy pdns.sql
   copy:
     src: pdns.sql
     dest: /pdns.sql
+  become: yes
 
 - name: Import pdns.sql
   shell: mysql -u root < /pdns.sql
+  check_mode: no
+  ignore_errors: yes
+  become: yes
 
 - name: Remove pdns.sql from remote host
   file:
     path: /pdns.sql
     state: absent
+  become: yes
 
 - name: Install PowerDNS
   pkgng:
     cached: no
     name: dns/powerdns
     state: present
+  become: yes
 
 - name: Add PowerDNS to /etc/rc.conf
   shell: grep pdns_enable /etc/rc.conf || echo 'pdns_enable="YES"' >> /etc/rc.conf
+  become: yes
 
 - name: Configure PowerDNS
   copy:
     src: pdns.conf
     dest: /usr/local/etc/pdns/pdns.conf
+  become: yes
 
 - name: Enable PowerDNS
   service:
     name: pdns
     state: started
+  become: yes
+

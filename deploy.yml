@@ -1,0 +1,5 @@
+---
+- hosts: gandhi
+  roles:
+          - gandhi-dns-deploy
+          - gandhi-http-deploy
