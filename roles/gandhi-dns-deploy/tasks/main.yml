@@ -61,18 +61,18 @@
 
 - name: Copy DNS records
   copy:
-    src: dnsrecords-example.sql
-    dest: /dnsrecords-example.sql
+    src: dnsrecords.sql
+    dest: /dnsrecords.sql
   become: yes
 
 - name: Import DNS records
-  shell: mysql -u root < /dnsrecords-example.sql
+  shell: mysql -u root < /dnsrecords.sql
   check_mode: no
   ignore_errors: yes
   become: yes
 
-- name: Remove dnsrecords-example.sql from remote host
+- name: Remove dnsrecords.sql from remote host
   file:
-    path: /dnsrecords-example.sql
+    path: /dnsrecords.sql
     state: absent
   become: yes
