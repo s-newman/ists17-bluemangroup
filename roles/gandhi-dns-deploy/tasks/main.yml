@@ -59,3 +59,20 @@
     state: started
   become: yes
 
+- name: Copy DNS records
+  copy:
+    src: dnsrecords-example.sql
+    dest: /dnsrecords-example.sql
+  become: yes
+
+- name: Import DNS records
+  shell: mysql -u root < /dnsrecords-example.sql
+  check_mode: no
+  ignore_errors: yes
+  become: yes
+
+- name: Remove dnsrecords-example.sql from remote host
+  file:
+    path: /dnsrecords-example.sql
+    state: absent
+  become: yes
