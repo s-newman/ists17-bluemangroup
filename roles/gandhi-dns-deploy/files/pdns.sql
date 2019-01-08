@@ -17,7 +17,7 @@ CREATE TABLE domains (
   PRIMARY KEY (id)
 ) Engine=InnoDB CHARACTER SET 'latin1';
 
-CREATE UNIQUE INDEX name_index ON domains(name);
+CREATE UNIQUE INDEX IF NOT EXISTS name_index ON domains(name);
 
 
 CREATE TABLE records (
