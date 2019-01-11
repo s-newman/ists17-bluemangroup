@@ -1,0 +1,5 @@
+# https://github.com/kyl191/ansible-role-openvpn
+- hosts: all
+  gather_facts: true
+  roles:
+    - {role: ansible-role-openvpn, clients: [client1]}

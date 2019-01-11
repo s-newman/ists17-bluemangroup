@@ -1,0 +1,98 @@
+# {{ ansible_managed }}
+
+port {{openvpn_port}}
+{% if openvpn_dualstack %}
+proto {{openvpn_proto}}6
+{% else %}
+proto {{openvpn_proto}}
+{% endif %}
+dev tun
+
+ca {{openvpn_key_dir}}/ca.crt
+cert {{openvpn_key_dir}}/server.crt
+key {{openvpn_key_dir}}/server.key
+dh {{openvpn_key_dir}}/dh.pem
+{% if openvpn_crl_path is defined %}
+crl-verify {{openvpn_crl_path}}
+{% endif %}
+{% if openvpn_use_crl|bool %}
+crl-verify {{openvpn_key_dir}}/ca-crl.pem
+{% endif %}
+
+tls-server
+
+{# Using Mozilla's modern cipher list + DHE for older clients #}
+{% if openvpn_use_modern_tls|bool %}
+{% endif %}
+{% if openvpn_duplicate_cn|bool %}
+duplicate-cn
+{% endif %}
+{% if openvpn_client_to_client|bool %}
+client-to-client
+{% endif %}
+
+server {{openvpn_server_network}} {{openvpn_server_netmask}}
+{% if openvpn_server_ipv6_network is defined %}
+server-ipv6 {{openvpn_server_ipv6_network}}
+{% endif %}
+{% if openvpn_topology is defined %}
+topology {{openvpn_topology}}
+{% endif %}
+
+
+{% if openvpn_redirect_gateway|bool %}
+push "redirect-gateway def1 bypass-dhcp"
+{% endif %}
+{% if openvpn_set_dns %}
+{% if openvpn_custom_dns %}
+{% for srv in openvpn_dns_servers %}
+push "dhcp-option DNS {{ srv }}"
+{% endfor %}
+{% else %}
+push "dhcp-option DNS 1.0.0.1"
+push "dhcp-option DNS 1.1.1.1"
+push "dhcp-option DNS 8.8.8.8"
+push "dhcp-option DNS 8.8.4.4"
+{% endif %}
+{% endif %}
+{% if openvpn_push is defined %}
+{% for opt in openvpn_push %}
+push "{{ opt }}"
+{% endfor %}
+{% endif %}
+keepalive 5 30
+persist-key
+persist-tun
+user nobody
+group nogroup
+
+{% for option in openvpn_addl_server_options %}
+{{ option }}
+{% endfor %}
+
+status openvpn-status.log
+status-version {{ openvpn_status_version }}
+log-append /var/log/openvpn.log
+verb 3
+
+{% if openvpn_verify_cn|bool %}
+verify-x509-name OpenVPN-Client-{{inventory_hostname[:24]}} name-prefix
+remote-cert-tls client
+{% endif %}
+
+{% if openvpn_enable_management|bool %}
+management {{openvpn_management_bind}}
+{% if openvpn_management_client_user %}
+management-client-user {{openvpn_management_client_user}}
+{% endif %}
+{% endif %}
+
+{% if openvpn_use_ldap|bool %}
+### LDAP AUTH ###
+{% if ansible_machine == "x86_64" %}
+plugin /usr/lib64/openvpn/plugin/lib/openvpn-auth-ldap.so "{{ openvpn_base_dir }}/auth/ldap.conf"
+{% else %}
+plugin /usr/lib/openvpn/plugin/lib/openvpn-auth-ldap.so "{{ openvpn_base_dir }}/auth/ldap.conf"
+{% endif %}
+client-cert-not-required
+{% endif %}
