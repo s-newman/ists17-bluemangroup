@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 - hosts: DockerHost
   roles:
           - churchill-docker-deploy
@@ -10,7 +11,9 @@
 - hosts: attila 
   roles:
           - attila-webapp-deploy
+=======
 - hosts: gandhi
   roles:
           - gandhi-dns-deploy
           - gandhi-http-deploy
+>>>>>>> gandhi

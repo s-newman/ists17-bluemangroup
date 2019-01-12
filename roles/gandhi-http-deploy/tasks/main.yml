@@ -1,0 +1,36 @@
+---
+# tasks file for gandhi-http-deploy
+
+- name: Install python
+  pkgng:
+    cached: no
+    name: python
+    state: present
+  become: yes
+
+- name: Install webmin
+  pkgng:
+    cached: no
+    name: webmin
+    state: present
+  become: yes
+
+- name: Copy webmin configuration
+  copy:
+    src: setup.sh
+    dest: /usr/local/lib/webmin/setup.sh
+  become: yes
+
+- name: Configure webmin
+  shell: /usr/local/lib/webmin/setup.sh
+  become: yes
+
+- name: Add webmin to /etc/rc.conf
+  shell: grep webmin_enable /etc/rc.conf || echo 'webmin_enable="YES"' >> /etc/rc.conf
+  become: yes
+
+- name: Enable webmin
+  service:
+    name: webmin
+    state: started
+  become: yes
