@@ -4,11 +4,11 @@
 - name: Install MariaDB server
   pkgng:
     cached: no
-    name: mariadb103-server-10.3.11
+    name: mariadb103-server
     state: present
   become: yes
 
-- name: Add MariaDB server to /etc/rc.conf
+- name: Add MariaDB server to /etc/rc.confb
   shell: grep mysql_enable /etc/rc.conf || echo 'mysql_enable=YES' >> /etc/rc.conf
   become: yes
 
