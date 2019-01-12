@@ -1,0 +1,40 @@
+- name: Create openvpn config file
+  template:
+    src: server.conf.j2
+    dest: "{{ openvpn_base_dir }}/{{openvpn_config_file}}.conf"
+    owner: root
+    group: root
+#  notify:
+#    - restart openvpn
+  become: true
+  become_user: root
+ 
+
+- name: Install LDAP config
+  template:
+    src: ldap.conf.j2
+    dest: "{{ openvpn_base_dir }}/auth/ldap.conf"
+    owner: root
+    group: root
+  when: openvpn_use_ldap
+  become: true
+  become_user: root
+
+- name: Copy openvpn logrotate config file
+  copy:
+    src: openvpn_logrotate.conf
+    dest: /etc/logrotate.d/openvpn.conf
+    owner: root
+    group: root
+    mode: 0400
+  when: ansible_os_family != 'Solaris'
+  become: true
+  become_user: root
+
+- name: Setup openvpn auto-start & start
+  service:
+    name: "{{openvpn_service_name}}"
+    enabled: yes
+    state: started
+  become: true
+  become_user: root

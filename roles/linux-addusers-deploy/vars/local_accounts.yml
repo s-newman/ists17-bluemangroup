@@ -1,0 +1,7 @@
+accounts:
+    - jeff
+    - martha
+    - edgar
+
+admin_accounts:
+    - admin

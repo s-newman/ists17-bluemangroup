@@ -1,4 +1,11 @@
 ---
+<<<<<<< HEAD
 - hosts: churchill
   roles:
           - churchill-docker-deploy
+=======
+- hosts: ashoka
+  roles:
+          - ashoka-openvpn-deploy
+
+>>>>>>> ashoka
