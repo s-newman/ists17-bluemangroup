@@ -1,11 +1,12 @@
 ---
-<<<<<<< HEAD
-- hosts: churchill
+- hosts: DockerHost
   roles:
           - churchill-docker-deploy
-=======
-- hosts: ashoka
+
+- hosts: VPNEndpoint
   roles:
           - ashoka-openvpn-deploy
 
->>>>>>> ashoka
+- hosts: attila 
+  roles:
+          - attila-webapp-deploy
