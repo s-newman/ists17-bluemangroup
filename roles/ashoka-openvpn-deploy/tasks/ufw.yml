@@ -3,6 +3,8 @@
     name: ufw
     enabled: true
     state: started
+  become: true
+  become_user: root
 
 - name: Enable ufw
   ufw:

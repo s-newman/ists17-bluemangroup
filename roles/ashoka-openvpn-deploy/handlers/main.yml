@@ -3,23 +3,28 @@
   service:
     name: "{{openvpn_service_name}}"
     state: restarted
+  become: yes
 
 - name: restart iptables
   service:
     name: iptables
     state: restarted
+  become: yes
 
 - name: restart firewalld
   service:
     name: firewalld
     state: restarted
+  become: yes
 
 - name: restart ufw
   service:
     name: ufw
     state: restarted
+  become: yes
 
 - name: save iptables rules (Debian/Ubuntu and CentOS/RHEL/Fedora)
   shell: "{{ iptables_save_command }}"
   when: ansible_os_family == 'Debian' or ansible_os_family == 'RedHat'
   listen: "save iptables"
+  become: yes
