@@ -1,0 +1,7 @@
+---
+ansible_user: deploy
+ansible_ssh_pass: password
+ansible_sudo_pass: password
+
+internal_base_domain: ists.io
+dmz_base_domain: cybertigers.club
