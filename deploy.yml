@@ -1,15 +1,16 @@
 ---
-- hosts: DockerHost
+- hosts: churchill
   roles:
           - churchill-docker-deploy
 
-- hosts: VPNEndpoint
+- hosts: ashoka
   roles:
           - ashoka-openvpn-deploy
 
 - hosts: attila 
   roles:
           - attila-webapp-deploy
+
 - hosts: gandhi
   roles:
           - gandhi-dns-deploy
