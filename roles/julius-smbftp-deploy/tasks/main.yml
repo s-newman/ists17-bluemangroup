@@ -1,0 +1,42 @@
+---
+# tasks file for julius-smbftp-deploy
+
+tasks:
+
+  - name: ensure fpt feature is present
+    win_feature:
+      name: Web-FTP-Service
+      state: present
+    register: ftp_result
+
+  - name: ensure smb feature is present
+    win_feature:
+      name: FS-FileServer
+      state: present
+    register: smb_result
+
+  - name: restart if required
+    when: ftp_result.reboot_required == "true" or smb_result.reboot_required == "true"
+    win_reboot:
+
+  - name: Ensure that the path for meme share exists
+  # there were some issues using win_share/new-smbshare. The directory 
+  # needs to exist, new-smbshare does not create a directory, only changes
+  # an already-existing one
+    win_file:
+      path: C:\Shares\meme_share
+      state: directory
+
+  - name: Ensure meme share exists
+    win_share:
+      name: meme_share
+      description: top secret russian-meme share
+      path: C:\Shares\meme_share
+      state: present
+      full: "Domain Users"
+
+  - name: Make sure memes are in the meme share
+    win_copy:
+      src: files/russian_memes/
+      dest: C:\shares\meme_share\
+
