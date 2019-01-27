@@ -1,0 +1,14 @@
+---
+# defaults file for xerses-mail-deploy
+
+# Domain name for the hMail server
+hmail_domain_name: "{{ domainname }}"
+
+# New users to add to the mail server
+hmail_users:
+  - jeff
+  - martha
+
+# Default password for all the user account
+hmail_password: "{{ password }}"
+
