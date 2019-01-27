@@ -1,0 +1,6 @@
+---
+# vars file for windows-localusers-deploy
+
+domainname: "team{{ machines[inventory_hostname]['team_id'] }}.ists.io"
+username: "Administrator@{{ domainname }}"
+password: "rockyou.txt-SUCKS!"
