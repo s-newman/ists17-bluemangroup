@@ -1,0 +1,211 @@
+---
+# tasks file for alexander-addusers-deploy
+# ensures that all users are on the DC
+
+  tasks:
+    - name: Enter User
+      win_domain_user:
+        name: Agustus
+        password: rockyou.txt-SUCKS!
+        state: present
+        groups: 
+        - Domain Admins
+        - Domain Users
+        upn: "agustus@{{ domain }}"
+
+    - name: Enter User
+      win_domain_user:
+        name: Cato
+        password: rockyou.txt-SUCKS!
+        state: present
+        groups: 
+        - Domain Admins
+        - Domain Users
+        upn: "astro@{{ domain }}"
+
+    - name: Enter User
+      win_domain_user:
+        name: Sulla
+        password: rockyou.txt-SUCKS!
+        state: present
+        groups:
+        - Domain Admins
+        - Domain Users
+        upn: "Sulla@{{ domain }}"
+
+    - name: Enter User
+      win_domain_user:
+        name: Lucius
+        password: rockyou.txt-SUCKS!
+        state: present
+        groups: 
+        - Domain Admins
+        - Domain Users
+        upn: "Lucius@{{ domain }}"
+
+    - name: Enter User
+      win_domain_user:
+        name: Favonius
+        password: rockyou.txt-SUCKS!
+        state: present
+        groups: 
+        - Domain Admins
+        - Domain Users
+        upn: "Favonius@{{ domain }}"
+
+    - name: Enter User
+      win_domain_user:
+        name: Julius
+        password: rockyou.txt-SUCKS!
+        state: present
+        groups:
+        - Domain Admins
+        - Domain Users
+        upn: "Julius@{{ domain }}"
+
+    - name: Enter User
+      win_domain_user:
+        name: Marcus
+        password: rockyou.txt-SUCKS!
+        state: present
+        groups: 
+        - Domain Admins
+        - Domain Users
+        upn: "Marcus@{{ domain }}"
+
+    - name: Enter User
+      win_domain_user:
+        name: Vinicius
+        password: rockyou.txt-SUCKS!
+        state: present
+        groups: 
+        - Domain Users
+        - Domain Admins
+        upn: "Vinicius@{{ domain }}"
+
+    - name: Enter User
+      win_domain_user:
+        name: Octavius
+        password: rockyou.txt-SUCKS!
+        state: present
+        groups: 
+        - Domain Users
+        - Domain Admins
+        upn: "Octavius@{{ domain }}"
+
+    - name: Enter User
+      win_domain_user:
+        name: Maximus
+        password: rockyou.txt-SUCKS!
+        state: present
+        groups: 
+        - Domain Users
+        upn: "Maximus@{{ domain }}"
+
+    - name: Enter User
+      win_domain_user:
+        name: Pompey
+        password: rockyou.txt-SUCKS!
+        state: present
+        groups: 
+        - Domain Users
+        upn: "Pompey@{{ domain }}"
+
+    - name: Enter User
+      win_domain_user:
+        name: Cicero
+        password: rockyou.txt-SUCKS!
+        state: present
+        groups: 
+        - Domain Users
+        upn: "Cicero@{{ domain }}"
+
+    - name: Enter User
+      win_domain_user:
+        name: Plato
+        password: rockyou.txt-SUCKS!
+        state: present
+        groups: 
+        - Domain Users
+        upn: "Plato@{{ domain }}"
+
+    - name: Enter User
+      win_domain_user:
+        name: Socrates
+        password: rockyou.txt-SUCKS!
+        state: present
+        groups: 
+        - Domain Users
+        upn: "Socrates@{{ domain }}"
+
+    - name: Enter User
+      win_domain_user:
+        name: Aristotle
+        password: rockyou.txt-SUCKS!
+        state: present
+        groups: 
+        - Domain Users
+        upn: "Aristotle@{{ domain }}"
+
+    - name: Enter User
+      win_domain_user:
+        name: Epicurus
+        password: rockyou.txt-SUCKS!
+        state: present
+        groups: 
+        - Domain Users
+        upn: "Epicurus@{{ domain }}"
+
+    - name: Enter User
+      win_domain_user:
+        name: Plutarch
+        password: rockyou.txt-SUCKS!
+        state: present
+        groups: 
+        - Domain Users
+        upn: "Plutarch@{{ domain }}"
+
+    - name: Enter User
+      win_domain_user:
+        name: jeffery
+        password: rockyou.txt-SUCKS!
+        state: present
+        groups: 
+        - Domain Users
+        upn: "jeffery@{{ domain }}"
+
+    - name: Enter User
+      win_domain_user:
+        name: jeff
+        password: rockyou.txt-SUCKS!
+        state: present
+        groups: 
+        - Domain Users
+        upn: "jeff@{{ domain }}"
+
+    - name: Enter User
+      win_domain_user:
+        name: jeofery
+        password: rockyou.txt-SUCKS!
+        state: present
+        groups: 
+        - Domain Users
+        upn: "jeofery@{{ domain }}"
+
+    - name: Enter User
+      win_domain_user:
+        name: matt
+        password: rockyou.txt-SUCKS!
+        state: present
+        groups: 
+        - Domain Users
+        upn: "matt@{{ domain }}"
+
+    - name: Enter User
+      win_domain_user:
+        name: martha
+        password: rockyou.txt-SUCKS!
+        state: present
+        groups: 
+        - Domain Users
+        upn: "martha@{{ domain }}"
