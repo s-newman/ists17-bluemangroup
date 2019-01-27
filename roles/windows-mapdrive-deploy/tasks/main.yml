@@ -1,0 +1,11 @@
+---
+# tasks file for windows-mapdrive-deploy
+
+tasks:
+- name: Ensure the meme drive is mapped
+  win_mapped_drive:
+    letter: Z
+    path: "\\julius@{{ domain }}\meme_share"
+    state: present
+    username: "{{ username }}"
+    password: "{{ password }}"
