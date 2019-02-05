@@ -73,3 +73,13 @@
     group: root
     mode: 0600
   notify: restart gitlab
+
+#- name: Whoa I can set root password for gitlab????
+#  gitlab_user:
+#    confirm: no
+#    email: root@team1.ists.io
+#    name: Administrator
+#    password: {{ password }}
+#    server_url: ataturk.team{{ team_number }}.ists.io
+#    username: root
+#    validate_certs: no

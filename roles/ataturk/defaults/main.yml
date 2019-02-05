@@ -14,7 +14,7 @@ gitlab_ssl_certificate_key: "/etc/gitlab/ssl/gitlab.key"
 
 # SSL Self-signed Certificate Configuration.
 gitlab_create_self_signed_cert: "true"
-gitlab_self_signed_cert_subj: "/C=US/ST=Missouri/L=Saint Louis/O=IT/CN=gitlab"
+gitlab_self_signed_cert_subj: "{{ cert_full_subj }}"
 
 # LDAP Configuration.
 gitlab_ldap_enabled: "false"
@@ -48,7 +48,7 @@ gitlab_nginx_ssl_client_certificate: ""
 gitlab_restart_handler_failed_when: 'gitlab_restart.rc != 0'
 
 # Optional settings.
-gitlab_time_zone: "UTC"
+gitlab_time_zone: "{{ time_zone }}"
 gitlab_backup_keep_time: "604800"
 gitlab_download_validate_certs: true
 gitlab_default_theme: '2'
