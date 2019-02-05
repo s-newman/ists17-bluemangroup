@@ -1,0 +1,34 @@
+---
+- name: Add Elastic repo key
+  rpm_key:
+    state: present
+    key: https://artifacts.elastic.co/GPG-KEY-elasticsearch
+
+- name: Add Elastic repo
+  yum_repository:
+    name: elastic.co
+    description: Elasticsearch repository for 5.x packages
+    baseurl: https://artifacts.elastic.co/packages/5.x/yum
+    enabled: yes
+    gpgcheck: yes
+    gpgkey: https://artifacts.elastic.co/GPG-KEY-elasticsearch
+    state: present
+
+- name: Install/Setup Elasticsearch
+  package:
+    name:
+      - elasticsearch
+      - java-1.8.0-openjdk-headless.x86_64
+    state: present
+
+- name: Rename Elasticsearch cluster name
+  lineinfile:
+    path: /etc/elasticsearch/elasticsearch.yml
+    regexp: '^cluster.name:'
+    line: 'cluster.name: graylog'
+
+- name: enable Elasticsearch
+  service:
+    name: elasticsearch
+    state: restarted
+    enabled: yes
