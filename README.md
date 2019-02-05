@@ -34,7 +34,7 @@ Blueteam-managed network
 No console access provided  
 Network: 10.X.1.0/24  
 Gateway: 10.X.1.254  
-Domain: teamX.TBD  
+Domain: teamX.cybertigers.club  
 
 | Hostname    | Role                | IP          | OS                      | Services                | Notes |
 |-------------|---------------------|-------------|-------------------------|-------------------------|-------|
