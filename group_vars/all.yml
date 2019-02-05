@@ -7,8 +7,14 @@ internal_base_domain: ists.io
 dmz_base_domain: cybertigers.club
 
 # Certs #
-cert_country: Hackistan
+cert_country: HN
 cert_state: Hacktavia
 cert_local: Hacktopolis
-cert_org: RITSEC-BLUE
-cert_full_subj: "/C={{ cert_country }}/ST={{ cert_state }}/L={{ cert_local }}/O={{ cert_org }}/CN={{ inventory_hostname }}"
+cert_org: BLUE
+cert_op_unit: RITSEC
+cert_full_subj: "/C={{ cert_country }}/ST={{ cert_state }}/L={{ cert_local }}/O={{ cert_org }}/OU={{ cert_op_unit }}/CN={{ inventory_hostname }}"
+
+time_zone: America/New_York
+
+# Base password for all users.
+default_password: "rockyou.txt-SUCKS!"

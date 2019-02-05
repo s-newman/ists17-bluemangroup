@@ -1,0 +1,4 @@
+---
+domainname: "team{{ team_number }}.{{ internal_base_domain }}"
+username: "Administrator@{{ domainname }}"
+password: "{{ default_password }}"
