@@ -60,7 +60,7 @@
   become: yes
 
 - name: Copy DNS records
-  copy:
+  template:
     src: dnsrecords.sql
     dest: /dnsrecords.sql
   become: yes
