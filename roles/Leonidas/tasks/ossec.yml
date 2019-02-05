@@ -1,0 +1,71 @@
+---
+- name: Install atomicorp repo
+  yum:
+    name: https://updates.atomicorp.com/channels/atomic/centos/7/x86_64/RPMS/atomic-release-1.0-21.el7.art.noarch.rpm
+    state: present
+
+- name: Install ossec-hids-server
+  package:
+    pkg: "{{ item }}"
+    state: present
+  with_items:
+    - ossec-hids
+    - ossec-hids-server
+
+- name: Install CIS Root Checks
+  get_url:
+    url: "https://raw.githubusercontent.com/ossec/ossec-hids/master/src/rootcheck/db/cis_rhel7_linux_rcl.txt"
+    dest: "/var/ossec/etc/shared/cis_rhel7_linux_rcl.txt"
+    mode: 0660
+    owner: root
+    group: ossec
+
+- name: Generate SSL files
+  command: "openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:1825 -keyout sslmanager.key -out sslmanager.cert -subj /CN={{ ossec_fqdn }}/"
+  args:
+    creates: sslmanager.cert
+    chdir: /var/ossec/etc/
+
+- name: Installing SSL files.
+  file:
+    path: /var/ossec/etc/{{ item }}
+    owner: root
+    group: root
+    mode: 0660
+  with_items:
+    - sslmanager.key
+    - sslmanager.cert
+
+- name: Configure the shared-agent.conf
+  template:
+    src: ossec_agent.conf
+    dest: /var/ossec/etc/shared/agent.conf
+    owner: ossec
+    group: ossec
+    mode: 0644
+  notify:
+    - restart ossec-server
+
+- name: Configure the ossec-server
+  template:
+    src: ossec-server.conf
+    dest: /var/ossec/etc/ossec-server.conf
+    owner: root
+    group: root
+    mode: 0644
+  notify:
+    - restart ossec-server
+
+- name: Move the thing that does things for windows
+  copy:
+    src: ossec-batch-manager.pl
+    dest: /var/ossec/bin/ossec-batch-manager.pl
+    owner: ossec
+    group: ossec
+    mode: a+x
+
+- name: start meeeeee
+  service:
+    name: ossec-hids
+    state: restarted
+    enabled: yes

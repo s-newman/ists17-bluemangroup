@@ -1,0 +1,27 @@
+---
+- name: Add MongoDB repo key
+  rpm_key:
+    state: present
+    key: https://www.mongodb.org/static/pgp/server-4.0.asc
+
+- name: Add MongoDB repo
+  yum_repository:
+    name: mongodb-org-4.0
+    description: MongoDB repository for 4.0 packages
+    baseurl: https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/4.0/x86_64/
+    enabled: yes
+    gpgcheck: yes
+    gpgkey: https://www.mongodb.org/static/pgp/server-4.0.asc
+    state: present
+
+- name: Install/Setup MongoDB
+  package:
+    name:
+      - mongodb-org
+    state: installed
+
+- name: Start Mongo service
+  service:
+    name: mongod
+    state: started
+    enabled: yes

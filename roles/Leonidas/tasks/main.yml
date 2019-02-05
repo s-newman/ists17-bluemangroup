@@ -1,0 +1,70 @@
+---
+####################################################################
+# Setup hostname
+
+- name: Set hostname
+  hostname:
+    name: '{{ ossec_hostname }}'
+
+####################################################################
+
+####################################################################
+# Set some stuff
+
+- name: Set the facts straight
+  set_fact:
+    install_base: True
+    install_elasticsearch: True
+    install_mongodb: True
+    install_graylog: True
+    install_nginx: True
+    install_ossec: True
+####################################################################
+
+####################################################################
+# Lets do some basic stuff
+
+- name: Basic stuff is basic
+  import_tasks: base.yml
+  when: install_base == True
+####################################################################
+
+####################################################################
+# Install/Setup Elasticsearch
+
+- name: Elasticsearch
+  import_tasks: elasticsearch.yml
+  when: install_elasticsearch == True
+####################################################################
+
+####################################################################
+# Install/Setup Mongodb
+
+- name: Mongodb
+  import_tasks: mongodb.yml
+  when: install_mongodb == True
+####################################################################
+
+####################################################################
+# Install/Setup Nginx
+
+- name: Nginx
+  import_tasks: nginx.yml
+  when: install_nginx == True
+####################################################################
+
+####################################################################
+# Install/Setup Graylog
+
+- name: Graylog
+  import_tasks: graylog.yml
+  when: install_graylog == True
+####################################################################
+
+####################################################################
+# Install/Setup OSSEC
+
+- name: OSSEC
+  import_tasks: ossec.yml
+  when: install_ossec == True
+####################################################################

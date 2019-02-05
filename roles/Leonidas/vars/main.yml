@@ -1,0 +1,24 @@
+---
+# vars file for OssecGraylog
+ossec_hostname: leonidas
+ossec_fqdn: '{{ ossec_hostname }}.team{{ team_number }}.{{ internal_base_domain }}'
+
+# Graylog 
+graylog_admin_password: adminadmin
+
+# Cert generation
+# Can we do this per team?
+cert_country: Hackistan
+cert_state: NY
+cert_local: Rochester
+cert_org: RITSEC-BLUE
+
+# Timezone
+timezone: America/New_York
+
+# Ossec 
+ossec_server_atomic_release: 1.0-21
+
+syslog_port: 1516
+# Correct IP
+ossec_ip: '10.{{ team_number }}.0.4'
