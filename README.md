@@ -28,6 +28,9 @@ Domain: teamX.ists.io
 | Xerxes      | Mail                | 10.2.X.6    | Windows Server 2008 R2  | SMTP (hMail)            | Not used for inject delivery |
 | Ashoka      | VPN Endpoint        | 10.2.X.7    | Ubuntu 14.04            | OpenVPN                 | Uses 10.X.2.0/24 for VPN clients |
 | Washington  | Router              | 10.2.X.254  | PAN                     |                         ||
+| Bismark     | Client              | DHCP        | Kali 2018.2             |                         ||
+| Suleyman    | Client              | DHCP        | Windows 8               |                         ||
+| N/A         | Client              | DHCP        | Assorted                |                         | We will attempt to deploy extra clients for each team so they can have GUIs |
 
 ### DMZ Network
 Blueteam-managed network  
@@ -42,14 +45,3 @@ Domain: teamX.cybertigers.club
 | Bonaparte   | Public Website      | 10.3.X.2    | Windows Server 2012 R2  | HTTP, HTTPS (IIS)       | Core install |
 | Ataturk     | GitLab              | 10.3.X.3    | openSUSE 42.3           | HTTPS, SSH (git)        | GitLab login required for HTTPS check |
 | Washington  | Router              | 10.3.X.254  | PAN                     |                         ||
-
-### VPN Network
-Whiteteam-managed network  
-Console access provided  
-Network: TBD  
-Domain: none  
-
-| Hostname    | Role                | IP          | OS                      | Services                | Notes |
-|-------------|---------------------|-------------|-------------------------|-------------------------|-------|
-| Bismark     | Client              | DHCP        | Kali 2018.2             |                         ||
-| Suleyman    | Client              | DHCP        | Windows 8               |                         ||
