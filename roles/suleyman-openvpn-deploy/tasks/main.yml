@@ -1,0 +1,20 @@
+---
+# tasks file for suleyman-openvpn-deploy
+
+tasks:
+- name: copy openVPN over if required
+  win_copy:
+    src: files/openvpninstaller.exe
+    dest: C:\openvpninstaller.exe
+
+- name: making sure openvpn is installed
+  win_package:
+    path: C:\openvpninstaller.exe
+    state: present
+    product_id: OpenVPN
+    arguments: /S
+  register: vpn_result
+
+- name: restarting if needed
+  when: vpn_result.reboot_required == true
+  win_reboot:
