@@ -11,7 +11,7 @@
         groups: 
         - Domain Admins
         - Domain Users
-        upn: "agustus@{{ domain }}"
+        upn: "agustus@{{ domainname }}"
 
     - name: Enter User
       win_domain_user:
@@ -21,7 +21,7 @@
         groups: 
         - Domain Admins
         - Domain Users
-        upn: "astro@{{ domain }}"
+        upn: "astro@{{ domainname }}"
 
     - name: Enter User
       win_domain_user:
@@ -31,7 +31,7 @@
         groups:
         - Domain Admins
         - Domain Users
-        upn: "Sulla@{{ domain }}"
+        upn: "Sulla@{{ domainname }}"
 
     - name: Enter User
       win_domain_user:
@@ -41,7 +41,7 @@
         groups: 
         - Domain Admins
         - Domain Users
-        upn: "Lucius@{{ domain }}"
+        upn: "Lucius@{{ domainname }}"
 
     - name: Enter User
       win_domain_user:
@@ -51,7 +51,7 @@
         groups: 
         - Domain Admins
         - Domain Users
-        upn: "Favonius@{{ domain }}"
+        upn: "Favonius@{{ domainname }}"
 
     - name: Enter User
       win_domain_user:
@@ -61,7 +61,7 @@
         groups:
         - Domain Admins
         - Domain Users
-        upn: "Julius@{{ domain }}"
+        upn: "Julius@{{ domainname }}"
 
     - name: Enter User
       win_domain_user:
@@ -71,7 +71,7 @@
         groups: 
         - Domain Admins
         - Domain Users
-        upn: "Marcus@{{ domain }}"
+        upn: "Marcus@{{ domainname }}"
 
     - name: Enter User
       win_domain_user:
@@ -81,7 +81,7 @@
         groups: 
         - Domain Users
         - Domain Admins
-        upn: "Vinicius@{{ domain }}"
+        upn: "Vinicius@{{ domainname }}"
 
     - name: Enter User
       win_domain_user:
@@ -91,7 +91,7 @@
         groups: 
         - Domain Users
         - Domain Admins
-        upn: "Octavius@{{ domain }}"
+        upn: "Octavius@{{ domainname }}"
 
     - name: Enter User
       win_domain_user:
@@ -100,7 +100,7 @@
         state: present
         groups: 
         - Domain Users
-        upn: "Maximus@{{ domain }}"
+        upn: "Maximus@{{ domainname }}"
 
     - name: Enter User
       win_domain_user:
@@ -109,7 +109,7 @@
         state: present
         groups: 
         - Domain Users
-        upn: "Pompey@{{ domain }}"
+        upn: "Pompey@{{ domainname }}"
 
     - name: Enter User
       win_domain_user:
@@ -118,7 +118,7 @@
         state: present
         groups: 
         - Domain Users
-        upn: "Cicero@{{ domain }}"
+        upn: "Cicero@{{ domainname }}"
 
     - name: Enter User
       win_domain_user:
@@ -127,7 +127,7 @@
         state: present
         groups: 
         - Domain Users
-        upn: "Plato@{{ domain }}"
+        upn: "Plato@{{ domainname }}"
 
     - name: Enter User
       win_domain_user:
@@ -136,7 +136,7 @@
         state: present
         groups: 
         - Domain Users
-        upn: "Socrates@{{ domain }}"
+        upn: "Socrates@{{ domainname }}"
 
     - name: Enter User
       win_domain_user:
@@ -145,7 +145,7 @@
         state: present
         groups: 
         - Domain Users
-        upn: "Aristotle@{{ domain }}"
+        upn: "Aristotle@{{ domainname }}"
 
     - name: Enter User
       win_domain_user:
@@ -154,7 +154,7 @@
         state: present
         groups: 
         - Domain Users
-        upn: "Epicurus@{{ domain }}"
+        upn: "Epicurus@{{ domainname }}"
 
     - name: Enter User
       win_domain_user:
@@ -163,7 +163,7 @@
         state: present
         groups: 
         - Domain Users
-        upn: "Plutarch@{{ domain }}"
+        upn: "Plutarch@{{ domainname }}"
 
     - name: Enter User
       win_domain_user:
@@ -172,7 +172,7 @@
         state: present
         groups: 
         - Domain Users
-        upn: "jeffery@{{ domain }}"
+        upn: "jeffery@{{ domainname }}"
 
     - name: Enter User
       win_domain_user:
@@ -181,7 +181,7 @@
         state: present
         groups: 
         - Domain Users
-        upn: "jeff@{{ domain }}"
+        upn: "jeff@{{ domainname }}"
 
     - name: Enter User
       win_domain_user:
@@ -190,7 +190,7 @@
         state: present
         groups: 
         - Domain Users
-        upn: "jeofery@{{ domain }}"
+        upn: "jeofery@{{ domainname }}"
 
     - name: Enter User
       win_domain_user:
@@ -199,7 +199,7 @@
         state: present
         groups: 
         - Domain Users
-        upn: "matt@{{ domain }}"
+        upn: "matt@{{ domainname }}"
 
     - name: Enter User
       win_domain_user:
@@ -208,4 +208,4 @@
         state: present
         groups: 
         - Domain Users
-        upn: "martha@{{ domain }}"
+        upn: "martha@{{ domainname }}"

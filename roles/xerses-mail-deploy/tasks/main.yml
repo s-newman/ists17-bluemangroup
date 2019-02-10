@@ -26,4 +26,4 @@
   win_reboot:
 
 - name: Run script
-  script: Setup-hMail.ps1 -domainName "{{ domainname }}" -ipAddr "10.{{ machines[inventory_hostname]['team_id'] }}.0.6"
+  script: Setup-hMail.ps1 -domainName "{{ domainname }}" -ipAddr "10.{{ team_number }}.0.6"

@@ -5,7 +5,7 @@ tasks:
   - name: Set DNS to the AD server
     win_dns_client:
       adapter_names: "*"
-      ipv4_addresses: "10.{{ machines[inventory_hostname]['team_id'] }}.0.1"
+      ipv4_addresses: "10.{{ team_number }}.0.1"
 
   - name: Join the domain
     win_domain_membership:
