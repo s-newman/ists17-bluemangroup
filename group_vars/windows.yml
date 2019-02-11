@@ -1,5 +1,5 @@
 ---
-domainname: "team{{ team_number }}.{{ internal_base_domain }}"
+domain_name: "team{{ team_number }}.{{ internal_base_domain }}" # used by alexander-deployment
 username: "Administrator@{{ domainname }}"
 password: "{{ default_password }}"
 ansible_user: Administrator # TODO: use standard user defined in all

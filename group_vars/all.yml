@@ -15,4 +15,4 @@ cert_full_subj: "/C={{ cert_country }}/ST={{ cert_state }}/L={{ cert_local }}/O=
 time_zone: America/New_York
 
 # Base password for all users.
-default_password: "rockyou.txt-SUCKS!"
+default_password: "rockyou.txt-SUCKS!" # used by alexander-deployment
