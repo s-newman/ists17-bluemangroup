@@ -8,7 +8,6 @@
 - hosts: julius
   roles:
     - julius-deployment
-    #- julius-smbftp-deploy
 
 # Deploy public web server
 - hosts: bonaparte

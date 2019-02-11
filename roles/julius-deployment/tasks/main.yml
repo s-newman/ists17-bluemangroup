@@ -1,0 +1,39 @@
+---
+- name: Install FTP service
+  win_feature:
+    name: Web-FTP-Service
+    state: present
+  register: ftp_result
+
+- name: Install SMB service
+  win_feature:
+    name: FS-FileServer
+    state: present
+  register: smb_result
+
+- name: Reboot once FTP and SMB installed
+  win_reboot:
+  when: ftp_result.reboot_required == "true" or smb_result.reboot_required == "true"
+
+- name: Create the share directory
+  win_file:
+    path: C:\Shares\meme_share
+    state: directory
+
+- name: Create SMB share
+  win_share:
+    name: meme_share
+    description: top secret russian-meme share
+    path: C:\Shares\meme_share
+    state: present
+    full: "Domain Users"
+
+- name: Add images to SMB share
+  win_copy:
+    src: images.zip
+    dest: C:\Shares\meme_share\images.zip
+
+- name: Extract images
+  win_unzip:
+    src: C:\Shares\meme_share\images.zip
+    dest: C:\Shares\meme_share
