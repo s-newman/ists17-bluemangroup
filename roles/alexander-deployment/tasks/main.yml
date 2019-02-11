@@ -1,0 +1,5 @@
+---
+# Set up the Active Directory domain
+- include_tasks: setup_domain.yml 
+# Populate the domain with users
+- include_tasks: add_domain_users.yml

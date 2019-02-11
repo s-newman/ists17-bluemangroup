@@ -1,0 +1,19 @@
+---
+- name: Install AD-Domain-Services feature
+  win_feature:
+    name: 'AD-Domain-Services'
+    include_management_tools: True
+    include_sub_features: True
+    state: present
+  register: win_result
+
+- name: Reboot once AD installed
+  win_reboot:
+  when: win_result.reboot_required
+    
+- name: Promote to domain controller
+  win_domain:
+    dns_domain_name: "{{ domain_name }}"
+    safe_mode_password: "{{ default_password }}"
+    state: domain_controller
+  register: domain_result

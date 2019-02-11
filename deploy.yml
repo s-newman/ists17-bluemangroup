@@ -3,8 +3,6 @@
 - hosts: alexander
   roles:
     - alexander-deployment
-    #- alexander-makedomain-deploy
-    #- alexander-addusers-deploy
 
 # Deploy file servers
 - hosts: julius
