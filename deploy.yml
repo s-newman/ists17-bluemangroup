@@ -23,9 +23,6 @@
 - hosts: Windows
   roles:
     - windows-standards
-    #- windows-localusers-deploy
-    #- windows-joindomain-deploy
-    #- windows-mapdrive-deploy
 
 # Install docker host
 - hosts: churchill

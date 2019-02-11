@@ -1,0 +1,31 @@
+---
+- name: Add local user accounts
+  win_user:
+    name: "{{ item }}"
+    password: "{{ password }}" 
+    state: present
+    groups:
+      - Users
+    group_action: replace
+    account_locked: no
+    account_disabled: no
+    password_expired: no
+    update_password: always
+    user_cannot_change_password: no
+  loop:
+    - jeff
+    - martha
+
+- name: Change Administrator password
+  win_user:
+    name: Administrator
+    password: "{{ password }}"
+    state: present
+    groups:
+      - Administrators
+    group_action: replace
+    account_locked: no
+    account_disabled: no
+    password_expired: no
+    update_password: always
+    user_cannot_change_password: no

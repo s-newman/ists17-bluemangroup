@@ -1,0 +1,7 @@
+---
+# Configure local user accounts
+- include_tasks: local_users.yml
+# Join AD domain
+- include_tasks: join_domain.yml
+# Configure SMB share
+- include_tasks: smb_share.yml
