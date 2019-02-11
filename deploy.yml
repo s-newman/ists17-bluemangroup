@@ -47,7 +47,6 @@
   become: yes
   roles:
     - ashoka-deployment
-    #- ashoka-openvpn-deploy
 
 # Install public DNS server
 - hosts: gandhi
