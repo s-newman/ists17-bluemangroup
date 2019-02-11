@@ -1,58 +1,86 @@
 ---
+# Deploy domain controllers
 - hosts: alexander
-  # become: yes
   roles:
-    - alexander-makedomain-deploy
-    - alexander-addusers-deploy
+    - alexander-deployment
+    #- alexander-makedomain-deploy
+    #- alexander-addusers-deploy
 
+# Deploy file servers
 - hosts: julius
-  become: yes
   roles:
-    - julius-smbftp-deploy
+    - julius-deployment
+    #- julius-smbftp-deploy
 
+# Deploy public web server
 - hosts: bonaparte
-  become: yes
   roles:
-    - bonaparte-iis-deploy
+    - bonaparte-deployment
+    #- bonaparte-iis-deploy
 
+# Deploy mail server
+- hosts: xerxes
+  roles:
+    - xerxes-deployment
+    #- xerxes-mail-deploy
+
+# Apply Windows standards
 - hosts: Windows
-  become: yes
   roles:
-    - windows-localusers-deploy
-    - windows-joindomain-deploy
-    - windows-mapdrive-deploy
+    - windows-standards
+    #- windows-localusers-deploy
+    #- windows-joindomain-deploy
+    #- windows-mapdrive-deploy
 
-- hosts: Linux
-  become: yes
-  roles:
-    - linux-hostname-deploy
-    - linux-addusers-deploy
-    - linux-addadmin-deploy
-  
+# Install docker host
 - hosts: churchill
   become: yes
   roles:
-    - churchill-docker-deploy
+    - churchill-deployment
+    #- churchill-docker-deploy
 
+# Install Graylog
 - hosts: leonidas
   become: yes
   roles:
-    - Leonidas
+    - leonidas-deployment
+    #- Leonidas
 
+# Install LAMP app
 - hosts: attila 
   become: yes
   roles:
-    - attila-webapp-deploy
+    - attila-deployment
+    #- attila-webapp-deploy
 
+# Install OpenVPN server
 - hosts: ashoka
+  become: yes
   roles:
-    - ashoka-openvpn-deploy
+    - ashoka-deployment
+    #- ashoka-openvpn-deploy
 
+# Install public DNS server
 - hosts: gandhi
+  become: yes
   roles:
-    - gandhi-dns-deploy
-    - gandhi-http-deploy
+    - gandhi-deployment
+    #- gandhi-dns-deploy
+    #- gandhi-http-deploy
 
+# Install GitLab
 - hosts: ataturk
+  become: yes
   roles:
-    - ataturk
+    - ataturk-deployment
+    #- ataturk
+
+# Apply Linux standards
+- hosts: Linux
+  become: yes
+  roles:
+    - linux-standards
+    #- linux-hostname-deploy
+    #- linux-addusers-deploy
+    #- linux-addadmin-deploy
+  
