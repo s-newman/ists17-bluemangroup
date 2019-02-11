@@ -59,7 +59,6 @@
   become: yes
   roles:
     - ataturk-deployment
-    #- ataturk
 
 # Apply Linux standards
 - hosts: Linux
