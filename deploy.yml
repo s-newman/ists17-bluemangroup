@@ -41,7 +41,6 @@
   become: yes
   roles:
     - attila-deployment
-    #- attila-webapp-deploy
 
 # Install OpenVPN server
 - hosts: ashoka

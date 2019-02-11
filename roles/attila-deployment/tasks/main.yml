@@ -14,3 +14,7 @@
     - mysqld
     - php-fpm
 
+- name: Extract web app
+  unarchive:
+    src: website.tar.gz
+    dest: /var/www/html
