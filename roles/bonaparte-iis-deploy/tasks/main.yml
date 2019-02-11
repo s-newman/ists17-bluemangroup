@@ -1,7 +1,6 @@
 ---
 # tasks file for bonaparte-iis-deploy
 
-tasks:
 - name: ensure the iis modules are installed
   win_feature:
     name:

@@ -1,42 +1,42 @@
 ---
 # tasks file for linux-addusers-deploy
 - name: Include user list
-    include_vars: "local_accounts.yml"
+  include_vars: "local_accounts.yml"
 
 - name: Add user accounts - Linux
-    user:
-        name: "{{ item }}"
-        password: "{{ default_password }}"
-        state: present
-    with_items: "{{ accounts }}"
-    when: ansible_system == "Linux"
+  user:
+    name: "{{ item }}"
+    password: "{{ default_password }}"
+    state: present
+  with_items: "{{ accounts }}"
+  when: ansible_system == "Linux"
 
 - name: Add local admin accounts - Linux
-    user:
-        name: "{{ item }}"
-        password: "{{ default_password }}"
-        state: present
-        groups: 
-            - "sudo"
-    with_items: "{{ admin_accounts }}"
-    when: ansible_os_family == "Debian"
-
-- name: Add local admin accounts
-    user:
-      name: "{{ item }}"
-      password: "{{ default_password }}"
-      state: present
-      groups: 
-        - "wheel"
-    with_items: "{{ admin_accounts }}"
-    when: ansible_os_family == "RedHat"
+  user:
+    name: "{{ item }}"
+    password: "{{ default_password }}"
+    state: present
+    groups: 
+        - "sudo"
+  with_items: "{{ admin_accounts }}"
+  when: ansible_os_family == "Debian"
 
 - name: Add local admin accounts
   user:
-      name: "{{ item }}"
-      password: "{{ default_password }}"
-      state: present
-      groups: 
-        - "sudoers"
-    with_items: "{{ admin_accounts }}"
-    when: ansible_os_family == "BSD"
+    name: "{{ item }}"
+    password: "{{ default_password }}"
+    state: present
+    groups: 
+      - "wheel"
+  with_items: "{{ admin_accounts }}"
+  when: ansible_os_family == "RedHat"
+
+- name: Add local admin accounts
+  user:
+    name: "{{ item }}"
+    password: "{{ default_password }}"
+    state: present
+    groups: 
+      - "sudoers"
+  with_items: "{{ admin_accounts }}"
+  when: ansible_os_family == "BSD"

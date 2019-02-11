@@ -1,20 +1,18 @@
 ---
 # tasks file for windows-joindomain-deploy
+- name: Set DNS to the AD server
+  win_dns_client:
+    adapter_names: "*"
+    ipv4_addresses: "10.{{ team_number }}.0.1"
 
-tasks:
-  - name: Set DNS to the AD server
-    win_dns_client:
-      adapter_names: "*"
-      ipv4_addresses: "10.{{ team_number }}.0.1"
+- name: Join the domain
+  win_domain_membership:
+    dns_domain_name: "{{ domainname }}"
+    domain_admin_password: "{{ password }}"
+    domain_admin_user: "{{ username }}" 
+    state: domain
+  register: domain_result
 
-  - name: Join the domain
-    win_domain_membership:
-      dns_domain_name: "{{ domainname }}"
-      domain_admin_password: "{{ password }}"
-      domain_admin_user: "{{ username }}" 
-      state: domain
-    register: domain_result
-
-  - name: reboot if required
-    when: domain_result.reboot_required
-    win_reboot:
+- name: reboot if required
+  when: domain_result.reboot_required
+  win_reboot:

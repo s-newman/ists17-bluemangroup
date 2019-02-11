@@ -1,46 +1,45 @@
 ---
 # tasks file for windows-localusers-deploy
 
-tasks:
-  - name: ensure jeff is present, change password, set groups
-    win_user:
-      name: jeff
-      password: "{{ password }}" 
-      state: present
-      groups:
-        - Users
-      group_action: replace
-      account_locked: no
-      account_disabled: no
-      password_expired: no
-      update_password: always
-      user_cannot_change_password: no
+- name: ensure jeff is present, change password, set groups
+  win_user:
+    name: jeff
+    password: "{{ password }}" 
+    state: present
+    groups:
+      - Users
+    group_action: replace
+    account_locked: no
+    account_disabled: no
+    password_expired: no
+    update_password: always
+    user_cannot_change_password: no
 
-  - name: ensure martha is present, change password, set groups
-    win_user:
-      name: martha
-      password: "{{ password }}"
-      state: present
-      groups:
-        - Users
-      group_action: replace
-      account_locked: no
-      account_disabled: no
-      password_expired: no
-      update_password: always
-      user_cannot_change_password: no
+- name: ensure martha is present, change password, set groups
+  win_user:
+    name: martha
+    password: "{{ password }}"
+    state: present
+    groups:
+      - Users
+    group_action: replace
+    account_locked: no
+    account_disabled: no
+    password_expired: no
+    update_password: always
+    user_cannot_change_password: no
 
-  - name: ensure administrator is present, change password, set groups
-    win_user:
-      name: administrator
-      password: "{{ password }}"
-      state: present
-      groups:
-        - Administrators
-      group_action: replace
-      account_locked: no
-      account_disabled: no
-      password_expired: no
-      update_password: always
-      user_cannot_change_password: no
+- name: ensure administrator is present, change password, set groups
+  win_user:
+    name: administrator
+    password: "{{ password }}"
+    state: present
+    groups:
+      - Administrators
+    group_action: replace
+    account_locked: no
+    account_disabled: no
+    password_expired: no
+    update_password: always
+    user_cannot_change_password: no
 

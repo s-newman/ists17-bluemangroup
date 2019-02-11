@@ -1,17 +1,58 @@
 ---
-- hosts: churchill
+- hosts: alexander
+  # become: yes
   roles:
-          - churchill-docker-deploy
+    - alexander-makedomain-deploy
+    - alexander-addusers-deploy
+
+- hosts: julius
+  become: yes
+  roles:
+    - julius-smbftp-deploy
+
+- hosts: bonaparte
+  become: yes
+  roles:
+    - bonaparte-iis-deploy
+
+- hosts: Windows
+  become: yes
+  roles:
+    - windows-localusers-deploy
+    - windows-joindomain-deploy
+    - windows-mapdrive-deploy
+
+- hosts: Linux
+  become: yes
+  roles:
+    - linux-hostname-deploy
+    - linux-addusers-deploy
+    - linux-addadmin-deploy
+  
+- hosts: churchill
+  become: yes
+  roles:
+    - churchill-docker-deploy
+
+- hosts: leonidas
+  become: yes
+  roles:
+    - Leonidas
+
+- hosts: attila 
+  become: yes
+  roles:
+    - attila-webapp-deploy
 
 - hosts: ashoka
   roles:
-          - ashoka-openvpn-deploy
-
-- hosts: attila 
-  roles:
-          - attila-webapp-deploy
+    - ashoka-openvpn-deploy
 
 - hosts: gandhi
   roles:
-          - gandhi-dns-deploy
-          - gandhi-http-deploy
+    - gandhi-dns-deploy
+    - gandhi-http-deploy
+
+- hosts: ataturk
+  roles:
+    - ataturk

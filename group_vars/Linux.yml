@@ -1,0 +1,3 @@
+---
+ansible_ssh_pass: local-admin # use "rockyou.txt-SUCKS!"
+ansible_sudo_pass: local-admin # use "rockyou.txt-SUCKS!"
