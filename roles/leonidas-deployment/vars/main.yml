@@ -4,14 +4,7 @@ ossec_hostname: leonidas
 ossec_fqdn: '{{ ossec_hostname }}.team{{ team_number }}.{{ internal_base_domain }}'
 
 # Graylog 
-graylog_admin_password: adminadmin
-
-# Cert generation
-# Can we do this per team?
-cert_country: Hackistan
-cert_state: NY
-cert_local: Rochester
-cert_org: RITSEC-BLUE
+graylog_admin_password: '{{ default_password }}'
 
 # Timezone
 timezone: America/New_York
