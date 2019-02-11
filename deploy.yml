@@ -65,7 +65,4 @@
   become: yes
   roles:
     - linux-standards
-    #- linux-hostname-deploy
-    #- linux-addusers-deploy
-    #- linux-addadmin-deploy
   
