@@ -13,7 +13,6 @@
 - hosts: bonaparte
   roles:
     - bonaparte-deployment
-    #- bonaparte-iis-deploy
 
 # Deploy mail server
 - hosts: xerxes

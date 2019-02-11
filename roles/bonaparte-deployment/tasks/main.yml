@@ -1,7 +1,5 @@
 ---
-# tasks file for bonaparte-iis-deploy
-
-- name: ensure the iis modules are installed
+- name: Install IIS modules
   win_feature:
     name:
       - Web-Default-Doc
@@ -12,19 +10,19 @@
     state: present
   register: iis_result
 
-- name: restart if required
-  when: iis_result.reboot_required
+- name: Reboot once IIS installed
   win_reboot:
+  when: iis_result.reboot_required
 
-- name: copy ssl binding script over
+- name: Copy SSL binding script
   win_copy:
     src: files/ssl_binding.ps1
     dest: C:\ssl_binding.ps1
 
-- name: run the ssl_binding script to generate an ssl binding for iis
+- name: Generate SSL binding for IIS
   win_command: powershell.exe -executionpolicy bypass C:\ssl_binding.ps1
 
-- name: restart the web service
+- name: Restart web sevice
   win_service:
     name: W3SVC
     state: restarted
