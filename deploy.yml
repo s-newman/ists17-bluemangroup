@@ -53,8 +53,6 @@
   become: yes
   roles:
     - gandhi-deployment
-    #- gandhi-dns-deploy
-    #- gandhi-http-deploy
 
 # Install GitLab
 - hosts: ataturk

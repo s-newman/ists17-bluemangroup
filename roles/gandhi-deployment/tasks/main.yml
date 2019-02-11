@@ -1,0 +1,5 @@
+---
+# Deploy DNS
+- include_tasks: dns.yml
+# Deploy webmin
+- include_tasks: http.yml
