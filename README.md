@@ -45,3 +45,13 @@ Domain: teamX.cybertigers.club
 | Bonaparte   | Public Website      | 10.3.X.2    | Windows Server 2012 R2  | HTTP, HTTPS (IIS)       | Core install |
 | Ataturk     | GitLab              | 10.3.X.3    | openSUSE 42.3           | HTTPS, SSH (git)        | GitLab login required for HTTPS check |
 | Washington  | Router              | 10.3.X.254  | PAN                     |                         ||
+
+## Running
+This section describes how to run the ansible in this repository to deploy the
+ISTS 17 defensive infrastructure.
+
+### Single-Team Deployment
+To run a deployment for a single team, run:
+```bash
+ansible-playbook deploy.yml -i inventory.yml -l teamX
+```
