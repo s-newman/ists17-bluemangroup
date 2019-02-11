@@ -1,36 +1,42 @@
 ---
 all:
   children:
-    alexander:
-      hosts:
-        alexander.team[0:13].ists.io
-    julius:
-      hosts:
-        julius.team[0:13].ists.io
-    churchill:
-      hosts:
-        churchill.team[0:13].ists.io
-    leonidas:
-      hosts:
-        leonidas.team[0:13].ists.io
-    attila:
-      hosts:
-        attila.team[0:13].ists.io
-    xerxes:
-      hosts:
-        xerxes.team[0:13].ists.io
-    ashoka:
-      hosts:
-        ashoka.team[0:13].ists.io
-    gandhi:
-      hosts:
-        gandhi.team[0:13].cybertigers.club
-    bonaparte:
-      hosts:
-        bonaparte.team[0:13].cybertigers.club
-    ataturk:
-      hosts:
-        ataturk.team[0:13].cybertigers.club
+    windows:
+      children:
+        alexander:
+          hosts:
+            alexander.team[0:13].ists.io
+        julius:
+          hosts:
+            julius.team[0:13].ists.io
+        xerxes:
+          hosts:
+            xerxes.team[0:13].ists.io
+    linux:
+      children:
+        churchill:
+          hosts:
+            churchill.team[0:13].ists.io
+        leonidas:
+          hosts:
+            leonidas.team[0:13].ists.io
+        attila:
+          hosts:
+            attila.team[0:13].ists.io
+        ashoka:
+          hosts:
+            ashoka.team[0:13].ists.io
+        bonaparte:
+          hosts:
+            bonaparte.team[0:13].cybertigers.club
+        ataturk:
+          hosts:
+            ataturk.team[0:13].cybertigers.club
+    bsd:
+      children:
+        gandhi:
+          hosts:
+            gandhi.team[0:13].cybertigers.club
     team0:
       hosts:
         alexander.team0.ists.io
