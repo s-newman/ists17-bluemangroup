@@ -35,7 +35,6 @@
   become: yes
   roles:
     - leonidas-deployment
-    #- Leonidas
 
 # Install LAMP app
 - hosts: attila 
