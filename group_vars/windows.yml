@@ -1,7 +1,7 @@
 ---
-domain_name: "team{{ team_number }}.{{ internal_base_domain }}" # used by alexander-deployment
+domain_name: "team{{ team_number }}.{{ internal_base_domain }}" # used by alexander-deployment, xerxes-deployment
 username: "Administrator@{{ domainname }}"
-password: "{{ default_password }}"
+password: "{{ default_password }}" # used by xerxes-deployment
 ansible_user: Administrator # TODO: use standard user defined in all
 ansible_password: L0cal-admin # TODO: use standard pass defined in all
 ansible_port: 5986
