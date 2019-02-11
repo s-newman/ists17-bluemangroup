@@ -29,7 +29,6 @@
   become: yes
   roles:
     - churchill-deployment
-    #- churchill-docker-deploy
 
 # Install Graylog
 - hosts: leonidas
