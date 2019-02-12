@@ -1,0 +1,65 @@
+---
+# https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-ossec-on-freebsd-10-1
+- name: Install ossecs
+  pkgng:
+    name: ossec-hids-agent-3.1.0_1
+    state: present
+
+- name: Set ossec deploy facts
+  set_fact:
+    ossec_agent_config_filename: ossec.conf
+    ossec_init_name: ossec-hids
+
+- name: Installing the ossec-agent.conf
+  template:
+    src: ossec_agent.conf
+    dest: /usr/local/ossec-hids/etc/{{ ossec_agent_config_filename }}
+    owner: root
+    group: wheel
+    mode: 0644
+
+- name: Check if client.keys exists
+  stat:
+    path: /usr/local/ossec-hids/etc/client.keys
+  register: check_keys
+
+- name: Check if client.keys exists on ossec-server
+  stat:
+    path: /usr/local/ossec-hids/etc/client.keys
+  when: ossec_managed_server
+  delegate_to: "{{ ossec_fqdn }}"
+  register: check_server_keys
+
+- name: You got broke stuff? I fix
+  shell: nohup /var/ossec/bin/ossec-authd -p 1515 -n
+  delegate_to: "{{ ossec_fqdn }}"
+
+- name: "register client"
+  shell: "/usr/local/ossec-hids/bin/agent-auth -m {{ ossec_server_ip|default(ossec_fqdn) }} -p 1515 -A '{{ ossec_agent_name|default(ansible_hostname) }}'"
+
+- name: Set permissions on client.keys file
+  file:
+    dest: /usr/local/ossec-hids/etc/client.keys
+    mode: 0640
+
+- name: Get running processes
+  shell: "ps -aux | grep -v grep | grep -w ossec-authd | awk '{print $2}'"
+  register: running_processes
+  delegate_to: "{{ ossec_fqdn }}"
+
+- name: Kill running processes
+  shell: "kill {{ item }}"
+  delegate_to: "{{ ossec_fqdn }}"
+  with_items: "{{ running_processes.stdout_lines }}"
+
+- name: "Restart ossec-remoted on server. If this is the first agent added it will not be running."
+  shell: /var/ossec/bin/ossec-control restart
+  delegate_to: "{{ ossec_fqdn }}"
+  when: ossec_managed_server and not check_server_keys.stat.exists and ossec_fqdn|default("") != ""
+  run_once: true
+
+- name: "Start ossec-agent if not already running"
+  service:
+    name: "{{ ossec_init_name }}"
+    state: started
+    enabled: yes

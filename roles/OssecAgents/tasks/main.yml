@@ -1,0 +1,4 @@
+---
+# tasks file for OssecAgents
+- name: Install the Agent
+  include_tasks: "{{ ansible_os_family }}.yml"
