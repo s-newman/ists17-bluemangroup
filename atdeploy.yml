@@ -1,0 +1,7 @@
+# Install LAMP app
+- hosts: attila 
+  become: yes
+  roles:
+    - attila-deployment
+    - linux-standards
+
