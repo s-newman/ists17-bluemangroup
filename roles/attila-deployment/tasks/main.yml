@@ -19,4 +19,5 @@
     src: website.tar.gz
     dest: /var/www/html
 
-
+- name: Uninstall fortune
+  shell: removepkg fortune
