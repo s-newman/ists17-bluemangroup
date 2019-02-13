@@ -1,0 +1,6 @@
+---
+# Apply Linux standards
+- hosts: linux
+  become: yes
+  roles:
+    - network-setup

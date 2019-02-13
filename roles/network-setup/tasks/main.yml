@@ -1,0 +1,15 @@
+---
+- set_fact:
+    ansible_os_family: Debian
+  when: ansible_distribution == "Parrot GNU/Linux"
+
+- name: Print ansible distro
+  debug:
+    msg: "{{ ansible_os_family }} "
+
+- name: Include tasks specific to the operating system
+  include_tasks: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution }}.yml"
+    - "{{ ansible_os_family }}.yml"
+    - "cucumber.yml"

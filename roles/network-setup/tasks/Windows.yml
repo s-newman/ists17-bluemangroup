@@ -1,0 +1,15 @@
+---
+
+- name: Upload static ip powershell script
+  win_copy:
+    src: files/set-ip.ps1
+    dest: C:/set-ip.ps1
+
+- set_fact:
+    dns_server: "{{ hostnames['ad'] }}.team{{ machines[inventory_hostname]['team_id'] }}.ists"
+
+- name: Run static ip script - Fire and Forget
+  async: 2
+  poll: 0
+  win_shell: C:/set-ip.ps1 "{{machines[inventory_hostname]['ip']}}" "{{machines[inventory_hostname]['gateway']}}" "{{machines[dns_server]['ip']}}"                   
+
