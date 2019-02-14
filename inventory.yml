@@ -37,8 +37,14 @@ all:
         gandhi:
           hosts:
             gandhi.team0.cybertigers.club
+    paloalto:
+      children:
+        washington:
+          hosts:
+            washington.team0.ists.io
     team0:
       hosts:
+        washington.team0.ists.io
         alexander.team0.ists.io
         julius.team0.ists.io
         churchill.team0.ists.io
