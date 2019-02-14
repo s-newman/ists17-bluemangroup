@@ -1,19 +1,44 @@
 ---
-- name: Install AD-Domain-Services feature
+- name: Rename hostname
+  win_hostname:
+    name: "{{ domain_controller_hostname }}"
+  register: hostname_reboot
+
+- name: Reboot host if necessary
+  win_reboot:
+  when: hostname_reboot.reboot_required == true
+
+- name: Install Active Directory
   win_feature:
-    name: 'AD-Domain-Services'
+    name: AD-Domain-Services
     include_management_tools: True
     include_sub_features: True
     state: present
-  register: win_result
+  register: ad_result
 
-- name: Reboot once AD installed
+- name: Reboot server if required
   win_reboot:
-  when: win_result.reboot_required
-    
-- name: Promote to domain controller
+  when: ad_result.reboot_required
+
+- name: Ensure domain exists
   win_domain:
-    dns_domain_name: "{{ domain_name }}"
-    safe_mode_password: "{{ default_password }}"
-    state: domain_controller
+     dns_domain_name: "{{ domain_name }}"
+     safe_mode_password: "{{ default_password }}"
   register: domain_result
+
+- name: Reboot server if required
+  win_reboot:
+  when: domain_result.reboot_required
+
+- name: Promote to domain controller
+  win_domain_controller:
+     dns_domain_name: "{{ domain_name }}"
+     domain_admin_user: "{{ username }}"
+     domain_admin_password: "{{ default_password }}"
+     safe_mode_password: "{{ default_password }}"
+     state: domain_controller
+  register: ad_result
+
+- name: Reboot server if required
+  win_reboot:
+  when: ad_result.reboot_required
