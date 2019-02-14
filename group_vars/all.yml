@@ -1,5 +1,5 @@
 ---
-ansible_user: local-admin # use "deploy"
+ansible_user: deploy # use "deploy"
 
 internal_base_domain: ists.io
 dmz_base_domain: cybertigers.club
@@ -16,3 +16,7 @@ time_zone: America/New_York
 
 # Base password for all users.
 default_password: "rockyou.txt-SUCKS!" # used by alexander-deployment
+
+
+whiteteam_nameservers:
+- "8.8.8.8"

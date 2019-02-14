@@ -1,0 +1,24 @@
+---
+
+- name: Apply rc.conf template
+  template:
+    src: templates/rc.conf
+    dest: /etc/rc.conf
+
+- name: Apply the resolv.conf template
+  template:
+    src: templates/resolv.conf
+    dest: /etc/resolv.conf
+
+- name: Apply the hosts template
+  template:
+    src: templates/hosts
+    dest: /etc/hosts
+
+- name: Restart network WARN This will break connection
+  service:
+      name: network
+      state: restarted
+  async: 2
+  poll: 0
+
