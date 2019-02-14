@@ -1,5 +1,5 @@
 ---
-ansible_user: deploy # use "deploy"
+ansible_user: local-admin # use "deploy"
 
 internal_base_domain: ists.io
 dmz_base_domain: cybertigers.club
