@@ -12,6 +12,9 @@ all:
         xerxes:
           hosts:
             xerxes.team0.ists.io
+        bonaparte:
+          hosts:
+            bonaparte.team0.cybertigers.club
     linux:
       children:
         churchill:
@@ -26,9 +29,6 @@ all:
         ashoka:
           hosts:
             ashoka.team0.ists.io
-        bonaparte:
-          hosts:
-            bonaparte.team0.cybertigers.club
         ataturk:
           hosts:
             ataturk.team0.cybertigers.club
@@ -44,17 +44,17 @@ all:
             washington.team0.ists.io
     team0:
       hosts:
-        washington.team0.ists.io
-        alexander.team0.ists.io
-        julius.team0.ists.io
-        churchill.team0.ists.io
-        leonidas.team0.ists.io
-        attila.team0.ists.io
-        xerxes.team0.ists.io
-        ashoka.team0.ists.io
-        gandhi.team0.cybertigers.club
-        bonaparte.team0.cybertigers.club
-        ataturk.team0.cybertigers.club
+        washington.team0.ists.io:
+        alexander.team0.ists.io:
+        julius.team0.ists.io:
+        churchill.team0.ists.io:
+        leonidas.team0.ists.io:
+        attila.team0.ists.io:
+        xerxes.team0.ists.io:
+        ashoka.team0.ists.io:
+        gandhi.team0.cybertigers.club:
+        bonaparte.team0.cybertigers.club:
+        ataturk.team0.cybertigers.club:
 #    team1:
 #      hosts:
 #        alexander.team1.ists.io
