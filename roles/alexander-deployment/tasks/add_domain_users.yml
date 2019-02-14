@@ -1,23 +1,9 @@
 ---
-- name: Add domain admins
-  win_domain_user:
-    name: "{{ item }}"
-    password: "{{ default_password }}"
-    state: present
-    groups:
-      - Domain Admins
-      - Domain Users
-    upn: "{{ item }}@{{ domain_name }}"
-  loop:
-    - Agustus
-    - Cato
-    - Sulla
-    - Lucius
-    - Favonius
-    - Julius
-    - Marcus
-    - Vinicius
-    - Octavius
+- name: Disable password complexity lmao
+  win_security_policy:
+     section: System Access
+     key: PasswordComplexity
+     value: 0
 
 - name: Add domain users
   win_domain_user:
@@ -25,7 +11,6 @@
     password: "{{ default_password }}"
     state: present
     groups:
-      - Domain Users
     upn: "{{ item }}@{{ domain_name }}"
   loop:
     - Maximus
@@ -41,3 +26,22 @@
     - Jeofery
     - Matt
     - Martha
+
+- name: Add domain admins
+  win_domain_user:
+    name: "{{ item }}"
+    password: "{{ default_password }}"
+    state: present
+    groups:
+      - Domain Admins
+    upn: "{{ item }}@{{ domain_name }}"
+  loop:
+    - Agustus
+    - Cato
+    - Sulla
+    - Lucius
+    - Favonius
+    - Julius
+    - Marcus
+    - Vinicius
+    - Octavius
