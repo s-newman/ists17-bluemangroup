@@ -1,6 +1,7 @@
 ---
 # Configure local user accounts
-- include_tasks: local_users.yml
+# FIXME: this literally throws an exception so we are gonna skip it for now.
+# - include_tasks: local_users.yml
 # Join AD domain
 - include_tasks: join_domain.yml
 # Configure SMB share
