@@ -21,7 +21,7 @@ VALUES ((SELECT id FROM domains WHERE name = 'team{{ team_number }}.cybertigers.
 -- A records
 
 INSERT INTO records (domain_id, name, content, type,ttl,prio)
-VALUES ((SELECT id FROM domains WHERE name = 'team{{ team_number }}.cybertigers.club'),'gandhi.team{{ team_number }}.cybertigers.clubb','10.{{ team_number }}.1.1','A',120,NULL);
+VALUES ((SELECT id FROM domains WHERE name = 'team{{ team_number }}.cybertigers.club'),'gandhi.team{{ team_number }}.cybertigers.club','10.{{ team_number }}.1.1','A',120,NULL);
 
 INSERT INTO records (domain_id, name, content, type,ttl,prio)
 VALUES ((SELECT id FROM domains WHERE name = 'team{{ team_number }}.cybertigers.club'),'bonaparte.team{{ team_number }}.cybertigers.club','10.{{ team_number }}.1.2','A',120,NULL);
