@@ -5,43 +5,43 @@ all:
       children:
         alexander:
           hosts:
-            alexander.team[0:13].ists.io
+            alexander.team[0:13].ists.io:
         julius:
           hosts:
-            julius.team[0:13].ists.io
+            julius.team[0:13].ists.io:
         xerxes:
           hosts:
-            xerxes.team[0:13].ists.io
+            xerxes.team[0:13].ists.io:
         bonaparte:
           hosts:
-            bonaparte.team[0:13].cybertigers.club
+            bonaparte.team[0:13].cybertigers.club:
     linux:
       children:
         churchill:
           hosts:
-            churchill.team[0:13].ists.io
+            churchill.team[0:13].ists.io:
         leonidas:
           hosts:
-            leonidas.team[0:13].ists.io
+            leonidas.team[0:13].ists.io:
         attila:
           hosts:
-            attila.team[0:13].ists.io
+            attila.team[0:13].ists.io:
         ashoka:
           hosts:
-            ashoka.team[0:13].ists.io
+            ashoka.team[0:13].ists.io:
         ataturk:
           hosts:
-            ataturk.team[0:13].cybertigers.club
+            ataturk.team[0:13].cybertigers.club:
     bsd:
       children:
         gandhi:
           hosts:
-            gandhi.team[0:13].cybertigers.club
+            gandhi.team[0:13].cybertigers.club:
     paloalto:
       children:
         washington:
           hosts:
-            washington.team[0:13].ists.io
+            washington.team[0:13].ists.io:
     team0:
       hosts:
         washington.team0.ists.io:
@@ -133,94 +133,94 @@ all:
         gandhi.team6.cybertigers.club:
         bonaparte.team6.cybertigers.club:
         ataturk.team6.cybertigers.club:
-    team0:
+    team7:
       hosts:
-        washington.team0.ists.io:
-        alexander.team0.ists.io:
-        julius.team0.ists.io:
-        churchill.team0.ists.io:
-        leonidas.team0.ists.io:
-        attila.team0.ists.io:
-        xerxes.team0.ists.io:
-        ashoka.team0.ists.io:
-        gandhi.team0.cybertigers.club:
-        bonaparte.team0.cybertigers.club:
-        ataturk.team0.cybertigers.club:
-    team0:
+        washington.team7.ists.io:
+        alexander.team7.ists.io:
+        julius.team7.ists.io:
+        churchill.team7.ists.io:
+        leonidas.team7.ists.io:
+        attila.team7.ists.io:
+        xerxes.team7.ists.io:
+        ashoka.team7.ists.io:
+        gandhi.team7.cybertigers.club:
+        bonaparte.team7.cybertigers.club:
+        ataturk.team7.cybertigers.club:
+    team8:
       hosts:
-        washington.team0.ists.io:
-        alexander.team0.ists.io:
-        julius.team0.ists.io:
-        churchill.team0.ists.io:
-        leonidas.team0.ists.io:
-        attila.team0.ists.io:
-        xerxes.team0.ists.io:
-        ashoka.team0.ists.io:
-        gandhi.team0.cybertigers.club:
-        bonaparte.team0.cybertigers.club:
-        ataturk.team0.cybertigers.club:
-    team0:
+        washington.team8.ists.io:
+        alexander.team8.ists.io:
+        julius.team8.ists.io:
+        churchill.team8.ists.io:
+        leonidas.team8.ists.io:
+        attila.team8.ists.io:
+        xerxes.team8.ists.io:
+        ashoka.team8.ists.io:
+        gandhi.team8.cybertigers.club:
+        bonaparte.team8.cybertigers.club:
+        ataturk.team8.cybertigers.club:
+    team9:
       hosts:
-        washington.team0.ists.io:
-        alexander.team0.ists.io:
-        julius.team0.ists.io:
-        churchill.team0.ists.io:
-        leonidas.team0.ists.io:
-        attila.team0.ists.io:
-        xerxes.team0.ists.io:
-        ashoka.team0.ists.io:
-        gandhi.team0.cybertigers.club:
-        bonaparte.team0.cybertigers.club:
-        ataturk.team0.cybertigers.club:
-    team0:
+        washington.team9.ists.io:
+        alexander.team9.ists.io:
+        julius.team9.ists.io:
+        churchill.team9.ists.io:
+        leonidas.team9.ists.io:
+        attila.team9.ists.io:
+        xerxes.team9.ists.io:
+        ashoka.team9.ists.io:
+        gandhi.team9.cybertigers.club:
+        bonaparte.team9.cybertigers.club:
+        ataturk.team9.cybertigers.club:
+    team10:
       hosts:
-        washington.team0.ists.io:
-        alexander.team0.ists.io:
-        julius.team0.ists.io:
-        churchill.team0.ists.io:
-        leonidas.team0.ists.io:
-        attila.team0.ists.io:
-        xerxes.team0.ists.io:
-        ashoka.team0.ists.io:
-        gandhi.team0.cybertigers.club:
-        bonaparte.team0.cybertigers.club:
-        ataturk.team0.cybertigers.club:
-    team0:
+        washington.team10.ists.io:
+        alexander.team10.ists.io:
+        julius.team10.ists.io:
+        churchill.team10.ists.io:
+        leonidas.team10.ists.io:
+        attila.team10.ists.io:
+        xerxes.team10.ists.io:
+        ashoka.team10.ists.io:
+        gandhi.team10.cybertigers.club:
+        bonaparte.team10.cybertigers.club:
+        ataturk.team10.cybertigers.club:
+    team11:
       hosts:
-        washington.team0.ists.io:
-        alexander.team0.ists.io:
-        julius.team0.ists.io:
-        churchill.team0.ists.io:
-        leonidas.team0.ists.io:
-        attila.team0.ists.io:
-        xerxes.team0.ists.io:
-        ashoka.team0.ists.io:
-        gandhi.team0.cybertigers.club:
-        bonaparte.team0.cybertigers.club:
-        ataturk.team0.cybertigers.club:
-    team0:
+        washington.team11.ists.io:
+        alexander.team11.ists.io:
+        julius.team11.ists.io:
+        churchill.team11.ists.io:
+        leonidas.team11.ists.io:
+        attila.team11.ists.io:
+        xerxes.team11.ists.io:
+        ashoka.team11.ists.io:
+        gandhi.team11.cybertigers.club:
+        bonaparte.team11.cybertigers.club:
+        ataturk.team11.cybertigers.club:
+    team12:
       hosts:
-        washington.team0.ists.io:
-        alexander.team0.ists.io:
-        julius.team0.ists.io:
-        churchill.team0.ists.io:
-        leonidas.team0.ists.io:
-        attila.team0.ists.io:
-        xerxes.team0.ists.io:
-        ashoka.team0.ists.io:
-        gandhi.team0.cybertigers.club:
-        bonaparte.team0.cybertigers.club:
-        ataturk.team0.cybertigers.club:
-    team0:
+        washington.team12.ists.io:
+        alexander.team12.ists.io:
+        julius.team12.ists.io:
+        churchill.team12.ists.io:
+        leonidas.team12.ists.io:
+        attila.team12.ists.io:
+        xerxes.team12.ists.io:
+        ashoka.team12.ists.io:
+        gandhi.team12.cybertigers.club:
+        bonaparte.team12.cybertigers.club:
+        ataturk.team12.cybertigers.club:
+    team13:
       hosts:
-        washington.team0.ists.io:
-        alexander.team0.ists.io:
-        julius.team0.ists.io:
-        churchill.team0.ists.io:
-        leonidas.team0.ists.io:
-        attila.team0.ists.io:
-        xerxes.team0.ists.io:
-        ashoka.team0.ists.io:
-        gandhi.team0.cybertigers.club:
-        bonaparte.team0.cybertigers.club:
-        ataturk.team0.cybertigers.club:
+        washington.team13.ists.io:
+        alexander.team13.ists.io:
+        julius.team13.ists.io:
+        churchill.team13.ists.io:
+        leonidas.team13.ists.io:
+        attila.team13.ists.io:
+        xerxes.team13.ists.io:
+        ashoka.team13.ists.io:
+        gandhi.team13.cybertigers.club:
+        bonaparte.team13.cybertigers.club:
+        ataturk.team13.cybertigers.club:
