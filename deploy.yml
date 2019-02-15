@@ -27,7 +27,7 @@
     - xerxes-deployment
 
 # Apply Windows standards
-- hosts: Windows
+- hosts: windows
   roles:
     - windows-standards
 
@@ -68,7 +68,7 @@
     - ataturk-deployment
 
 # Apply Linux standards
-- hosts: Linux
+- hosts: linux
   become: yes
   roles:
     - linux-standards
