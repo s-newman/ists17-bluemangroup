@@ -2,8 +2,7 @@
 domain_name: "team{{ team_number }}.{{ internal_base_domain }}" # used by alexander-deployment, xerxes-deployment, windows-standards
 username: "Administrator@{{ domain_name }}" # used by windows-standards
 password: "{{ default_password }}" # used by xerxes-deployment, windows-standards
-ansible_user: Administrator # TODO: use standard user defined in all
-ansible_password: L0cal-admin # TODO: use standard pass defined in all
+ansible_password: "{{ default_password }}"
 ansible_port: 5986
 ansible_connection: winrm
 ansible_winrm_scheme: https
