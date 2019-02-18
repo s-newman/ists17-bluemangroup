@@ -11,8 +11,8 @@
     state: present
     filename: gitlab-runner
   loop:
-    - "deb https://packages.gitlab.com/runner/gitlab-runner/ubuntu/ xenial main"
-    - "deb-src https://packages.gitlab.com/runner/gitlab-runner/ubuntu/ xenial main"
+    - "deb https://packages.gitlab.com/runner/gitlab-runner/ubuntu/ bionic main"
+    - "deb-src https://packages.gitlab.com/runner/gitlab-runner/ubuntu/ bionic main"
   when: ansible_distribution == 'Ubuntu'
 
 - name: Install GitLab packages (Ubuntu)
