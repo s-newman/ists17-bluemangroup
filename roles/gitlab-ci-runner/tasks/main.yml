@@ -1,0 +1,20 @@
+---
+- name: Add GitLab repository apt key
+  apt_key:
+    url: https://packages.gitlab.com/runner/gitlab-runner/gpgkey
+    state: present
+
+- name: Add GitLab repositories
+  apt_repository:
+    repo: "{{ item }}"
+    state: present
+    filename: gitlab-runner
+  loop:
+    - "deb https://packages.gitlab.com/runner/gitlab-runner/ubuntu/ xenial main"
+    - "deb-src https://packages.gitlab.com/runner/gitlab-runner/ubuntu/ xenial main"
+
+- name: Install GitLab packages (Ubuntu)
+  apt:
+    name: "{{ gitlab_ci_runner_ubuntu_packages }}"
+    state: present
+    update_cache: yes
