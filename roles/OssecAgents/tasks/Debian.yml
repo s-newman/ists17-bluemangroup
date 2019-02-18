@@ -1,0 +1,63 @@
+---
+- name: Debian/Ubuntu | Installing repository key
+  apt_key: 
+    url: https://www.atomicorp.com/RPM-GPG-KEY.atomicorp.txt
+    state: present
+
+- name: Debian/Ubuntu | Installing repository
+  apt_repository: 
+    repo: "deb https://updates.atomicorp.com/channels/ossec/{{ ansible_distribution | lower }} {{ ansible_distribution_release }} main" 
+    state: present
+
+- name: Install OSSEC Agent
+  apt: 
+    name: ossec-hids-agent
+    state: present
+
+- name: Set ossec deploy facts
+  set_fact:
+    ossec_agent_config_filename: ossec.conf
+    ossec_init_name: ossec
+
+- name: Installing the ossec-agent.conf
+  template:
+    src: ossec_agent.conf
+    dest: /var/ossec/etc/{{ ossec_agent_config_filename }}
+    owner: root
+    group: root
+    mode: 0644
+  notify: restart ossec-agent
+
+- name: "You got broke stuff? I fix"
+  shell: "nohup /var/ossec/bin/ossec-authd -p 1515 -n"
+  delegate_to: "{{ ossec_fqdn }}"
+
+- name: "register client"
+  shell: "/var/ossec/bin/agent-auth -m {{ ossec_server_ip|default(ossec_fqdn) }} -p 1515 -A '{{ ossec_agent_name|default(ansible_hostname) }}'"
+
+- name: Set permissions on client.keys file
+  file:
+    dest: /var/ossec/etc/client.keys
+    mode: 0640
+
+- name: Get running processes
+  shell: "ps -aux | grep -v grep | grep -w ossec-authd | awk '{print $2}'"
+  register: running_processes
+  delegate_to: "{{ ossec_fqdn }}"
+
+- name: Kill running processes
+  shell: "kill {{ item }}"
+  with_items: "{{ running_processes.stdout_lines }}"
+  delegate_to: "{{ ossec_fqdn }}"
+
+- name: "Restart ossec-remoted on server. If this is the first agent added it will not be running."
+  shell: /var/ossec/bin/ossec-control restart
+  delegate_to: "{{ ossec_fqdn }}"
+  when: ossec_managed_server and not check_server_keys.stat.exists and ossec_fqdn|default("") != ""
+  run_once: true
+
+- name: "Start ossec-agent if not already running"
+  service:
+    name: "{{ ossec_init_name }}"
+    state: started
+    enabled: yes
