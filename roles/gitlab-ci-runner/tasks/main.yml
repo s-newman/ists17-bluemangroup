@@ -1,0 +1,23 @@
+---
+- name: Add GitLab repository GPG key (Ubuntu)
+  apt_key:
+    url: https://packages.gitlab.com/runner/gitlab-runner/gpgkey
+    state: present
+  when: ansible_distribution == 'Ubuntu'
+
+- name: Add GitLab repositories (Ubuntu)
+  apt_repository:
+    repo: "{{ item }}"
+    state: present
+    filename: gitlab-runner
+  loop:
+    - "deb https://packages.gitlab.com/runner/gitlab-runner/ubuntu/ bionic main"
+    - "deb-src https://packages.gitlab.com/runner/gitlab-runner/ubuntu/ bionic main"
+  when: ansible_distribution == 'Ubuntu'
+
+- name: Install GitLab packages (Ubuntu)
+  apt:
+    name: "{{ gitlab_ci_runner_ubuntu_packages }}"
+    state: present
+    update_cache: yes
+  when: ansible_distribution == 'Ubuntu'

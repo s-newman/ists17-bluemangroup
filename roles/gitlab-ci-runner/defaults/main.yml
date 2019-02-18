@@ -1,0 +1,3 @@
+---
+gitlab_ci_runner_ubuntu_packages:
+  - gitlab-runner
