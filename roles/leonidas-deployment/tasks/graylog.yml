@@ -43,6 +43,7 @@
   uri:
     url: "https://{{ ossec_fqdn }}"
     status_code: 200
+    validate_certs: no
   register: result
   until: result.status == 200
   retries: 60
