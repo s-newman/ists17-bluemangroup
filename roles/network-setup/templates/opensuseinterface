@@ -3,7 +3,6 @@
 {% set netmask = machines[inventory_hostname]['netmask'] %}
 {% set network = machines[inventory_hostname]['network'] %}
 {% set broadcast = machines[inventory_hostname]['broadcast'] %}
-{% set gateway = machines[inventory_hostname]['gateway'] %}
 {% set domain = 'team'+team_id+'.'+internal_base_domain %}
 {% set nameserver_fqdn = hostnames['ad']+'.'+domain %}
 {% set nameserver_ip = machines[nameserver_fqdn]['ip'] %}

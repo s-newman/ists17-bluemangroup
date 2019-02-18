@@ -1,0 +1,3 @@
+{% set gateway = machines[inventory_hostname]['gateway'] %}
+# Destination       Dummy/Gateway           Netmask     Device
+default             10.3.{{ gateway }}.254  -           eth0

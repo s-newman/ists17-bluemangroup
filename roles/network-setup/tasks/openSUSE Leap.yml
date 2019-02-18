@@ -14,6 +14,11 @@
     src: templates/opensuseinterface
     dest: /etc/sysconfig/network/ifcfg-eth0
 
+- name: Apply the routes template
+  template:
+    src: templates/opensuse-routes
+    dest: /etc/sysconfig/network/routes
+
 - name: Restart network WARN This will break connection
   service:
       name: networking
