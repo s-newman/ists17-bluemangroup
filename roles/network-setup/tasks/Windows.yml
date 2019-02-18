@@ -6,7 +6,7 @@
     dest: C:/set-ip.ps1
 
 - set_fact:
-    dns_server: "{{ hostnames['ad'] }}.team{{ machines[inventory_hostname]['team_id'] }}.ists"
+    dns_server: "{{ hostnames['ad'] }}.team{{ machines[inventory_hostname]['team_id'] }}.ists.io"
 
 - name: Run static ip script - Fire and Forget
   async: 2
