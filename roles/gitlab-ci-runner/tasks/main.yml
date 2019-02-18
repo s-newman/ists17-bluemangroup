@@ -10,6 +10,7 @@
     repo: "{{ item }}"
     state: present
     filename: gitlab-runner
+    update_cache: yes
   loop:
     - "deb https://packages.gitlab.com/runner/gitlab-runner/ubuntu/ xenial main"
     - "deb-src https://packages.gitlab.com/runner/gitlab-runner/ubuntu/ xenial main"
@@ -17,7 +18,6 @@
 
 - name: Install GitLab packages (Ubuntu)
   apt:
-    name: "{{ gitlab_ci_runner_ubuntu_packages }}"
+    name: gitlab-runner
     state: present
-    update_cache: yes
   when: ansible_distribution == 'Ubuntu'
