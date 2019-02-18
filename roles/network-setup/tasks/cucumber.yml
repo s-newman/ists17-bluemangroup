@@ -12,7 +12,7 @@
 - name: Set the default interface for cucumber Linux
   set_fact:
     ansible_default_ipv4:
-      interface: "eno16777736"
+      interface: "eno666"
 
 - name: Apply the interfaces template
   template:

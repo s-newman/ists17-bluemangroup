@@ -7,23 +7,15 @@
 {% set domain = 'team'+team_id+'.'+internal_base_domain %}
 {% set nameserver_fqdn = hostnames['ad']+'.'+domain %}
 {% set nameserver_ip = machines[nameserver_fqdn]['ip'] %}
-# This file describes the network interfaces available on your system
-# and how to activate them. For more information, see interfaces(5).
-
-# The loopback network interface
-auto lo
-iface lo inet loopback
-
-# The primary network interface
-auto {{ ansible_default_ipv4.interface }}
-iface {{ ansible_default_ipv4.interface }} inet static
-    address {{ ip }}
-    netmask {{ netmask }}
-    gateway {{ gateway }}
-{% if whiteteam_nameservers is defined %}
-    dns-nameservers {{ nameserver_ip}} {{ whiteteam_nameservers|join(" ") }}
-{% else %}
-    dns-nameservers {{ nameserver_ip}}
-{% endif %}
-    dns-domain {{ domain }}
-    dns-search {{ domain }}
+# This bad boy was configured via Ansible. If you'd like more information on
+# how to reconfigure it, check out the cucumber website, or the templates in
+# /etc/network/templates. I really hope this works, because this operating
+# system really frustrates me.
+# If you find this message, let Sean Newman know. You may get some extra points
+# for being thorough.
+ONBOOT=yes
+METHOD=static
+ADDRESS={{ ip }}
+NETMASK={{ netmask }}
+BROADCAST={{ broadcast }}
+GATEWAY={{ gateway }}
