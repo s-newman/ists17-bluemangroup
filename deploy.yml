@@ -74,3 +74,14 @@
   roles:
     - linux-standards
   
+# Install OSSEC clients (linux)
+- hosts: linux
+  become: yes
+  roles:
+    - OssecAgents
+
+# Install OSSEC clients (windows)
+- hosts: windows
+  become: yes
+  roles:
+    - OssecAgents
