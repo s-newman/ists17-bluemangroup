@@ -1,5 +1,5 @@
 echo "machines:"
-for i in $(seq 0 11); do echo -e "
+for i in $(seq 0 13); do echo -e "
   alexander.team$i.ists.io:
     team_id: \"$i\"
     ip: \"10.2.$i.1\"
