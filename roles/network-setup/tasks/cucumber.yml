@@ -16,7 +16,7 @@
 
 - name: Apply the interfaces template
   template:
-    src: templates/interfaces
+    src: templates/cuc-interfaces
     dest: /etc/network/interfaces
 
 - name: Restart network WARN This will break connection

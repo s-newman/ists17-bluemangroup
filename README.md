@@ -14,9 +14,18 @@ This guide will use team 0 as the example deployment team.
 
 ### Prerequisites
 Before you can use this repository to deploy any teams, you will need to create
-templates for each host in the host reference tables below. In addition, each
-template must meet the following requirements:
-- 
+templates for each host in the host reference tables below. Each template's
+hostname should be configured with the hostname listed in the tables below. In
+addition, all templates must be accessible via Ansible. Make sure to configure
+the files in `group_vars` properly.
+
+Lastly, the network you use to deploy must have Windows DHCP and DNS set up.
+Windows is specifically required because of the interaction between the DHCP
+and DNS services. DHCP must be configured (in addition to typical options) to
+send a domain name and update DNS records for clients. This will be used for
+initial connectivity before hosts are assigned static IP addresses.
+
+### Phase 1: Static IPs
 
 ## Network Topology
 ![ISTS 17 topology](network.png)

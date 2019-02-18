@@ -66,10 +66,10 @@ for i in $(seq 0 13); do echo -e "
   bonaparte.team$i.cybertigers.club:
     team_id: \"$i\"
     ip: \"10.3.$i.2\"
-    network: \"10.2.$i.0\"
+    network: \"10.3.$i.0\"
     netmask: \"255.255.255.0\"
-    gateway: \"10.2.$i.254\"
-    broadcast: \"10.2.$i.255\"  
+    gateway: \"10.3.$i.254\"
+    broadcast: \"10.3.$i.255\"  
   ataturk.team$i.cybertigers.club:
     team_id: \"$i\"
     ip: \"10.3.$i.3\"
