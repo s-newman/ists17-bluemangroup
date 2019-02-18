@@ -15,9 +15,6 @@ all:
         bonaparte:
           hosts:
             bonaparte.team[0:13].cybertigers.club:
-        suleyman:
-          hosts:
-            suleyman.team[0:13].ists.io:
     linux:
       children:
         churchill:
@@ -35,6 +32,9 @@ all:
         ataturk:
           hosts:
             ataturk.team[0:13].cybertigers.club:
+        suleyman:
+          hosts:
+            suleyman.team[0:13].ists.io:
     bsd:
       children:
         gandhi:
