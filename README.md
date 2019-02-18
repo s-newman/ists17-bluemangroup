@@ -27,7 +27,6 @@ Domain: teamX.ists.io
 | Attila      | Vulnerable Web App  | 10.2.X.5    | Cucumber Linux          | HTTP                    | LAMP stack for injects webapp |
 | Xerxes      | Mail                | 10.2.X.6    | Windows Server 2008 R2  | SMTP (hMail)            | Not used for inject delivery |
 | Ashoka      | VPN Endpoint        | 10.2.X.7    | Ubuntu 14.04            | OpenVPN                 | Uses 10.X.2.0/24 for VPN clients |
-| Suleyman    | GitLab CI Runner    | 10.2.X.8    | Ubuntu 16.04            |                         | Used for DevOps inject |
 | Bismark     | Client              | DHCP        | Kali 2018.2             |                         ||
 | Washington  | Router              | 10.2.X.254  | PAN                     |                         ||
 
