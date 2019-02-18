@@ -36,6 +36,7 @@
   become: yes
   roles:
     - churchill-deployment
+    - gitlab-ci-runner
 
 # Install Graylog
 - hosts: leonidas
