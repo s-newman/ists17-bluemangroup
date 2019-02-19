@@ -26,9 +26,10 @@
     path: /etc/elasticsearch/elasticsearch.yml
     regexp: '^cluster.name:'
     line: 'cluster.name: graylog'
+  notify:
+    - Restart Elasticsearch
 
-- name: enable Elasticsearch
-  service:
+- name: Enable Elasticsearch
+  systemd:
     name: elasticsearch
-    state: restarted
     enabled: yes

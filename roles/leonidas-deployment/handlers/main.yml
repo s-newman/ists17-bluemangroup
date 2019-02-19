@@ -10,3 +10,8 @@
   command: systemctl daemon-reload
   tags:
     - skip_ansible_lint
+
+- name: Restart Elasticsearch
+  systemd:
+    name: elasticsearch
+    state: restarted
