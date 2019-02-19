@@ -1,4 +1,7 @@
 ---
+# Make sure graylog and nginx are started
+- meta: flush_handlers
+
 - name: "Wait for my boi to come up"
   uri:
     url: "https://{{ ossec_fqdn }}"
@@ -84,8 +87,7 @@
     owner: ossec
     group: ossec
     mode: 0644
-  notify:
-    - restart ossec-server
+  notify: Restart ossec
 
 - name: Configure the ossec-server
   template:
@@ -94,8 +96,7 @@
     owner: root
     group: root
     mode: 0644
-  notify:
-    - restart ossec-server
+  notify: Restart ossec
 
 - name: Move the thing that does things for windows
   copy:
@@ -105,8 +106,7 @@
     group: ossec
     mode: a+x
 
-- name: start meeeeee
+- name: Enable ossec
   service:
     name: ossec-hids
-    state: restarted
     enabled: yes

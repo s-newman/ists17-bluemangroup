@@ -1,9 +1,9 @@
 ---
-- name: Yum update
-  yum:
-    name: '*'
-    state: latest
-  when: ansible_distribution == 'CentOS'
+# - name: Yum update
+#   yum:
+#     name: '*'
+#     state: latest
+#   when: ansible_distribution == 'CentOS'
 
 - name: Yum install epel
   package:

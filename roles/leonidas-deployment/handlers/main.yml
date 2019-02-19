@@ -1,11 +1,6 @@
 ---
 # handlers file for ossec-server
 
-- name: restart ossec-server
-  service: name=ossec-hids
-           state=restarted
-           enabled=yes
-
 - name: systemd daemon-reload
   command: systemctl daemon-reload
   tags:
@@ -24,4 +19,9 @@
 - name: Restart nginx
   systemd:
     name: nginx
+    state: restarted
+
+- name: Restart ossec
+  systemd:
+    name: ossec-hids
     state: restarted
