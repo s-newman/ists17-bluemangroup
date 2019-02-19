@@ -35,7 +35,7 @@
   delegate_to: "{{ ossec_fqdn }}"
 
 - name: "register client"
-  shell: "/usr/local/ossec-hids/bin/agent-auth -m {{ ossec_server_ip|default(ossec_fqdn) }} -p 1515 -A '{{ ossec_agent_name|default(ansible_hostname) }}'"
+  shell: "/usr/local/ossec-hids/bin/agent-auth -m {{ ossec_server_ip }} -p 1515 -A '{{ ossec_agent_name|default(ansible_hostname) }}'"
 
 - name: Set permissions on client.keys file
   file:
