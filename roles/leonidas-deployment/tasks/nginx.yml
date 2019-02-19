@@ -13,6 +13,7 @@
     owner: root
     group: root
     mode: '0600'
+  notify: Restart nginx
 
 - name: nginx ssl directory create
   file:
@@ -45,9 +46,9 @@
     owner: root
     group: root
     mode: '0600'
+  notify: Restart nginx
 
 - name: enable Nginx
   service:
     name: nginx
-    state: restarted
     enabled: yes

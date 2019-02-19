@@ -11,7 +11,17 @@
   tags:
     - skip_ansible_lint
 
+- name: Restart Graylog
+  systemd:
+    name: graylog-server
+    state: restarted
+
 - name: Restart Elasticsearch
   systemd:
     name: elasticsearch
+    state: restarted
+
+- name: Restart nginx
+  systemd:
+    name: nginx
     state: restarted
