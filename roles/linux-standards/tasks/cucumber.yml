@@ -1,0 +1,38 @@
+---
+- name: Handle cucumber Linux
+  shell: "/bin/cat /etc/lsb-release | /bin/grep DISTRIB_ID"
+  register: command_output
+
+- name: Create wheel group - Cucumber
+  group:
+    name: wheel
+    state: present
+  when: command_output.stdout.find('ucumber') != -1 
+  become: yes
+
+- name: Add wheel group to sudoers - Cucumber
+  lineinfile:
+    path: /etc/sudoers
+    line: "%wheel ALL=(ALL) ALL"
+  when: command_output.stdout.find('ucumber') != -1 
+  become: yes
+
+- name: Add local admin accounts
+  user:
+    name: "{{ item }}"
+    password: "{{ default_password }}"
+    state: present
+    groups: 
+      - "wheel"
+  with_items: "{{ admin_accounts }}"
+  when: command_output.stdout.find('ucumber') != -1 
+  become: yes
+
+- name: Add accounts accounts
+  user:
+    name: "{{ item }}"
+    password: "{{ default_password }}"
+    state: present
+  with_items: "{{ admin_accounts }}"
+  when: command_output.stdout.find('ucumber') != -1 
+  become: yes
