@@ -1,4 +1,11 @@
 ---
+- name: "Check if client.keys exists on ossec-server"
+  stat:
+    path: /var/ossec/etc/client.keys
+  when: ossec_managed_server
+  delegate_to: "{{ ossec_fqdn }}"
+  register: check_server_keys
+
 - name: "You got broke stuff? I fix"
   shell: "nohup /var/ossec/bin/ossec-authd -p 1515 -n"
   delegate_to: "{{ ossec_fqdn }}"

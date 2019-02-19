@@ -5,7 +5,7 @@ ossec_fqdn: '{{ ossec_hostname }}.team{{ team_number }}.{{ internal_base_domain 
 #ossec_ip: '10.100.3.72'
 syslog_port: 1516
 # Correct IP
-ossec_ip: 10.{{ team_number }}.0.4
+ossec_ip: 10.2.{{ team_number }}.4
 ossec_managed_server: True
 
 # windows
