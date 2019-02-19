@@ -66,7 +66,7 @@ Domain: teamX.cybertigers.club
 |-------------|---------------------|-------------|-------------------------|-------------------------|-------|
 | Gandhi      | Public DNS          | 10.3.X.1    | FreeBSD 11.2            | DNS, HTTP (Webmin)      ||
 | Bonaparte   | Public Website      | 10.3.X.2    | Windows Server 2012 R2  | HTTP, HTTPS (IIS)       | Core install |
-| Ataturk     | GitLab              | 10.3.X.3    | openSUSE 42.3           | HTTPS, SSH (git)        | GitLab login required for HTTPS check |
+| Ataturk     | GitLab              | 10.3.X.3    | CentOS 7.6              | HTTPS, SSH (git)        | GitLab login required for HTTPS check |
 | Washington  | Router              | 10.3.X.254  | PAN                     |                         ||
 
 ## Running
