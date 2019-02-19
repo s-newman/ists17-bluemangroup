@@ -45,9 +45,15 @@
 
 
 # Cucumber Linux nonsense
+- name: Check for lsb-release file
+  stat:
+    path: /etc/lsb-release
+  register: stat_result
+
 - name: Handle cucumber Linux
-  shell: "/bin/cat /etc/*rel* | /bin/grep DISTRIB_ID"
+  shell: "/bin/cat /etc/lsb-release | /bin/grep DISTRIB_ID"
   register: command_output
+  when: stat_result.stat.exists == True
 
 - name: Create wheel group - Cucumber
   group:
