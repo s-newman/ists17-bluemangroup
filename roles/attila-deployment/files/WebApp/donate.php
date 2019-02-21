@@ -4,7 +4,7 @@
 	$user = $_SESSION['username'];
 	$method = $_POST["select"];
 	if($method == "0"){
-	echo "Please select a valid payment method";
+	echo "Please select a valid payment method.<br>You may need to add one.";
 	header('Refresh: 2; URL = dono.php');
 	
 	}

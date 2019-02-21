@@ -31,8 +31,9 @@ function getRecords(elmnt){
     		/*overflow: hidden;*/
     		border: 1px solid #ccc;
     		background-color: #f1f1f1;
-		align-items: center;																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																															justify-content: center;
-	display: flex;
+		align-items: center;
+		justify-content: center;
+		display: flex;
 	}
 
 	/* Style the buttons inside the tab */
@@ -107,7 +108,7 @@ function getRecords(elmnt){
          ?>
 	<form>
 	<br>
-<input type="button" value="Add a Payment Method" onclick="window.location.href='http://localhost/payment.php'" />
+<input type="button" value="Add a Payment Method" onclick="window.location.href='/payment.php'" />
 </form>
     </body>
 </html>

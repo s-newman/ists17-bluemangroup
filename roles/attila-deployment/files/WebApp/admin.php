@@ -99,7 +99,7 @@ $db = mysqli_connect('localhost','root','rockyou.txt-SUCKS!','DonationDatabase')
 	<?php
             if (isset($_POST['getRecords']) && !empty($_POST['username']) ) {
 	       $db = mysqli_connect('localhost','root','rockyou.txt-SUCKS!','DonationDatabase') or die ('Error connecting');
-		$query = "Select * from Donations where username = '".$_POSSSSST['username']."';";
+		$query = "Select * from Donations where username = '".$_POST['username']."';";
 		$result = mysqli_query($db, $query) or die('Error Querying');
 		echo "<h3>Records for ".$_POST['username']."</h3><br>";
 		echo "<h4>Transactions:</h4>";

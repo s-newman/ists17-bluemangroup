@@ -12,8 +12,9 @@ session_start();
     		/*overflow: hidden;*/
     		border: 1px solid #ccc;
     		background-color: #f1f1f1;
-		align-items: center;																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																												justify-content: center;
-display: flex;
+		align-items: center;
+		justify-content: center;
+		display: flex;
 	}
 
 	/* Style the buttons inside the tab */
@@ -27,7 +28,6 @@ display: flex;
     		transition: 0.3s;
     		font-size: 17px;
 		align-items: center;
- 																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																	justify-content: center;
 display: flex;
 	}
 
