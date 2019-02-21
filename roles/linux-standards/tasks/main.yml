@@ -8,7 +8,7 @@
 - name: Add user accounts - Linux
   user:
     name: "{{ item }}"
-    password: "{{ default_password }}"
+    password: "{{ hashed_default_password }}"
     state: present
   with_items: "{{ accounts }}"
   when: ansible_system == "Linux"
@@ -16,7 +16,7 @@
 - name: Add local admin accounts - Linux
   user:
     name: "{{ item }}"
-    password: "{{ default_password }}"
+    password: "{{ hashed_default_password }}"
     state: present
     groups: 
         - "sudo"
@@ -26,7 +26,7 @@
 - name: Add local admin accounts
   user:
     name: "{{ item }}"
-    password: "{{ default_password }}"
+    password: "{{ hashed_default_password }}"
     state: present
     groups: 
       - "wheel"
@@ -36,7 +36,7 @@
 - name: Add local admin accounts
   user:
     name: "{{ item }}"
-    password: "{{ default_password }}"
+    password: "{{ hashed_default_password }}"
     state: present
     groups: 
       - "sudoers"

@@ -20,19 +20,10 @@
 - name: Add local admin accounts
   user:
     name: "{{ item }}"
-    password: "{{ default_password }}"
+    password: "{{ hashed_default_password }}"
     state: present
     groups: 
       - "wheel"
-  with_items: "{{ admin_accounts }}"
-  when: command_output.stdout.find('ucumber') != -1 
-  become: yes
-
-- name: Add accounts accounts
-  user:
-    name: "{{ item }}"
-    password: "{{ default_password }}"
-    state: present
   with_items: "{{ admin_accounts }}"
   when: command_output.stdout.find('ucumber') != -1 
   become: yes

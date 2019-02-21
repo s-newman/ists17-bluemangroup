@@ -16,6 +16,7 @@ time_zone: America/New_York
 
 # Base password for all users.
 default_password: "rockyou.txt-SUCKS!" # used by alexander-deployment
+hashed_default_password: "$6$pleaseDontHurtMe$FyPgrHDXl.BpkSUJ8LkmIAbpdpAgAaSQ1K6tC7XBF.5qTmI1Aeqv9Rn8stdQCwW.Ldr/6SGAQmmERSqp0Qldq/"
 
 whiteteam_nameservers:
   - "10.10.10.80"
