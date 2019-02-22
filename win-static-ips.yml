@@ -1,0 +1,4 @@
+---
+- hosts: windows
+  roles:
+    - network-setup
