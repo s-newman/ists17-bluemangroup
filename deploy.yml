@@ -73,8 +73,13 @@
   become: yes
   roles:
     - linux-standards
-  
-<<<<<<< HEAD
+
+# Apply Linux standards to BSD
+- hosts: bsd
+  become: yes
+  roles:
+    - linux-standards
+
 # Install OSSEC clients (linux)
 - hosts: linux
   become: yes
@@ -86,5 +91,3 @@
   become: yes
   roles:
     - OssecAgents
-=======
->>>>>>> implement PAN

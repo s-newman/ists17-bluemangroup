@@ -32,10 +32,11 @@ all:
         ataturk:
           hosts:
             ataturk.team[0:13].cybertigers.club:
+    bsd:
+      children:
         gandhi:
           hosts:
             gandhi.team[0:13].cybertigers.club:
-
     paloalto:
       children:
         washington:
