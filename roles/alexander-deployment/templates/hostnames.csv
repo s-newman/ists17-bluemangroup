@@ -1,0 +1,9 @@
+Address,Name
+10.2.{{ team_id }}.1,alexander
+10.2.{{ team_id }}.2,julius
+10.2.{{ team_id }}.3,churchill
+10.2.{{ team_id }}.4,leonidas
+10.2.{{ team_id }}.5,attila
+10.2.{{ team_id }}.6,xerxes
+10.2.{{ team_id }}.7,ashoka
+10.2.{{ team_id }}.254,washington
