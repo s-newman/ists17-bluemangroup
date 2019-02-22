@@ -65,19 +65,37 @@
     group: root
     mode: 0644
 
+- name: "Debugging"
+  debug:
+    msg: "ssh_pass: {{ ansible_ssh_pass }}\nssh_user {{ ansible_ssh_user }}\nsudo_password {{ ansible_sudo_pass }}"
+
+- name: Ansible shell module output
+  shell: whoami
+  register: command_result
+
+- name: Ansible shell register result
+  debug: msg= "{{ command_result }}"
+
+- name: Return only the shell standard output
+  debug: msg= "{{ command_result.stdout }}"
+
 - name: "Check if client.keys exists on ossec-server"
   stat:
     path: /var/ossec/etc/client.keys
   when: ossec_managed_server
   delegate_to: "{{ ossec_fqdn }}"
   register: check_server_keys
+  ignore_errors: yes
 
 - name: "You got broke stuff? I fix"
   shell: "nohup /var/ossec/bin/ossec-authd -p 1515 -n"
   delegate_to: "{{ ossec_fqdn }}"
+  ignore_errors: yes
 
 - name: "register client"
   shell: "/var/ossec/bin/agent-auth -m {{ ossec_ip }} -p 1515 -A '{{ ossec_agent_name|default(ansible_hostname) }}'"
+  ignore_errors: yes
+
 
 - name: Set permissions on client.keys file
   file:
@@ -88,14 +106,17 @@
   shell: "ps -aux | grep -v grep | grep -w ossec-authd | awk '{print $2}'"
   register: running_processes
   delegate_to: "{{ ossec_fqdn }}"
+  ignore_errors: yes
 
 - name: Kill running processes
   shell: "kill {{ item }}"
   with_items: "{{ running_processes.stdout_lines }}"
   delegate_to: "{{ ossec_fqdn }}"
+  ignore_errors: yes
 
 - name: "Restart ossec-remoted on server. If this is the first agent added it will not be running."
   shell: /var/ossec/bin/ossec-control restart
   delegate_to: "{{ ossec_fqdn }}"
   when: ossec_managed_server and not check_server_keys.stat.exists and ossec_fqdn|default("") != ""
   run_once: true
+  ignore_errors: yes

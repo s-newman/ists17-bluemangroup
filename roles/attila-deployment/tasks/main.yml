@@ -37,8 +37,14 @@
     dest: /tmp
 
 - name: Restore database from dump
-  raw: mysql -u root --password="{{ default_password }}" < /tmp/DonationDatabase.sql
+  raw: mysql -u root --password= "{{ default_password }}" < /tmp/DonationDatabase.sql
   ignore_errors: yes
+
+- name: restrat httpd
+  service:
+    name: httpd
+    state: restarted
 
 - name: Uninstall fortune
   shell: removepkg fortune
+

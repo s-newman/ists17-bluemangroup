@@ -24,6 +24,7 @@ whiteteam_nameservers:
 machines:
 
   alexander.team0.ists.io:
+    hostname: "alexander"
     team_id: "0"
     ip: "10.2.0.1"
     network: "10.2.0.0"
@@ -31,6 +32,7 @@ machines:
     gateway: "10.2.0.254"
     broadcast: "10.2.0.255"
   julius.team0.ists.io:
+    hostname: "julius"
     team_id: "0"
     ip: "10.2.0.2"
     network: "10.2.0.0"
@@ -38,6 +40,7 @@ machines:
     gateway: "10.2.0.254"
     broadcast: "10.2.0.255"
   churchill.team0.ists.io:
+    hostname: "churchill"
     team_id: "0"
     ip: "10.2.0.3"
     network: "10.2.0.0"
@@ -45,6 +48,7 @@ machines:
     gateway: "10.2.0.254"
     broadcast: "10.2.0.255"
   leonidas.team0.ists.io:
+    hostname: "leonidas"
     team_id: "0"
     ip: "10.2.0.4"
     network: "10.2.0.0"
@@ -52,6 +56,7 @@ machines:
     gateway: "10.2.0.254"
     broadcast: "10.2.0.255"
   attila.team0.ists.io:
+    hostname: "attila"
     team_id: "0"
     ip: "10.2.0.5"
     network: "10.2.0.0"
@@ -59,6 +64,7 @@ machines:
     gateway: "10.2.0.254"
     broadcast: "10.2.0.255"
   xerxes.team0.ists.io:
+    hostname: "xerxes"
     team_id: "0"
     ip: "10.2.0.6"
     network: "10.2.0.0"
@@ -66,6 +72,7 @@ machines:
     gateway: "10.2.0.254"
     broadcast: "10.2.0.255"
   ashoka.team0.ists.io:
+    hostname: "ashoka"
     team_id: "0"
     ip: "10.2.0.7"
     network: "10.2.0.0"
@@ -73,6 +80,7 @@ machines:
     gateway: "10.2.0.254"
     broadcast: "10.2.0.255"
   washington.team0.ists.io:
+    hostname: "washington"
     team_id: "0"
     ip: "10.2.0.254"
     network: "10.2.0.0"
@@ -80,6 +88,7 @@ machines:
     gateway: "10.2.0.254"
     broadcast: "10.2.0.255"
   gandhi.team0.cybertigers.club:
+    hostname: "gandhi"
     team_id: "0"
     ip: "10.3.0.1"
     network: "10.3.0.0"
@@ -87,6 +96,7 @@ machines:
     gateway: "10.3.0.254"
     broadcast: "10.3.0.255"
   bonaparte.team0.cybertigers.club:
+    hostname: "bonaparte"
     team_id: "0"
     ip: "10.3.0.2"
     network: "10.3.0.0"
@@ -94,6 +104,7 @@ machines:
     gateway: "10.3.0.254"
     broadcast: "10.3.0.255"  
   ataturk.team0.cybertigers.club:
+    hostname: "ataturk"
     team_id: "0"
     ip: "10.3.0.3"
     network: "10.3.0.0"
@@ -105,6 +116,7 @@ machines:
 
 
   alexander.team1.ists.io:
+    hostname: "alexander"
     team_id: "1"
     ip: "10.2.1.1"
     network: "10.2.1.0"
@@ -112,6 +124,7 @@ machines:
     gateway: "10.2.1.254"
     broadcast: "10.2.1.255"
   julius.team1.ists.io:
+    hostname: "julius"
     team_id: "1"
     ip: "10.2.1.2"
     network: "10.2.1.0"
@@ -119,6 +132,7 @@ machines:
     gateway: "10.2.1.254"
     broadcast: "10.2.1.255"
   churchill.team1.ists.io:
+    hostname: "churchill"
     team_id: "1"
     ip: "10.2.1.3"
     network: "10.2.1.0"
@@ -126,6 +140,7 @@ machines:
     gateway: "10.2.1.254"
     broadcast: "10.2.1.255"
   leonidas.team1.ists.io:
+    hostname: "leonidas"
     team_id: "1"
     ip: "10.2.1.4"
     network: "10.2.1.0"
@@ -133,6 +148,7 @@ machines:
     gateway: "10.2.1.254"
     broadcast: "10.2.1.255"
   attila.team1.ists.io:
+    hostname: "attila"
     team_id: "1"
     ip: "10.2.1.5"
     network: "10.2.1.0"
@@ -140,6 +156,7 @@ machines:
     gateway: "10.2.1.254"
     broadcast: "10.2.1.255"
   xerxes.team1.ists.io:
+    hostname: "xerxes"
     team_id: "1"
     ip: "10.2.1.6"
     network: "10.2.1.0"
@@ -147,6 +164,7 @@ machines:
     gateway: "10.2.1.254"
     broadcast: "10.2.1.255"
   ashoka.team1.ists.io:
+    hostname: "ashoka"
     team_id: "1"
     ip: "10.2.1.7"
     network: "10.2.1.0"
@@ -154,6 +172,7 @@ machines:
     gateway: "10.2.1.254"
     broadcast: "10.2.1.255"
   washington.team1.ists.io:
+    hostname: "washington"
     team_id: "1"
     ip: "10.2.1.254"
     network: "10.2.1.0"
@@ -161,6 +180,7 @@ machines:
     gateway: "10.2.1.254"
     broadcast: "10.2.1.255"
   gandhi.team1.cybertigers.club:
+    hostname: "gandhi"
     team_id: "1"
     ip: "10.3.1.1"
     network: "10.3.1.0"
@@ -168,6 +188,7 @@ machines:
     gateway: "10.3.1.254"
     broadcast: "10.3.1.255"
   bonaparte.team1.cybertigers.club:
+    hostname: "bonaparte"
     team_id: "1"
     ip: "10.3.1.2"
     network: "10.3.1.0"
@@ -175,6 +196,7 @@ machines:
     gateway: "10.3.1.254"
     broadcast: "10.3.1.255"  
   ataturk.team1.cybertigers.club:
+    hostname: "ataturk"
     team_id: "1"
     ip: "10.3.1.3"
     network: "10.3.1.0"
@@ -186,6 +208,7 @@ machines:
 
 
   alexander.team2.ists.io:
+    hostname: "alexander"
     team_id: "2"
     ip: "10.2.2.1"
     network: "10.2.2.0"
@@ -193,6 +216,7 @@ machines:
     gateway: "10.2.2.254"
     broadcast: "10.2.2.255"
   julius.team2.ists.io:
+    hostname: "julius"
     team_id: "2"
     ip: "10.2.2.2"
     network: "10.2.2.0"
@@ -200,6 +224,7 @@ machines:
     gateway: "10.2.2.254"
     broadcast: "10.2.2.255"
   churchill.team2.ists.io:
+    hostname: "churchill"
     team_id: "2"
     ip: "10.2.2.3"
     network: "10.2.2.0"
@@ -207,6 +232,7 @@ machines:
     gateway: "10.2.2.254"
     broadcast: "10.2.2.255"
   leonidas.team2.ists.io:
+    hostname: "leonidas"
     team_id: "2"
     ip: "10.2.2.4"
     network: "10.2.2.0"
@@ -214,6 +240,7 @@ machines:
     gateway: "10.2.2.254"
     broadcast: "10.2.2.255"
   attila.team2.ists.io:
+    hostname: "attila"
     team_id: "2"
     ip: "10.2.2.5"
     network: "10.2.2.0"
@@ -221,6 +248,7 @@ machines:
     gateway: "10.2.2.254"
     broadcast: "10.2.2.255"
   xerxes.team2.ists.io:
+    hostname: "xerxes"
     team_id: "2"
     ip: "10.2.2.6"
     network: "10.2.2.0"
@@ -228,6 +256,7 @@ machines:
     gateway: "10.2.2.254"
     broadcast: "10.2.2.255"
   ashoka.team2.ists.io:
+    hostname: "ashoka"
     team_id: "2"
     ip: "10.2.2.7"
     network: "10.2.2.0"
@@ -235,6 +264,7 @@ machines:
     gateway: "10.2.2.254"
     broadcast: "10.2.2.255"
   washington.team2.ists.io:
+    hostname: "washington"
     team_id: "2"
     ip: "10.2.2.254"
     network: "10.2.2.0"
@@ -242,6 +272,7 @@ machines:
     gateway: "10.2.2.254"
     broadcast: "10.2.2.255"
   gandhi.team2.cybertigers.club:
+    hostname: "gandhi"
     team_id: "2"
     ip: "10.3.2.1"
     network: "10.3.2.0"
@@ -249,6 +280,7 @@ machines:
     gateway: "10.3.2.254"
     broadcast: "10.3.2.255"
   bonaparte.team2.cybertigers.club:
+    hostname: "bonaparte"
     team_id: "2"
     ip: "10.3.2.2"
     network: "10.3.2.0"
@@ -256,6 +288,7 @@ machines:
     gateway: "10.3.2.254"
     broadcast: "10.3.2.255"  
   ataturk.team2.cybertigers.club:
+    hostname: "ataturk"
     team_id: "2"
     ip: "10.3.2.3"
     network: "10.3.2.0"
@@ -267,6 +300,7 @@ machines:
 
 
   alexander.team3.ists.io:
+    hostname: "alexander"
     team_id: "3"
     ip: "10.2.3.1"
     network: "10.2.3.0"
@@ -274,6 +308,7 @@ machines:
     gateway: "10.2.3.254"
     broadcast: "10.2.3.255"
   julius.team3.ists.io:
+    hostname: "julius"
     team_id: "3"
     ip: "10.2.3.2"
     network: "10.2.3.0"
@@ -281,6 +316,7 @@ machines:
     gateway: "10.2.3.254"
     broadcast: "10.2.3.255"
   churchill.team3.ists.io:
+    hostname: "churchill"
     team_id: "3"
     ip: "10.2.3.3"
     network: "10.2.3.0"
@@ -288,6 +324,7 @@ machines:
     gateway: "10.2.3.254"
     broadcast: "10.2.3.255"
   leonidas.team3.ists.io:
+    hostname: "leonidas"
     team_id: "3"
     ip: "10.2.3.4"
     network: "10.2.3.0"
@@ -295,6 +332,7 @@ machines:
     gateway: "10.2.3.254"
     broadcast: "10.2.3.255"
   attila.team3.ists.io:
+    hostname: "attila"
     team_id: "3"
     ip: "10.2.3.5"
     network: "10.2.3.0"
@@ -302,6 +340,7 @@ machines:
     gateway: "10.2.3.254"
     broadcast: "10.2.3.255"
   xerxes.team3.ists.io:
+    hostname: "xerxes"
     team_id: "3"
     ip: "10.2.3.6"
     network: "10.2.3.0"
@@ -309,6 +348,7 @@ machines:
     gateway: "10.2.3.254"
     broadcast: "10.2.3.255"
   ashoka.team3.ists.io:
+    hostname: "ashoka"
     team_id: "3"
     ip: "10.2.3.7"
     network: "10.2.3.0"
@@ -316,6 +356,7 @@ machines:
     gateway: "10.2.3.254"
     broadcast: "10.2.3.255"
   washington.team3.ists.io:
+    hostname: "washington"
     team_id: "3"
     ip: "10.2.3.254"
     network: "10.2.3.0"
@@ -323,6 +364,7 @@ machines:
     gateway: "10.2.3.254"
     broadcast: "10.2.3.255"
   gandhi.team3.cybertigers.club:
+    hostname: "gandhi"
     team_id: "3"
     ip: "10.3.3.1"
     network: "10.3.3.0"
@@ -330,6 +372,7 @@ machines:
     gateway: "10.3.3.254"
     broadcast: "10.3.3.255"
   bonaparte.team3.cybertigers.club:
+    hostname: "bonaparte"
     team_id: "3"
     ip: "10.3.3.2"
     network: "10.3.3.0"
@@ -337,6 +380,7 @@ machines:
     gateway: "10.3.3.254"
     broadcast: "10.3.3.255"  
   ataturk.team3.cybertigers.club:
+    hostname: "ataturk"
     team_id: "3"
     ip: "10.3.3.3"
     network: "10.3.3.0"
@@ -348,6 +392,7 @@ machines:
 
 
   alexander.team4.ists.io:
+    hostname: "alexander"
     team_id: "4"
     ip: "10.2.4.1"
     network: "10.2.4.0"
@@ -355,6 +400,7 @@ machines:
     gateway: "10.2.4.254"
     broadcast: "10.2.4.255"
   julius.team4.ists.io:
+    hostname: "julius"
     team_id: "4"
     ip: "10.2.4.2"
     network: "10.2.4.0"
@@ -362,6 +408,7 @@ machines:
     gateway: "10.2.4.254"
     broadcast: "10.2.4.255"
   churchill.team4.ists.io:
+    hostname: "churchill"
     team_id: "4"
     ip: "10.2.4.3"
     network: "10.2.4.0"
@@ -369,6 +416,7 @@ machines:
     gateway: "10.2.4.254"
     broadcast: "10.2.4.255"
   leonidas.team4.ists.io:
+    hostname: "leonidas"
     team_id: "4"
     ip: "10.2.4.4"
     network: "10.2.4.0"
@@ -376,6 +424,7 @@ machines:
     gateway: "10.2.4.254"
     broadcast: "10.2.4.255"
   attila.team4.ists.io:
+    hostname: "attila"
     team_id: "4"
     ip: "10.2.4.5"
     network: "10.2.4.0"
@@ -383,6 +432,7 @@ machines:
     gateway: "10.2.4.254"
     broadcast: "10.2.4.255"
   xerxes.team4.ists.io:
+    hostname: "xerxes"
     team_id: "4"
     ip: "10.2.4.6"
     network: "10.2.4.0"
@@ -390,6 +440,7 @@ machines:
     gateway: "10.2.4.254"
     broadcast: "10.2.4.255"
   ashoka.team4.ists.io:
+    hostname: "ashoka"
     team_id: "4"
     ip: "10.2.4.7"
     network: "10.2.4.0"
@@ -397,6 +448,7 @@ machines:
     gateway: "10.2.4.254"
     broadcast: "10.2.4.255"
   washington.team4.ists.io:
+    hostname: "washington"
     team_id: "4"
     ip: "10.2.4.254"
     network: "10.2.4.0"
@@ -404,6 +456,7 @@ machines:
     gateway: "10.2.4.254"
     broadcast: "10.2.4.255"
   gandhi.team4.cybertigers.club:
+    hostname: "gandhi"
     team_id: "4"
     ip: "10.3.4.1"
     network: "10.3.4.0"
@@ -411,6 +464,7 @@ machines:
     gateway: "10.3.4.254"
     broadcast: "10.3.4.255"
   bonaparte.team4.cybertigers.club:
+    hostname: "bonaparte"
     team_id: "4"
     ip: "10.3.4.2"
     network: "10.3.4.0"
@@ -418,6 +472,7 @@ machines:
     gateway: "10.3.4.254"
     broadcast: "10.3.4.255"  
   ataturk.team4.cybertigers.club:
+    hostname: "ataturk"
     team_id: "4"
     ip: "10.3.4.3"
     network: "10.3.4.0"
@@ -429,6 +484,7 @@ machines:
 
 
   alexander.team5.ists.io:
+    hostname: "alexander"
     team_id: "5"
     ip: "10.2.5.1"
     network: "10.2.5.0"
@@ -436,6 +492,7 @@ machines:
     gateway: "10.2.5.254"
     broadcast: "10.2.5.255"
   julius.team5.ists.io:
+    hostname: "julius"
     team_id: "5"
     ip: "10.2.5.2"
     network: "10.2.5.0"
@@ -443,6 +500,7 @@ machines:
     gateway: "10.2.5.254"
     broadcast: "10.2.5.255"
   churchill.team5.ists.io:
+    hostname: "churchill"
     team_id: "5"
     ip: "10.2.5.3"
     network: "10.2.5.0"
@@ -450,6 +508,7 @@ machines:
     gateway: "10.2.5.254"
     broadcast: "10.2.5.255"
   leonidas.team5.ists.io:
+    hostname: "leonidas"
     team_id: "5"
     ip: "10.2.5.4"
     network: "10.2.5.0"
@@ -457,6 +516,7 @@ machines:
     gateway: "10.2.5.254"
     broadcast: "10.2.5.255"
   attila.team5.ists.io:
+    hostname: "attila"
     team_id: "5"
     ip: "10.2.5.5"
     network: "10.2.5.0"
@@ -464,6 +524,7 @@ machines:
     gateway: "10.2.5.254"
     broadcast: "10.2.5.255"
   xerxes.team5.ists.io:
+    hostname: "xerxes"
     team_id: "5"
     ip: "10.2.5.6"
     network: "10.2.5.0"
@@ -471,6 +532,7 @@ machines:
     gateway: "10.2.5.254"
     broadcast: "10.2.5.255"
   ashoka.team5.ists.io:
+    hostname: "ashoka"
     team_id: "5"
     ip: "10.2.5.7"
     network: "10.2.5.0"
@@ -478,6 +540,7 @@ machines:
     gateway: "10.2.5.254"
     broadcast: "10.2.5.255"
   washington.team5.ists.io:
+    hostname: "washington"
     team_id: "5"
     ip: "10.2.5.254"
     network: "10.2.5.0"
@@ -485,6 +548,7 @@ machines:
     gateway: "10.2.5.254"
     broadcast: "10.2.5.255"
   gandhi.team5.cybertigers.club:
+    hostname: "gandhi"
     team_id: "5"
     ip: "10.3.5.1"
     network: "10.3.5.0"
@@ -492,6 +556,7 @@ machines:
     gateway: "10.3.5.254"
     broadcast: "10.3.5.255"
   bonaparte.team5.cybertigers.club:
+    hostname: "bonaparte"
     team_id: "5"
     ip: "10.3.5.2"
     network: "10.3.5.0"
@@ -499,6 +564,7 @@ machines:
     gateway: "10.3.5.254"
     broadcast: "10.3.5.255"  
   ataturk.team5.cybertigers.club:
+    hostname: "ataturk"
     team_id: "5"
     ip: "10.3.5.3"
     network: "10.3.5.0"
@@ -510,6 +576,7 @@ machines:
 
 
   alexander.team6.ists.io:
+    hostname: "alexander"
     team_id: "6"
     ip: "10.2.6.1"
     network: "10.2.6.0"
@@ -517,6 +584,7 @@ machines:
     gateway: "10.2.6.254"
     broadcast: "10.2.6.255"
   julius.team6.ists.io:
+    hostname: "julius"
     team_id: "6"
     ip: "10.2.6.2"
     network: "10.2.6.0"
@@ -524,6 +592,7 @@ machines:
     gateway: "10.2.6.254"
     broadcast: "10.2.6.255"
   churchill.team6.ists.io:
+    hostname: "churchill"
     team_id: "6"
     ip: "10.2.6.3"
     network: "10.2.6.0"
@@ -531,6 +600,7 @@ machines:
     gateway: "10.2.6.254"
     broadcast: "10.2.6.255"
   leonidas.team6.ists.io:
+    hostname: "leonidas"
     team_id: "6"
     ip: "10.2.6.4"
     network: "10.2.6.0"
@@ -538,6 +608,7 @@ machines:
     gateway: "10.2.6.254"
     broadcast: "10.2.6.255"
   attila.team6.ists.io:
+    hostname: "attila"
     team_id: "6"
     ip: "10.2.6.5"
     network: "10.2.6.0"
@@ -545,6 +616,7 @@ machines:
     gateway: "10.2.6.254"
     broadcast: "10.2.6.255"
   xerxes.team6.ists.io:
+    hostname: "xerxes"
     team_id: "6"
     ip: "10.2.6.6"
     network: "10.2.6.0"
@@ -552,6 +624,7 @@ machines:
     gateway: "10.2.6.254"
     broadcast: "10.2.6.255"
   ashoka.team6.ists.io:
+    hostname: "ashoka"
     team_id: "6"
     ip: "10.2.6.7"
     network: "10.2.6.0"
@@ -559,6 +632,7 @@ machines:
     gateway: "10.2.6.254"
     broadcast: "10.2.6.255"
   washington.team6.ists.io:
+    hostname: "washington"
     team_id: "6"
     ip: "10.2.6.254"
     network: "10.2.6.0"
@@ -566,6 +640,7 @@ machines:
     gateway: "10.2.6.254"
     broadcast: "10.2.6.255"
   gandhi.team6.cybertigers.club:
+    hostname: "gandhi"
     team_id: "6"
     ip: "10.3.6.1"
     network: "10.3.6.0"
@@ -573,6 +648,7 @@ machines:
     gateway: "10.3.6.254"
     broadcast: "10.3.6.255"
   bonaparte.team6.cybertigers.club:
+    hostname: "bonaparte"
     team_id: "6"
     ip: "10.3.6.2"
     network: "10.3.6.0"
@@ -580,6 +656,7 @@ machines:
     gateway: "10.3.6.254"
     broadcast: "10.3.6.255"  
   ataturk.team6.cybertigers.club:
+    hostname: "ataturk"
     team_id: "6"
     ip: "10.3.6.3"
     network: "10.3.6.0"
@@ -591,6 +668,7 @@ machines:
 
 
   alexander.team7.ists.io:
+    hostname: "alexander"
     team_id: "7"
     ip: "10.2.7.1"
     network: "10.2.7.0"
@@ -598,6 +676,7 @@ machines:
     gateway: "10.2.7.254"
     broadcast: "10.2.7.255"
   julius.team7.ists.io:
+    hostname: "julius"
     team_id: "7"
     ip: "10.2.7.2"
     network: "10.2.7.0"
@@ -605,6 +684,7 @@ machines:
     gateway: "10.2.7.254"
     broadcast: "10.2.7.255"
   churchill.team7.ists.io:
+    hostname: "churchill"
     team_id: "7"
     ip: "10.2.7.3"
     network: "10.2.7.0"
@@ -612,6 +692,7 @@ machines:
     gateway: "10.2.7.254"
     broadcast: "10.2.7.255"
   leonidas.team7.ists.io:
+    hostname: "leonidas"
     team_id: "7"
     ip: "10.2.7.4"
     network: "10.2.7.0"
@@ -619,6 +700,7 @@ machines:
     gateway: "10.2.7.254"
     broadcast: "10.2.7.255"
   attila.team7.ists.io:
+    hostname: "attila"
     team_id: "7"
     ip: "10.2.7.5"
     network: "10.2.7.0"
@@ -626,6 +708,7 @@ machines:
     gateway: "10.2.7.254"
     broadcast: "10.2.7.255"
   xerxes.team7.ists.io:
+    hostname: "xerxes"
     team_id: "7"
     ip: "10.2.7.6"
     network: "10.2.7.0"
@@ -633,6 +716,7 @@ machines:
     gateway: "10.2.7.254"
     broadcast: "10.2.7.255"
   ashoka.team7.ists.io:
+    hostname: "ashoka"
     team_id: "7"
     ip: "10.2.7.7"
     network: "10.2.7.0"
@@ -640,6 +724,7 @@ machines:
     gateway: "10.2.7.254"
     broadcast: "10.2.7.255"
   washington.team7.ists.io:
+    hostname: "washington"
     team_id: "7"
     ip: "10.2.7.254"
     network: "10.2.7.0"
@@ -647,6 +732,7 @@ machines:
     gateway: "10.2.7.254"
     broadcast: "10.2.7.255"
   gandhi.team7.cybertigers.club:
+    hostname: "gandhi"
     team_id: "7"
     ip: "10.3.7.1"
     network: "10.3.7.0"
@@ -654,6 +740,7 @@ machines:
     gateway: "10.3.7.254"
     broadcast: "10.3.7.255"
   bonaparte.team7.cybertigers.club:
+    hostname: "bonaparte"
     team_id: "7"
     ip: "10.3.7.2"
     network: "10.3.7.0"
@@ -661,6 +748,7 @@ machines:
     gateway: "10.3.7.254"
     broadcast: "10.3.7.255"  
   ataturk.team7.cybertigers.club:
+    hostname: "ataturk"
     team_id: "7"
     ip: "10.3.7.3"
     network: "10.3.7.0"
@@ -672,6 +760,7 @@ machines:
 
 
   alexander.team8.ists.io:
+    hostname: "alexander"
     team_id: "8"
     ip: "10.2.8.1"
     network: "10.2.8.0"
@@ -679,6 +768,7 @@ machines:
     gateway: "10.2.8.254"
     broadcast: "10.2.8.255"
   julius.team8.ists.io:
+    hostname: "julius"
     team_id: "8"
     ip: "10.2.8.2"
     network: "10.2.8.0"
@@ -686,6 +776,7 @@ machines:
     gateway: "10.2.8.254"
     broadcast: "10.2.8.255"
   churchill.team8.ists.io:
+    hostname: "churchill"
     team_id: "8"
     ip: "10.2.8.3"
     network: "10.2.8.0"
@@ -693,6 +784,7 @@ machines:
     gateway: "10.2.8.254"
     broadcast: "10.2.8.255"
   leonidas.team8.ists.io:
+    hostname: "leonidas"
     team_id: "8"
     ip: "10.2.8.4"
     network: "10.2.8.0"
@@ -700,6 +792,7 @@ machines:
     gateway: "10.2.8.254"
     broadcast: "10.2.8.255"
   attila.team8.ists.io:
+    hostname: "attila"
     team_id: "8"
     ip: "10.2.8.5"
     network: "10.2.8.0"
@@ -707,6 +800,7 @@ machines:
     gateway: "10.2.8.254"
     broadcast: "10.2.8.255"
   xerxes.team8.ists.io:
+    hostname: "xerxes"
     team_id: "8"
     ip: "10.2.8.6"
     network: "10.2.8.0"
@@ -714,6 +808,7 @@ machines:
     gateway: "10.2.8.254"
     broadcast: "10.2.8.255"
   ashoka.team8.ists.io:
+    hostname: "ashoka"
     team_id: "8"
     ip: "10.2.8.7"
     network: "10.2.8.0"
@@ -721,6 +816,7 @@ machines:
     gateway: "10.2.8.254"
     broadcast: "10.2.8.255"
   washington.team8.ists.io:
+    hostname: "washington"
     team_id: "8"
     ip: "10.2.8.254"
     network: "10.2.8.0"
@@ -728,6 +824,7 @@ machines:
     gateway: "10.2.8.254"
     broadcast: "10.2.8.255"
   gandhi.team8.cybertigers.club:
+    hostname: "gandhi"
     team_id: "8"
     ip: "10.3.8.1"
     network: "10.3.8.0"
@@ -735,6 +832,7 @@ machines:
     gateway: "10.3.8.254"
     broadcast: "10.3.8.255"
   bonaparte.team8.cybertigers.club:
+    hostname: "bonaparte"
     team_id: "8"
     ip: "10.3.8.2"
     network: "10.3.8.0"
@@ -742,6 +840,7 @@ machines:
     gateway: "10.3.8.254"
     broadcast: "10.3.8.255"  
   ataturk.team8.cybertigers.club:
+    hostname: "ataturk"
     team_id: "8"
     ip: "10.3.8.3"
     network: "10.3.8.0"
@@ -753,6 +852,7 @@ machines:
 
 
   alexander.team9.ists.io:
+    hostname: "alexander"
     team_id: "9"
     ip: "10.2.9.1"
     network: "10.2.9.0"
@@ -760,6 +860,7 @@ machines:
     gateway: "10.2.9.254"
     broadcast: "10.2.9.255"
   julius.team9.ists.io:
+    hostname: "julius"
     team_id: "9"
     ip: "10.2.9.2"
     network: "10.2.9.0"
@@ -767,6 +868,7 @@ machines:
     gateway: "10.2.9.254"
     broadcast: "10.2.9.255"
   churchill.team9.ists.io:
+    hostname: "churchill"
     team_id: "9"
     ip: "10.2.9.3"
     network: "10.2.9.0"
@@ -774,6 +876,7 @@ machines:
     gateway: "10.2.9.254"
     broadcast: "10.2.9.255"
   leonidas.team9.ists.io:
+    hostname: "leonidas"
     team_id: "9"
     ip: "10.2.9.4"
     network: "10.2.9.0"
@@ -781,6 +884,7 @@ machines:
     gateway: "10.2.9.254"
     broadcast: "10.2.9.255"
   attila.team9.ists.io:
+    hostname: "attila"
     team_id: "9"
     ip: "10.2.9.5"
     network: "10.2.9.0"
@@ -788,6 +892,7 @@ machines:
     gateway: "10.2.9.254"
     broadcast: "10.2.9.255"
   xerxes.team9.ists.io:
+    hostname: "xerxes"
     team_id: "9"
     ip: "10.2.9.6"
     network: "10.2.9.0"
@@ -795,6 +900,7 @@ machines:
     gateway: "10.2.9.254"
     broadcast: "10.2.9.255"
   ashoka.team9.ists.io:
+    hostname: "ashoka"
     team_id: "9"
     ip: "10.2.9.7"
     network: "10.2.9.0"
@@ -802,6 +908,7 @@ machines:
     gateway: "10.2.9.254"
     broadcast: "10.2.9.255"
   washington.team9.ists.io:
+    hostname: "washington"
     team_id: "9"
     ip: "10.2.9.254"
     network: "10.2.9.0"
@@ -809,6 +916,7 @@ machines:
     gateway: "10.2.9.254"
     broadcast: "10.2.9.255"
   gandhi.team9.cybertigers.club:
+    hostname: "gandhi"
     team_id: "9"
     ip: "10.3.9.1"
     network: "10.3.9.0"
@@ -816,6 +924,7 @@ machines:
     gateway: "10.3.9.254"
     broadcast: "10.3.9.255"
   bonaparte.team9.cybertigers.club:
+    hostname: "bonaparte"
     team_id: "9"
     ip: "10.3.9.2"
     network: "10.3.9.0"
@@ -823,6 +932,7 @@ machines:
     gateway: "10.3.9.254"
     broadcast: "10.3.9.255"  
   ataturk.team9.cybertigers.club:
+    hostname: "ataturk"
     team_id: "9"
     ip: "10.3.9.3"
     network: "10.3.9.0"
@@ -834,6 +944,7 @@ machines:
 
 
   alexander.team10.ists.io:
+    hostname: "alexander"
     team_id: "10"
     ip: "10.2.10.1"
     network: "10.2.10.0"
@@ -841,6 +952,7 @@ machines:
     gateway: "10.2.10.254"
     broadcast: "10.2.10.255"
   julius.team10.ists.io:
+    hostname: "julius"
     team_id: "10"
     ip: "10.2.10.2"
     network: "10.2.10.0"
@@ -848,6 +960,7 @@ machines:
     gateway: "10.2.10.254"
     broadcast: "10.2.10.255"
   churchill.team10.ists.io:
+    hostname: "churchill"
     team_id: "10"
     ip: "10.2.10.3"
     network: "10.2.10.0"
@@ -855,6 +968,7 @@ machines:
     gateway: "10.2.10.254"
     broadcast: "10.2.10.255"
   leonidas.team10.ists.io:
+    hostname: "leonidas"
     team_id: "10"
     ip: "10.2.10.4"
     network: "10.2.10.0"
@@ -862,6 +976,7 @@ machines:
     gateway: "10.2.10.254"
     broadcast: "10.2.10.255"
   attila.team10.ists.io:
+    hostname: "attila"
     team_id: "10"
     ip: "10.2.10.5"
     network: "10.2.10.0"
@@ -869,6 +984,7 @@ machines:
     gateway: "10.2.10.254"
     broadcast: "10.2.10.255"
   xerxes.team10.ists.io:
+    hostname: "xerxes"
     team_id: "10"
     ip: "10.2.10.6"
     network: "10.2.10.0"
@@ -876,6 +992,7 @@ machines:
     gateway: "10.2.10.254"
     broadcast: "10.2.10.255"
   ashoka.team10.ists.io:
+    hostname: "ashoka"
     team_id: "10"
     ip: "10.2.10.7"
     network: "10.2.10.0"
@@ -883,6 +1000,7 @@ machines:
     gateway: "10.2.10.254"
     broadcast: "10.2.10.255"
   washington.team10.ists.io:
+    hostname: "washington"
     team_id: "10"
     ip: "10.2.10.254"
     network: "10.2.10.0"
@@ -890,6 +1008,7 @@ machines:
     gateway: "10.2.10.254"
     broadcast: "10.2.10.255"
   gandhi.team10.cybertigers.club:
+    hostname: "gandhi"
     team_id: "10"
     ip: "10.3.10.1"
     network: "10.3.10.0"
@@ -897,6 +1016,7 @@ machines:
     gateway: "10.3.10.254"
     broadcast: "10.3.10.255"
   bonaparte.team10.cybertigers.club:
+    hostname: "bonaparte"
     team_id: "10"
     ip: "10.3.10.2"
     network: "10.3.10.0"
@@ -904,6 +1024,7 @@ machines:
     gateway: "10.3.10.254"
     broadcast: "10.3.10.255"  
   ataturk.team10.cybertigers.club:
+    hostname: "ataturk"
     team_id: "10"
     ip: "10.3.10.3"
     network: "10.3.10.0"
@@ -915,6 +1036,7 @@ machines:
 
 
   alexander.team11.ists.io:
+    hostname: "alexander"
     team_id: "11"
     ip: "10.2.11.1"
     network: "10.2.11.0"
@@ -922,6 +1044,7 @@ machines:
     gateway: "10.2.11.254"
     broadcast: "10.2.11.255"
   julius.team11.ists.io:
+    hostname: "julius"
     team_id: "11"
     ip: "10.2.11.2"
     network: "10.2.11.0"
@@ -929,6 +1052,7 @@ machines:
     gateway: "10.2.11.254"
     broadcast: "10.2.11.255"
   churchill.team11.ists.io:
+    hostname: "churchill"
     team_id: "11"
     ip: "10.2.11.3"
     network: "10.2.11.0"
@@ -936,6 +1060,7 @@ machines:
     gateway: "10.2.11.254"
     broadcast: "10.2.11.255"
   leonidas.team11.ists.io:
+    hostname: "leonidas"
     team_id: "11"
     ip: "10.2.11.4"
     network: "10.2.11.0"
@@ -943,6 +1068,7 @@ machines:
     gateway: "10.2.11.254"
     broadcast: "10.2.11.255"
   attila.team11.ists.io:
+    hostname: "attila"
     team_id: "11"
     ip: "10.2.11.5"
     network: "10.2.11.0"
@@ -950,6 +1076,7 @@ machines:
     gateway: "10.2.11.254"
     broadcast: "10.2.11.255"
   xerxes.team11.ists.io:
+    hostname: "xerxes"
     team_id: "11"
     ip: "10.2.11.6"
     network: "10.2.11.0"
@@ -957,6 +1084,7 @@ machines:
     gateway: "10.2.11.254"
     broadcast: "10.2.11.255"
   ashoka.team11.ists.io:
+    hostname: "ashoka"
     team_id: "11"
     ip: "10.2.11.7"
     network: "10.2.11.0"
@@ -964,6 +1092,7 @@ machines:
     gateway: "10.2.11.254"
     broadcast: "10.2.11.255"
   washington.team11.ists.io:
+    hostname: "washington"
     team_id: "11"
     ip: "10.2.11.254"
     network: "10.2.11.0"
@@ -971,6 +1100,7 @@ machines:
     gateway: "10.2.11.254"
     broadcast: "10.2.11.255"
   gandhi.team11.cybertigers.club:
+    hostname: "gandhi"
     team_id: "11"
     ip: "10.3.11.1"
     network: "10.3.11.0"
@@ -978,6 +1108,7 @@ machines:
     gateway: "10.3.11.254"
     broadcast: "10.3.11.255"
   bonaparte.team11.cybertigers.club:
+    hostname: "bonaparte"
     team_id: "11"
     ip: "10.3.11.2"
     network: "10.3.11.0"
@@ -985,6 +1116,7 @@ machines:
     gateway: "10.3.11.254"
     broadcast: "10.3.11.255"  
   ataturk.team11.cybertigers.club:
+    hostname: "ataturk"
     team_id: "11"
     ip: "10.3.11.3"
     network: "10.3.11.0"
@@ -996,6 +1128,7 @@ machines:
 
 
   alexander.team12.ists.io:
+    hostname: "alexander"
     team_id: "12"
     ip: "10.2.12.1"
     network: "10.2.12.0"
@@ -1003,6 +1136,7 @@ machines:
     gateway: "10.2.12.254"
     broadcast: "10.2.12.255"
   julius.team12.ists.io:
+    hostname: "julius"
     team_id: "12"
     ip: "10.2.12.2"
     network: "10.2.12.0"
@@ -1010,6 +1144,7 @@ machines:
     gateway: "10.2.12.254"
     broadcast: "10.2.12.255"
   churchill.team12.ists.io:
+    hostname: "churchill"
     team_id: "12"
     ip: "10.2.12.3"
     network: "10.2.12.0"
@@ -1017,6 +1152,7 @@ machines:
     gateway: "10.2.12.254"
     broadcast: "10.2.12.255"
   leonidas.team12.ists.io:
+    hostname: "leonidas"
     team_id: "12"
     ip: "10.2.12.4"
     network: "10.2.12.0"
@@ -1024,6 +1160,7 @@ machines:
     gateway: "10.2.12.254"
     broadcast: "10.2.12.255"
   attila.team12.ists.io:
+    hostname: "attila"
     team_id: "12"
     ip: "10.2.12.5"
     network: "10.2.12.0"
@@ -1031,6 +1168,7 @@ machines:
     gateway: "10.2.12.254"
     broadcast: "10.2.12.255"
   xerxes.team12.ists.io:
+    hostname: "xerxes"
     team_id: "12"
     ip: "10.2.12.6"
     network: "10.2.12.0"
@@ -1038,6 +1176,7 @@ machines:
     gateway: "10.2.12.254"
     broadcast: "10.2.12.255"
   ashoka.team12.ists.io:
+    hostname: "ashoka"
     team_id: "12"
     ip: "10.2.12.7"
     network: "10.2.12.0"
@@ -1045,6 +1184,7 @@ machines:
     gateway: "10.2.12.254"
     broadcast: "10.2.12.255"
   washington.team12.ists.io:
+    hostname: "washington"
     team_id: "12"
     ip: "10.2.12.254"
     network: "10.2.12.0"
@@ -1052,6 +1192,7 @@ machines:
     gateway: "10.2.12.254"
     broadcast: "10.2.12.255"
   gandhi.team12.cybertigers.club:
+    hostname: "gandhi"
     team_id: "12"
     ip: "10.3.12.1"
     network: "10.3.12.0"
@@ -1059,6 +1200,7 @@ machines:
     gateway: "10.3.12.254"
     broadcast: "10.3.12.255"
   bonaparte.team12.cybertigers.club:
+    hostname: "bonaparte"
     team_id: "12"
     ip: "10.3.12.2"
     network: "10.3.12.0"
@@ -1066,6 +1208,7 @@ machines:
     gateway: "10.3.12.254"
     broadcast: "10.3.12.255"  
   ataturk.team12.cybertigers.club:
+    hostname: "ataturk"
     team_id: "12"
     ip: "10.3.12.3"
     network: "10.3.12.0"
@@ -1077,6 +1220,7 @@ machines:
 
 
   alexander.team13.ists.io:
+    hostname: "alexander"
     team_id: "13"
     ip: "10.2.13.1"
     network: "10.2.13.0"
@@ -1084,6 +1228,7 @@ machines:
     gateway: "10.2.13.254"
     broadcast: "10.2.13.255"
   julius.team13.ists.io:
+    hostname: "julius"
     team_id: "13"
     ip: "10.2.13.2"
     network: "10.2.13.0"
@@ -1091,6 +1236,7 @@ machines:
     gateway: "10.2.13.254"
     broadcast: "10.2.13.255"
   churchill.team13.ists.io:
+    hostname: "churchill"
     team_id: "13"
     ip: "10.2.13.3"
     network: "10.2.13.0"
@@ -1098,6 +1244,7 @@ machines:
     gateway: "10.2.13.254"
     broadcast: "10.2.13.255"
   leonidas.team13.ists.io:
+    hostname: "leonidas"
     team_id: "13"
     ip: "10.2.13.4"
     network: "10.2.13.0"
@@ -1105,6 +1252,7 @@ machines:
     gateway: "10.2.13.254"
     broadcast: "10.2.13.255"
   attila.team13.ists.io:
+    hostname: "attila"
     team_id: "13"
     ip: "10.2.13.5"
     network: "10.2.13.0"
@@ -1112,6 +1260,7 @@ machines:
     gateway: "10.2.13.254"
     broadcast: "10.2.13.255"
   xerxes.team13.ists.io:
+    hostname: "xerxes"
     team_id: "13"
     ip: "10.2.13.6"
     network: "10.2.13.0"
@@ -1119,6 +1268,7 @@ machines:
     gateway: "10.2.13.254"
     broadcast: "10.2.13.255"
   ashoka.team13.ists.io:
+    hostname: "ashoka"
     team_id: "13"
     ip: "10.2.13.7"
     network: "10.2.13.0"
@@ -1126,6 +1276,7 @@ machines:
     gateway: "10.2.13.254"
     broadcast: "10.2.13.255"
   washington.team13.ists.io:
+    hostname: "washington"
     team_id: "13"
     ip: "10.2.13.254"
     network: "10.2.13.0"
@@ -1133,6 +1284,7 @@ machines:
     gateway: "10.2.13.254"
     broadcast: "10.2.13.255"
   gandhi.team13.cybertigers.club:
+    hostname: "gandhi"
     team_id: "13"
     ip: "10.3.13.1"
     network: "10.3.13.0"
@@ -1140,6 +1292,7 @@ machines:
     gateway: "10.3.13.254"
     broadcast: "10.3.13.255"
   bonaparte.team13.cybertigers.club:
+    hostname: "bonaparte"
     team_id: "13"
     ip: "10.3.13.2"
     network: "10.3.13.0"
@@ -1147,6 +1300,7 @@ machines:
     gateway: "10.3.13.254"
     broadcast: "10.3.13.255"  
   ataturk.team13.cybertigers.club:
+    hostname: "ataturk"
     team_id: "13"
     ip: "10.3.13.3"
     network: "10.3.13.0"
