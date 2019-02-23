@@ -1,4 +1,13 @@
 ---
+- name: An Nginx has appeared
+  yum_repository:
+    name: nginx repo
+    description: Nginx?
+    baseurl: http://nginx.org/packages/centos/7/x86_64/
+    enabled: yes
+    gpgcheck: no
+    state: present
+
 - name: Install/Setup Nginx
   package:
     name: '{{ item }}'
