@@ -17,6 +17,11 @@
 
 - name: Generate SSL binding for IIS
   win_command: powershell.exe -executionpolicy bypass C:\ssl_binding.ps1
+  
+- name: Move index.html to bonaparte
+  win_template:
+    src: /templates/index.html
+    dest: C:\inetpub\wwwroot\index.html
 
 - name: Restart web sevice
   win_service:
