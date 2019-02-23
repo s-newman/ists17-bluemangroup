@@ -104,9 +104,8 @@ team!
 
 ## Host Reference
 Notes about "global" services:
-- Ping on all hosts
-- WinRM on all Windows hosts
-- SSH on all Linux/Unix hosts
+- WinRM on all Windows hosts using local accounts
+- SSH on all Linux/Unix hosts using local accounts
 
 ### Internal Network
 Blueteam-managed network  
@@ -117,13 +116,13 @@ Domain: teamX.ists.io
 
 | Hostname    | Role                | IP          | OS                      | Services                | Notes |
 |-------------|---------------------|-------------|-------------------------|-------------------------|-------|
-| Alexander   | Domain Controller   | 10.2.X.1    | Windows Server 2016     | LDAP, DNS               ||
-| Julius      | Fileserver          | 10.2.X.2    | Windows Server 2012 R2  | SMB, FTP                | Roaming user profile host |
+| Alexander   | Domain Controller   | 10.2.X.1    | Windows Server 2016     | LDAP, DNS               | GUI install of Windows Server |
+| Julius      | Fileserver          | 10.2.X.2    | Windows Server 2012 R2  | SMB, FTP                | GUI install of Windows Server |
 | Churchill   | Docker Host         | 10.2.X.3    | Ubuntu 16.04            | Docker API              | Running Mattermost, other containers (unscored) |
-| Leonidas    | Graylog             | 10.2.X.4    | CentOS 7                | HTTP, Elasticsearch API | Also OSSEC controller |
+| Leonidas    | Graylog             | 10.2.X.4    | CentOS 7.6              | HTTP, Elasticsearch API | Also OSSEC controller |
 | Attila      | Vulnerable Web App  | 10.2.X.5    | Cucumber Linux          | HTTP                    | LAMP stack for injects webapp |
-| Xerxes      | Mail                | 10.2.X.6    | Windows Server 2008 R2  | SMTP (hMail)            | Not used for inject delivery |
-| Ashoka      | VPN Endpoint        | 10.2.X.7    | Ubuntu 14.04            | OpenVPN                 | Uses 10.X.2.0/24 for VPN clients |
+| Xerxes      | Mail                | 10.2.X.6    | Windows Server 2008 R2  | SMTP (hMail)            | GUI install of Windows Server | 
+| Ashoka      | VPN Endpoint        | 10.2.X.7    | Ubuntu 14.04            | OpenVPN                 ||
 | Bismark     | Client              | DHCP        | Kali 2018.2             |                         ||
 | Washington  | Router              | 10.2.X.254  | PAN                     |                         ||
 
@@ -137,16 +136,6 @@ Domain: teamX.cybertigers.club
 | Hostname    | Role                | IP          | OS                      | Services                | Notes |
 |-------------|---------------------|-------------|-------------------------|-------------------------|-------|
 | Gandhi      | Public DNS          | 10.3.X.1    | FreeBSD 11.2            | DNS, HTTP (Webmin)      ||
-| Bonaparte   | Public Website      | 10.3.X.2    | Windows Server 2012 R2  | HTTP, HTTPS (IIS)       | Core install |
+| Bonaparte   | Public Website      | 10.3.X.2    | Windows Server 2012 R2  | HTTP, HTTPS (IIS)       | Core install of Windows Server |
 | Ataturk     | GitLab              | 10.3.X.3    | CentOS 7.6              | HTTPS, SSH (git)        | GitLab login required for HTTPS check |
 | Washington  | Router              | 10.3.X.254  | PAN                     |                         ||
-
-## Running
-This section describes how to run the ansible in this repository to deploy the
-ISTS 17 defensive infrastructure.
-
-### Single-Team Deployment
-To run a deployment for a single team, run:
-```bash
-ansible-playbook deploy.yml -i inventory.yml -l teamX
-```
