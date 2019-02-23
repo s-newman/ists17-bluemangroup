@@ -22,4 +22,14 @@
   win_reboot:
 
 - name: Run hMail installation script
-  script: C:\Setup-hMail.ps1 
+  win_command: powershell.exe C:\Setup-hMail.ps1 
+
+- name: open firewall port
+  win_firewall_rule:
+    name: SMTP
+    localport: 25
+    action: allow
+    direction: in
+    protocol: tcp
+    state: present
+    enabled: yes
