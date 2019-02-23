@@ -2,16 +2,16 @@
 - name: Copy configure script
   win_template:
     src: configure.j2
-    dest: Setup-hMail.ps1
+    dest: C:\Setup-hMail.ps1
 
 - name: Copy hMail server executable
   win_copy:
     src: ./files/hmailserver.exe
-    dest: hmailserver.exe
+    dest: C:\hmailserver.exe
 
 - name: Install hMail server
   win_package:
-    path: hmailserver.exe
+    path: C:\hmailserver.exe
     state: present
     product_id: hMailServer_is1
     arguments: /verysilent
@@ -22,4 +22,4 @@
   win_reboot:
 
 - name: Run hMail installation script
-  script: Setup-hMail.ps1 
+  win_command: powershell.exe C:\Setup-hMail.ps1 
