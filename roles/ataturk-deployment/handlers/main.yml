@@ -1,4 +1,8 @@
 ---
+- name: disable firewalld
+  firewalld:
+    state: disabled
+
 - name: restart gitlab
   command: gitlab-ctl reconfigure
   register: gitlab_restart
