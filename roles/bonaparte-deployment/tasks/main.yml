@@ -3,11 +3,6 @@
   win_feature:
     name:
       - Web-Server
-#      - Web-Default-Doc
-#      - Web-Dir-Browsing
-#      - Web-Http-Errors
-#      - Web-Static-Content
-#      - Web-Mgmt-Console
     state: present
   register: iis_result
 

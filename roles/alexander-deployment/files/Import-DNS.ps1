@@ -8,5 +8,5 @@ param (
 $csv = Import-Csv $Filename
 foreach ($record in $csv){
     $ZoneName = "team" + $TeamNumber + ".ists.io"
-     Add-DnsServerResourceRecordA -Name $record.Name -IPv4Address $record.Address -ZoneName $ZoneName
+    Add-DnsServerResourceRecordA -Name $record.Name -IPv4Address $record.Address -ZoneName $ZoneName -ErrorAction silentlycontinue
 }

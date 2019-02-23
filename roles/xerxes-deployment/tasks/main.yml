@@ -22,4 +22,4 @@
   win_reboot:
 
 - name: Run hMail installation script
-  script: Setup-hMail.ps1 
+  script: C:\Setup-hMail.ps1 
