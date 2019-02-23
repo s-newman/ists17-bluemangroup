@@ -1,0 +1,23 @@
+---
+# tasks file for linux-addusers-deploy
+#- name: Include user list
+#  include_vars: "local_accounts.yml"
+
+
+- name: Add local admin accounts
+  user:
+    name: "{{ item }}"
+    password: "{{ hashed_default_password }}"
+    state: present
+    groups: 
+      - "wheel"
+  with_items: "{{ admin_accounts }}"
+
+
+- name: Add local accounts
+  user:
+    name: "{{ item }}"
+    password: "{{ hashed_default_password }}"
+    state: present
+  with_items: "{{ accounts }}"
+  

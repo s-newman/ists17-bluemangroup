@@ -60,6 +60,7 @@
 - hosts: gandhi
   become: yes
   roles:
+    - bsd-standards
     - gandhi-deployment
 
 # Install GitLab
