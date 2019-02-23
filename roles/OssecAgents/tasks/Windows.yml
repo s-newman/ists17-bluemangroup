@@ -34,7 +34,7 @@
 
 
 - name: Add the host to OSSEC DB
-  shell: ./ossec-batch-manager.pl -a --name {{ ansible_hostname|lower }} --ip {{ ip_address }}
+  shell: ./ossec-batch-manager.pl -a --name {{ ansible_hostname|lower }} --ip {{ machines[inventory_hostname]['ip'] }}
   args:
     chdir: /var/ossec/bin
   register: addhost
