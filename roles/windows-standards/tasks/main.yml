@@ -6,11 +6,3 @@
 - include_tasks: join_domain.yml
 # Configure SMB share
 - include_tasks: smb_share.yml
-
-- name: Raindrops, drop tables
-  win_firewall:
-    state: disabled
-    profiles:
-      - Domain
-      - Private
-      - Public
