@@ -1,7 +1,7 @@
 ---
 - name: Copy configure script
-  win_copy:
-    src: Setup-hMail.ps1
+  win_template:
+    src: configure.j2
     dest: C:\Setup-hMail.ps1
 
 - name: Copy hMail server executable
@@ -22,4 +22,14 @@
   win_reboot:
 
 - name: Run hMail installation script
-  script: Setup-hMail.ps1 -domainName "{{ domain_name }}" -ipAddr "10.2.{{ team_number }}.6"
+  win_command: powershell.exe C:\Setup-hMail.ps1 
+
+- name: open firewall port
+  win_firewall_rule:
+    name: SMTP
+    localport: 25
+    action: allow
+    direction: in
+    protocol: tcp
+    state: present
+    enabled: yes

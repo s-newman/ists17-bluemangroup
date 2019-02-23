@@ -13,8 +13,6 @@
       - curl
     state: present
 
-# If you want epel you need to fix nginx as you get a version miss match
-#https://nopistash.wordpress.com/2018/05/03/centos7-nginx-conflicting-module-versions/
 # The perl is so that ossec-batch-manager.pl works which is used on at least the windows clients
 
 - name: Disable FirewallD

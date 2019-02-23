@@ -1,4 +1,48 @@
 ---
+# Make sure graylog and nginx are started
+- meta: flush_handlers
+
+- name: "Wait for my boi to come up"
+  uri:
+    url: "https://{{ ossec_fqdn }}"
+    status_code: 200
+    validate_certs: no
+  register: result
+  until: result.status == 200
+  retries: 60
+  delay: 5
+
+- name: Get node id
+  uri:
+      url: https://{{ ossec_fqdn }}/api/cluster
+      method: GET
+      validate_certs: no
+      user: admin
+      password: "{{ graylog_admin_password }}"
+  register: nodeid
+
+- name: Add Syslog input
+  uri:
+      url: https://{{ ossec_fqdn }}/api/system/inputs
+      method: POST
+      status_code: 201
+      validate_certs: no
+      body_format: json
+      user: admin
+      password: "{{ graylog_admin_password }}" 
+      body: 
+        title: "Ossec syslog"
+        type: "org.graylog2.inputs.syslog.udp.SyslogUDPInput"
+        global: false
+        configuration: 
+          port: 1516
+          recv_buffer_size: 262144
+          tls_enable: false, 
+          bind_address: "0.0.0.0"
+        node: "{{ nodeid.x_graylog_node_id }}"
+      headers:
+        Content-Type: "application/json"
+
 - name: Install atomicorp repo
   yum:
     name: https://updates.atomicorp.com/channels/atomic/centos/7/x86_64/RPMS/atomic-release-1.0-21.el7.art.noarch.rpm
@@ -43,8 +87,7 @@
     owner: ossec
     group: ossec
     mode: 0644
-  notify:
-    - restart ossec-server
+  notify: Restart ossec
 
 - name: Configure the ossec-server
   template:
@@ -53,8 +96,7 @@
     owner: root
     group: root
     mode: 0644
-  notify:
-    - restart ossec-server
+  notify: Restart ossec
 
 - name: Move the thing that does things for windows
   copy:
@@ -64,8 +106,7 @@
     group: ossec
     mode: a+x
 
-- name: start meeeeee
+- name: Enable ossec
   service:
     name: ossec-hids
-    state: restarted
     enabled: yes

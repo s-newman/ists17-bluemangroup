@@ -26,9 +26,20 @@
     path: /etc/elasticsearch/elasticsearch.yml
     regexp: '^cluster.name:'
     line: 'cluster.name: graylog'
+  notify:
+    - Restart Elasticsearch
 
-- name: enable Elasticsearch
-  service:
+# People this is why you like transfer the file myyyyyy dudes
+# Like for real just copy the file next time
+- name: Rename Elasticsearch cluster name
+  lineinfile:
+    path: /etc/elasticsearch/elasticsearch.yml
+    regexp: '#network.host:'
+    line: 'network.host: 0.0.0.0'
+  notify:
+    - Restart Elasticsearch
+
+- name: Enable Elasticsearch
+  systemd:
     name: elasticsearch
-    state: restarted
     enabled: yes

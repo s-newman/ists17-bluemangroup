@@ -1,0 +1,27 @@
+- name: Create DNS records template file
+  template:
+    src: ../templates/hostnames.csv
+    dest: /tmp/hostnames.csv
+  delegate_to: localhost
+
+- name: Upload DNS records
+  win_copy:
+    src: /tmp/hostnames.csv
+    dest: C:\hostnames.csv
+
+- name: Import DNS records
+  script: "../files/Import-DNS.ps1 -Filename C:\\hostnames.csv -TeamNumber {{ team_number }}"
+
+- name: Clean up DNS records (remotely)
+  win_file:
+    path: C:\hostnames.csv
+    state: absent
+
+- name: Clean up DNS records (locally)
+  file:
+    path: /tmp/hostnames.csv
+    state: absent
+  delegate_to: localhost
+
+- name: Add DNS forwarder
+  win_shell: "Add-DnsServerForwarder -IPAddress 8.8.8.8"

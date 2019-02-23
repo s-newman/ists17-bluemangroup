@@ -1,0 +1,13 @@
+---
+# vars file for OssecAgents
+ossec_hostname: leonidas
+ossec_fqdn: '{{ ossec_hostname }}.team{{ team_number }}.{{ internal_base_domain }}'
+#ossec_ip: '10.100.3.72'
+syslog_port: 1516
+# Correct IP
+ossec_ip: 10.2.{{ team_number }}.4
+ossec_managed_server: True
+
+# windows
+ossec_url: https://updates.atomicorp.com/channels/atomic/windows/ossec-agent-win32-3.2.0-6132.exe
+ossec_file: ossec-agent-win32-3.2.0-6132.exe

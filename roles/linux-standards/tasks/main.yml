@@ -8,7 +8,7 @@
 - name: Add user accounts - Linux
   user:
     name: "{{ item }}"
-    password: "{{ default_password }}"
+    password: "{{ hashed_default_password }}"
     state: present
   with_items: "{{ accounts }}"
   when: ansible_system == "Linux"
@@ -16,7 +16,7 @@
 - name: Add local admin accounts - Linux
   user:
     name: "{{ item }}"
-    password: "{{ default_password }}"
+    password: "{{ hashed_default_password }}"
     state: present
     groups: 
         - "sudo"
@@ -26,7 +26,7 @@
 - name: Add local admin accounts
   user:
     name: "{{ item }}"
-    password: "{{ default_password }}"
+    password: "{{ hashed_default_password }}"
     state: present
     groups: 
       - "wheel"
@@ -36,7 +36,7 @@
 - name: Add local admin accounts
   user:
     name: "{{ item }}"
-    password: "{{ default_password }}"
+    password: "{{ hashed_default_password }}"
     state: present
     groups: 
       - "sudoers"
@@ -45,40 +45,10 @@
 
 
 # Cucumber Linux nonsense
-- name: Handle cucumber Linux
-  shell: "/bin/cat /etc/*rel* | /bin/grep DISTRIB_ID"
-  register: command_output
+- name: Check for lsb-release file
+  stat:
+    path: /etc/lsb-release
+  register: stat_result
 
-- name: Create wheel group - Cucumber
-  group:
-    name: wheel
-    state: present
-  when: command_output.stdout.find('ucumber') != -1 
-  become: yes
-
-- name: Add wheel group to sudoers - Cucumber
-  lineinfile:
-    path: /etc/sudoers
-    line: "%wheel ALL=(ALL) ALL"
-  when: command_output.stdout.find('ucumber') != -1 
-  become: yes
-
-- name: Add local admin accounts
-  user:
-    name: "{{ item }}"
-    password: "{{ default_password }}"
-    state: present
-    groups: 
-      - "wheel"
-  with_items: "{{ admin_accounts }}"
-  when: command_output.stdout.find('ucumber') != -1 
-  become: yes
-
-- name: Add accounts accounts
-  user:
-    name: "{{ item }}"
-    password: "{{ default_password }}"
-    state: present
-  with_items: "{{ admin_accounts }}"
-  when: command_output.stdout.find('ucumber') != -1 
-  become: yes
+- import_tasks: cucumber.yml
+  when: stat_result.stat.exists == True

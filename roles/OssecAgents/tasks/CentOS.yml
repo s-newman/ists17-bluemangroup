@@ -1,0 +1,5 @@
+---
+
+# Hey I am not doing anything silly
+- name: Do nothing silly
+  sleep: 1

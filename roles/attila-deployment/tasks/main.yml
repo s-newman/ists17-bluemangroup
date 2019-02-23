@@ -14,10 +14,37 @@
     - mysqld
     - php-fpm
 
-- name: Extract web app
-  unarchive:
-    src: website.tar.gz
-    dest: /var/www/html
+# - name: Extract web app
+#   unarchive:
+#     src: webApp.tar.gz
+#     dest: /var/www/html
+
+# - name: Change web root directory to /var/www/html/WebApp
+#   copy: 
+#     src: httpd.conf
+#     dest: /etc/httpd/httpd.conf
+#     owner: root
+#     group: root
+#     mode: 0644
+
+# - name: Set mysql password
+#   raw: /usr/bin/mysqladmin -u root password '{{ default_password }}'
+#   ignore_errors: yes
+
+# - name: Copy mysql data
+#   copy:
+#     src: DonationDatabase.sql
+#     dest: /tmp
+
+# - name: Restore database from dump
+#   raw: mysql -u root --password= "{{ default_password }}" < /tmp/DonationDatabase.sql
+#   ignore_errors: yes
+
+# - name: restrat httpd
+#   service:
+#     name: httpd
+#     state: restarted
 
 - name: Uninstall fortune
   shell: removepkg fortune
+

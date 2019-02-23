@@ -12,11 +12,11 @@
 - name: Set the default interface for cucumber Linux
   set_fact:
     ansible_default_ipv4:
-      interface: "eno16777736"
+      interface: "eno666"
 
 - name: Apply the interfaces template
   template:
-    src: templates/interfaces
+    src: templates/cuc-interfaces
     dest: /etc/network/interfaces
 
 - name: Restart network WARN This will break connection

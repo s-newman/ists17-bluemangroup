@@ -10,7 +10,7 @@
     name: "{{ item }}"
     password: "{{ default_password }}"
     state: present
-    groups:
+    update_password: on_create
     upn: "{{ item }}@{{ domain_name }}"
   loop:
     - Maximus
@@ -34,6 +34,7 @@
     state: present
     groups:
       - Domain Admins
+    update_password: on_create
     upn: "{{ item }}@{{ domain_name }}"
   loop:
     - Agustus

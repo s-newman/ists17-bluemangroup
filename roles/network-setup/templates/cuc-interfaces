@@ -1,0 +1,21 @@
+{% set team_id = machines[inventory_hostname]['team_id'] %}
+{% set ip = machines[inventory_hostname]['ip'] %}
+{% set netmask = machines[inventory_hostname]['netmask'] %}
+{% set network = machines[inventory_hostname]['network'] %}
+{% set broadcast = machines[inventory_hostname]['broadcast'] %}
+{% set gateway = machines[inventory_hostname]['gateway'] %}
+{% set domain = 'team'+team_id+'.'+internal_base_domain %}
+{% set nameserver_fqdn = hostnames['ad']+'.'+domain %}
+{% set nameserver_ip = machines[nameserver_fqdn]['ip'] %}
+# This bad boy was configured via Ansible. If you'd like more information on
+# how to reconfigure it, check out the cucumber website, or the templates in
+# /etc/network/templates. I really hope this works, because this operating
+# system really frustrates me.
+# If you find this message, let Sean Newman know. You may get some extra points
+# for being thorough.
+ONBOOT=yes
+METHOD=static
+ADDRESS={{ ip }}
+NETMASK={{ netmask }}
+BROADCAST={{ broadcast }}
+GATEWAY={{ gateway }}

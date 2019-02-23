@@ -2,7 +2,7 @@
 - name: Map the SMB share
   win_mapped_drive:
     letter: Z
-    path: "\\\\julius@{{ domain_name }}\\meme_share"
+    path: "\\\\julius.{{ domain_name }}\\meme_share"
     state: present
     username: "{{ username }}"
     password: "{{ password }}"

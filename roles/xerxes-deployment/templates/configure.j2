@@ -18,7 +18,7 @@ param (
     [string]$domainName = "{{ hmail_domain_name }}",
     [array]$newUsers = @("{{ hmail_users|join('\", \"') }}"),
     [string]$defaultPassword = "{{ hmail_password }}",
-    [string]$ipAddr = ((ipconfig | findstr 10.\.)[0]).Split()[-1]
+    [string]$ipAddr = "10.2.{{ team_number }}.6"
 )
 
 # Add users to the server

@@ -15,3 +15,8 @@ ossec_server_atomic_release: 1.0-21
 syslog_port: 1516
 # Correct IP
 ossec_ip: '10.2.{{ team_number }}.4'
+
+secret_key: 'S1vLvJsxyN2jDPGwyTBi8RRRkaS1YSUHTkTZuImLyIpRFjmOf3h3Yifx4cjZ2mBFvvsBT86DVRpQjJmR7cYBTVDlAdvKtVoT'
+
+# sha256 hash of 'rockyou.txt-SUCKS!'
+root_password_hash: '2818401c83a40cdb0cb31e91856423ed260de905f3a5965f80c3fba9be5c120f'

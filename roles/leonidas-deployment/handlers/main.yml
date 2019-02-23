@@ -1,12 +1,27 @@
 ---
 # handlers file for ossec-server
 
-- name: restart ossec-server
-  service: name=ossec-hids
-           state=restarted
-           enabled=yes
-
 - name: systemd daemon-reload
   command: systemctl daemon-reload
   tags:
     - skip_ansible_lint
+
+- name: Restart Graylog
+  systemd:
+    name: graylog-server
+    state: restarted
+
+- name: Restart Elasticsearch
+  systemd:
+    name: elasticsearch
+    state: restarted
+
+- name: Restart nginx
+  systemd:
+    name: nginx
+    state: restarted
+
+- name: Restart ossec
+  systemd:
+    name: ossec-hids
+    state: restarted

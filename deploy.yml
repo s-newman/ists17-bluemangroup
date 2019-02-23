@@ -29,6 +29,7 @@
   become: yes
   roles:
     - churchill-deployment
+    - gitlab-ci-runner
 
 # Install Graylog
 - hosts: leonidas
@@ -65,4 +66,20 @@
   become: yes
   roles:
     - linux-standards
-  
+
+# Apply Linux standards to BSD
+- hosts: bsd
+  become: yes
+  roles:
+    - linux-standards
+
+# Install OSSEC clients (linux)
+- hosts: linux
+  become: yes
+  roles:
+    - OssecAgents
+
+# Install OSSEC clients (windows)
+- hosts: windows
+  roles:
+    - OssecAgents

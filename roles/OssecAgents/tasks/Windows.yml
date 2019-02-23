@@ -1,0 +1,77 @@
+---
+#Download the agent to the machine
+- name: Check if ossec install file is present.
+  win_stat:
+    path: 'c:\users\{{ ansible_user }}\Downloads\{{ ossec_file }}'
+  register: file_info
+
+- name: "Download ossec file {{ossec_file}} if missing."
+  win_get_url:
+    url: '{{ ossec_url }}'
+    dest: 'c:\users\{{ ansible_user }}\Downloads\{{ ossec_file }}'
+  when: not file_info.stat.exists
+
+- name: "Silent install of {{ossec_file}} "
+  win_command: 'c:\users\{{ ansible_user }}\downloads\{{ ossec_file }} /S'
+  args:
+    executable: cmd
+    creates: 'c:\Program Files (x86)\ossec-agent'
+  register: install
+
+#You have to right click and select "Run as administrator for the program to launch correctly."
+- name: Create a desktop shortcut for Ossec
+  win_shortcut:
+    src: 'C:\Program Files (x86)\ossec-agent\win32ui.exe'
+    dest: C:\Users\Public\Desktop\Ossec Agent Manager.lnk
+    directory: 'C:\Program Files (x86)\ossec-agent\'
+# THIS NEEDS TO BE A WINDOWS CONFIG NOT LINUX (WTF IS THAT EVEN ): -_- :( ))
+- name: Template file for ossec.conf copied to server.
+  win_template:
+    src: templates/ossec_agent_windows.conf
+    dest: 'C:\Program Files (x86)\ossec-agent\ossec.conf'
+  #notify: Restart Ossec Windows
+
+
+
+- name: Add the host to OSSEC DB
+  shell: ./ossec-batch-manager.pl -a --name {{ ansible_hostname|lower }} --ip {{ machines[inventory_hostname]['ip'] }}
+  args:
+    chdir: /var/ossec/bin
+  register: addhost
+  delegate_to: "{{ ossec_fqdn }}"
+  become: true
+
+#Using shell vs command because of PIPE, both will work.
+- name: Print the key for the host that was registered.
+  shell: ./ossec-batch-manager.pl -e {{ ansible_hostname|lower }} | awk '{ print $2 }'
+  args:
+    chdir: /var/ossec/bin
+  register: key
+  delegate_to: "{{ ossec_fqdn }}"
+  become: true
+
+- name: Set key fact
+  set_fact:
+    ossec_agent_client_key="{{key.stdout}}"
+
+- debug:
+    msg: "OSSEC KEY:{{ ossec_agent_client_key }}"
+
+
+
+- name: Register the key we generated from the ossec server.
+  win_shell: 'echo y\r\n \r\n | .\manage_agents.exe -i {{ ossec_agent_client_key }}'
+  args:
+    executable: powershell
+    chdir: 'c:\Program Files (x86)\ossec-agent'
+  register: command_result
+  failed_when: "'Invalid authentication key' in command_result.stderr"
+
+- debug:
+    msg: "{{ command_result.stdout }}"
+
+- name: Restart the ossec agent
+  win_service:
+    name: OssecSvc
+    start_mode: auto
+    state: restarted

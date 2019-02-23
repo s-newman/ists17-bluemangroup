@@ -3,3 +3,5 @@
 - include_tasks: setup_domain.yml 
 # Populate the domain with users
 - include_tasks: add_domain_users.yml
+# Set up DNS
+- include_tasks: dns.yml

@@ -1,5 +1,7 @@
+{% set hostname = machines[inventory_hostname]['hostname'] %}
  127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
  ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+ 127.0.1.1   {{ hostname }}
 
 {% if whiteteam_hosts is defined %}
     {% for ip, host in whiteteam_hosts.items() %}
