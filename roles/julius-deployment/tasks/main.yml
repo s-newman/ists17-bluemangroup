@@ -1,4 +1,12 @@
 ---
+- name: Install IIS Web Server (prereq for FTP)
+  win_feature:
+    name: Web-Server
+    state: present
+    include_management_tools: yes
+    include_sub_features: yes
+  register: iis_result
+
 - name: Install FTP service
   win_feature:
     name: Web-FTP-Service
@@ -11,9 +19,9 @@
     state: present
   register: smb_result
 
-- name: Reboot once FTP and SMB installed
+- name: Reboot if installed features require it
   win_reboot:
-  when: ftp_result.reboot_required == "true" or smb_result.reboot_required == "true"
+  when: ftp_result.reboot_required == "true" or smb_result.reboot_required == "true" or iis_result.reboot_required == "true"
 
 - name: Create the share directory
   win_file:
