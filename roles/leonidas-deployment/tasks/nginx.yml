@@ -1,7 +1,7 @@
 ---
 - name: An Nginx has appeared
   yum_repository:
-    name: nginx repo
+    name: nginx
     description: Nginx?
     baseurl: http://nginx.org/packages/centos/7/x86_64/
     enabled: yes
