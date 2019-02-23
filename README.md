@@ -12,7 +12,7 @@ For ISTS 17, we deployed 14 teams in total - teams 1-13 were for competitiors,
 and team 0 was an unused team for testing deployment and red team activities.
 This guide will use team 0 as the example deployment team.
 
-### Prerequisites
+### Phase 0: Prerequisite Setup
 Before you can use this repository to deploy any teams, you will need to create
 templates for each host in the host reference tables below. Each template's
 hostname should be configured with the hostname listed in the tables below. In
@@ -26,6 +26,78 @@ send a domain name and update DNS records for clients. This will be used for
 initial connectivity before hosts are assigned static IP addresses.
 
 ### Phase 1: Static IPs
+Once a team's VMs are cloned out, they should get DHCP leases and the Windows
+DHCP/DNS server should create DNS records for their temporary IP addresses.
+Before doing anything else, ensure that the entire team is reachable using
+Ansible. You can use the following commands to do so:
+```bash
+ansible team0 -i inventory.yml -m ping -l linux         # Linux host testing
+ansible team0 -i inventory.yml -m ping -l bsd           # BSD host testing
+ansible team0 -i inventory.yml -m win_ping -l windows   # Windows host testing
+```
+
+Attila may have some issues getting DHCP because interfaces do not always get
+consistent names. If it does not get DHCP, you will have to log in manually and
+fix the interface script. See the [distribution documentation](https://wiki.cucumberlinux.com/wiki/sysconfig:networking)
+for further details on configuring networking on Cucumber Linux. Also, you may
+have to configure the static IP addresses for Attila manually due to the above
+issue with interface naming.
+
+Next, generate the `machines` variable block in `group_vars/all.yml` using the
+`generateMachines.sh` script. Make sure to double-check that the script is
+setting the correct IP addresses for your environment. At the time this
+document was written, the script is configured to use the IP addresses shown in
+the host reference tables below. After removing the old `machines` and
+`hostnames` variables, you can use the following command to generate the
+variable block:
+```bash
+./generateMachines.sh >> group_vars/all.yml
+```
+
+Once Ansible connectivity is verified, run the `static-ips.yml` playbook on the
+team to configure the static IP addresses. You can use the following command to
+do so:
+```bash
+ansible-playbook static-ips.yml -i inventory.yml -l team0
+```
+
+Once the playbook is complete, delete the old A and PTR records in the blue
+team DNS zones and replace them with records that point to the newly-set static
+IP addresses. Finally, restart all of the team's boxes so the networking
+changes take affect. A hard reset is acceptable.
+
+Once the team's VMs are back up, verify Ansible connectivity using the ad-hoc
+Ansible commands shown above. You may have to flush the DNS cache on the
+Ansible deployment host in order to properly resolve the newly-created DNS
+records. After connectivity has been verified, take a "Pre-deployment" snapshot
+of the VM in vCenter _without including memory_.
+
+### Phase 2: Service Deployment
+Now that static IP addresses are set and the hosts can be connected to, you
+should be able to start deployment. This is as simple as running the following
+command:
+```bash
+ansible-playbook deploy.yml -i inventory.yml -l team0
+```
+
+Please note that the playbook will fail the first time you run it once it
+starts trying to add domain users. This is because the domain controller has
+not finished restarting. Our Ansible doesn't do a good job at waiting for the
+domain controller to configure itself, so you'll just have to watch the console
+to wait for Alexander to reboot. Once it's rebooted, just re-run the playbook
+with the same command as listed above.
+
+Once the playbook is finished, you should verify that all the services are
+functioning properly. We didn't do any molecule tests or any sort of CI for the
+Ansible this year (I'm a sad boi about it). The recommended way for testing is
+to set up [the scoring engine](https://github.com/scoringengine/scoringengine)
+for all teams you will deploy. Once a service is passing checks, you should be
+good to go with it.
+
+After a host is passing all of it's service checks, delete the "Pre-deployment"
+snapshot and consolidate the disks. Then, take a "Post-deployment" snapshot,
+once again _without including memory_. You are now ready to deploy the next
+team!
 
 ## Network Topology
 ![ISTS 17 topology](network.png)
