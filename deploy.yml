@@ -88,6 +88,5 @@
 
 # Install OSSEC clients (windows)
 - hosts: windows
-  become: yes
   roles:
     - OssecAgents
