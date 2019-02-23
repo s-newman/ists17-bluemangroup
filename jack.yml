@@ -1,0 +1,35 @@
+---
+# # Deploy router
+# - hosts: washington
+#   roles:
+#     - washington-deployment
+#   connection: local
+#   gather_facts: False
+
+
+# Install public DNS server
+#- hosts: gandhi
+#  become: yes
+#  roles:
+#    - gandhi-deployment
+
+# Install GitLab
+#- hosts: ataturk
+#  become: yes
+#  roles:
+#    - ataturk-deployment
+
+#Might run into 
+# Install docker host
+- hosts: churchill
+  become: yes
+  roles:
+    - churchill-deployment
+
+
+# Apply Linux standards
+- hosts: linux
+  become: yes
+  roles:
+    - linux-standards
+  

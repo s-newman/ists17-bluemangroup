@@ -17,7 +17,7 @@
     install_elasticsearch: True
     install_mongodb: True
     install_graylog: True
-    install_nginx: True
+    install_nginx: False
     install_ossec: True
 ####################################################################
 

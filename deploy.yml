@@ -1,11 +1,4 @@
 ---
-# # Deploy router
-# - hosts: washington
-#   roles:
-#     - washington-deployment
-#   connection: local
-#   gather_facts: False
-
 # Deploy domain controllers
 - hosts: alexander
   roles:
@@ -27,7 +20,7 @@
     - xerxes-deployment
 
 # Apply Windows standards
-- hosts: windows
+- hosts: Windows
   roles:
     - windows-standards
 
@@ -70,7 +63,7 @@
     - ataturk-deployment
 
 # Apply Linux standards
-- hosts: linux
+- hosts: Linux
   become: yes
   roles:
     - linux-standards

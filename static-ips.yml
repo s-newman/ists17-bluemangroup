@@ -4,6 +4,11 @@
   roles:
     - network-setup
 
+- hosts: bsd
+  become: yes
+  roles:
+    - network-setup
+
 - hosts: windows
   roles:
     - network-setup

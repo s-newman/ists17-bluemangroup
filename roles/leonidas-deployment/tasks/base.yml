@@ -1,13 +1,14 @@
 ---
-# - name: Yum update
-#   yum:
-#     name: '*'
-#     state: latest
-#   when: ansible_distribution == 'CentOS'
+- name: Yum update
+  yum:
+    name: '*'
+    state: latest
+  when: ansible_distribution == 'CentOS'
 
 - name: Yum install stuff
   package:
-    name:
+    name: 
+      - vim
       - perl-Digest-MD5
       - curl
     state: present

@@ -1,4 +1,3 @@
----
 ansible_user: deploy
 
 internal_base_domain: ists.io
