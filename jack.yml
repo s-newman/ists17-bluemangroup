@@ -14,17 +14,17 @@
 #    - gandhi-deployment
 
 # Install GitLab
-- hosts: ataturk
-  become: yes
-  roles:
-    - ataturk-deployment
+#- hosts: ataturk
+#  become: yes
+#  roles:
+#    - ataturk-deployment
 
 #Might run into 
 # Install docker host
-#- hosts: churchill
-#  become: yes
-#  roles:
-#    - churchill-deployment
+- hosts: churchill
+  become: yes
+  roles:
+    - churchill-deployment
 
 
 # Apply Linux standards

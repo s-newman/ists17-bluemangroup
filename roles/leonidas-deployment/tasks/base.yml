@@ -5,17 +5,10 @@
     state: latest
   when: ansible_distribution == 'CentOS'
 
-- name: Yum install epel
-  package:
-    name: epel-release
-    state: present
-
 - name: Yum install stuff
   package:
     name: 
-      - epel-release
       - vim
-      - htop
       - perl-Digest-MD5
       - curl
     state: present

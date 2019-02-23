@@ -1,0 +1,43 @@
+---
+# Install docker host
+- hosts: churchill
+  become: yes
+  roles:
+    - churchill-deployment
+
+# Install Graylog
+- hosts: leonidas
+  become: yes
+  roles:
+    - leonidas-deployment
+
+# Install LAMP app
+- hosts: attila 
+  become: yes
+  roles:
+    - attila-deployment
+
+# Install OpenVPN server
+- hosts: ashoka
+  become: yes
+  roles:
+    - ashoka-deployment
+
+# Install public DNS server
+- hosts: gandhi
+  become: yes
+  roles:
+    - gandhi-deployment
+
+# Install GitLab
+- hosts: ataturk
+  become: yes
+  roles:
+    - ataturk-deployment
+
+# Apply Linux standards
+- hosts: Linux
+  become: yes
+  roles:
+    - linux-standards
+ 
